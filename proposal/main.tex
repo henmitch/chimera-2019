@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+
+\usepackage{color}
+\usepackage[arrowdel]{physics}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage[lmargin=1.5in, rmargin=1.5in, tmargin=1in, bmargin=1in]{geometry}
+\usepackage[style=apa, backend=biber]{biblatex}
+\usepackage{fontspec}
+\usepackage[doublespacing]{setspace}
+\usepackage[noblocks]{authblk}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{cleveref}
+\usepackage{todonotes}
+
+\newcommand{\etal}{\textit{et al}. }
+\setmainfont{Times New Roman}
+
+\addbibresource{biblio.bib}
+\AtEveryBibitem{\clearfield{addendum}}
+
+\renewcommand\Affilfont{\small}
+
+\author[1, 2]{Henry Mitchell}
+\author[1, 4]{Chris Danforth}
+\author[3, 4]{Matt Mahoney}
+\affil[1]{Department of Mathematics and Statistics, University of Vermont College of Engineering and Mathematical Sciences}
+\affil[2]{Department of Physics, University of Vermont College of Arts and Sciences}
+\affil[3]{Department of Neurology, University of Vermont Larner College of Medicince}
+\affil[4]{Department of Computer Science, University of Vermont College of Engineering and Mathematical Sciences}
+
+\title{Sudden Unison: Quantitative Analysis of Chimera State Collapse and Epileptic Seizures}
+
+\begin{document}
+\begin{titlepage}
+  \maketitle
+  \thispagestyle{empty}
+  \begin{abstract}
+    \input{section/abstract}
+  \end{abstract}
+\end{titlepage}
+
+\section{Descriptive Narrative}
+\label{sec:narrative}
+\input{section/narrative}
+
+\section{Literative Review}
+\label{sec:lit_review}
+\input{section/lit_review}
+
+\section{Methodology}
+\label{sec:methodology}
+\input{section/method}
+
+\section{Significance}
+\label{sec:significance}
+\input{section/significance}
+
+\clearpage
+\newpage
+\nocite{*}
+\printbibliography
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,5 @@
+* DONE Find papers from Strogatz (and past 5 years) on Josephson junctions
+  DEADLINE: <2018-02-14 Wed 14:00>
+* TODO Organize brain by cortex
+* TODO Look at 3D plots from Wang 2012
+* TODO Code up model

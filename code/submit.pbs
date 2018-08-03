@@ -1,0 +1,14 @@
+# job needs 1 compute node with 1 processor per node.
+#PBS -l nodes=1:ppn=1,pmem=8gb,pvmem=9gb
+# It should be allowed to run for up to 1 hour.
+#PBS -l walltime=01:00:00
+# Name of job.
+#PBS -N chimera
+# Join STDERR TO STDOUT.
+#PBS -j oe   
+# Send me mail on job start, job end and if job aborts
+#PBS -M hmmitche@uvm.edu
+#PBS -m bea
+
+cd $HOME/chimera
+$HOME/pyenv/bin/python3 test.py

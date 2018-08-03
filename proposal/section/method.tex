@@ -1,0 +1,34 @@
+My process will follow three main steps.
+The first is to computationally implement the HR model (\cref{eq:HRx,eq:HRy,eq:HRz}) on a functional human connectivity network (connectome), similarly to what was done on the cat connectome.
+\begin{align}
+  \label{eq:HRx}
+  \dot{x}_{j} &= y_{j} - x_{j}^{3} + b x_{j}^{2} + I_{j} - z_{j}
+                -
+                \frac{\alpha}{n'_{j}} \sum_{k = 1}^{N}{G'_{j, k} \Theta(x_{k})}
+                -
+                \frac{\beta}{n''_{j}} \sum_{k = 1}^{N}{G''_{j, k} \Theta(x_{k})} \\
+  \label{eq:HRy}
+  \dot{y}_{j} &= 1 - 5 x_{j}^{2} - y_{j} \\
+  \label{eq:HRz}
+  \dot{z}_{j} &= \mu \bqty{s \pqty{x_{j} - x_{\text{rest}}} - z_{j}}
+\end{align}
+As part of the testing of this step, in fact, I plan to recreate the results of Santos \etal on the same cat connectome which they used for their work.
+This development is unlikely to take very long, as it is a relatively simple task to write Python code to integrate the requisite differential equations on a network.
+Additionally, there are several readily available human functional connectomes such as those from the Human Connectome Project and the Budapest Reference Connectome.
+
+Once I have implemented this model for the human connectome, I will use parameter estimation techniques to find the circumstances that lead to chimera state evolution and collapse \autocite{Ramsay2007}.
+This will allow me to generate various chimera states in the model, so as to later compare my simulations with real data.
+This portion of the project is likely to take longer than the model implementation, as it will require running the HR model with parameter-matching code on top of it.
+
+Finally, I will match the simulations to seizure data obtained from the Department of Neurology at the University of Vermont Medical Center.
+This will involve filling out paperwork for the Internal Review Board, and is likely to take the longest of the three steps.
+This will also require parameter matching techniques, and both quantitative and qualitative comparison between measured data and my simulations.
+If the simulated patterns from the chimera states are similar enough to the data collected from actual seizures, then I will have shown the validity of the HR model under certain conditions.
+Given the amount and breadth of the seizure data that the University has collected, if I am able to match these data, I will have shown in a general and universal sense which parameter values (both in the model and in the brain) lead to seizures.
+The main difficulty in doing so is that I will need a way to determine that a fit is ``good enough,'' which is a determination that I will need to make from the literature and experts' opinions.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% TeX-master: "../main"
+%%% End:
