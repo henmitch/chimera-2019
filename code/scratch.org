@@ -1,1 +1,20 @@
-To find
+* Finding phase
+** Find firing times
+** Create mask
+
+#+BEGIN_SRC
+[0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, ... k, k, k, k]
+#+END_SRC
+
+** Generate a mask for each neuron
+** Cut off everything where last neuron to hit last firing time hits last firing time
+For example, if we had 3 neurons:
+
+#+BEGIN_SRC
+0 0 0 0 0 1 1 1 1 1 2 2|2 2 2 3 3 3 3 3 4 4 4 4 4
+0 0 0 0 1 1 1 1 2 2 2 2|3 3 3 3 4 4 4 4
+0 0 0 1 1 1 2 2 2 3 3 3|4 4 4
+                        *
+#+END_SRC
+
+We would stop before the asterisk.

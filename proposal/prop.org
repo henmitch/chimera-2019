@@ -3,8 +3,8 @@
 * Papers
 ** DONE Santos 2017			      :chimera:neuronal:bifurcations:
    Chimera states in cat brain models
-- No data = opportunity?
-- Could apply to mouse, match w/ data
+   - No data = opportunity?
+   - Could apply to mouse, match w/ data
 
 ** TODO [#B] Schmidt 2017				   :neuronal:chimera:
    Chimera states in 2D neuron networks
@@ -14,50 +14,52 @@
 
 ** DONE Andrzejak 2016				  :neuronal:chimera:epilepsy:
    Sudden collapse of chimera states
-- Misleading title
-- Not particularly groundbreaking observations
-- Useful visualization techniques
+   - Misleading title
+   - Not particularly groundbreaking observations
+   - Useful visualization techniques
 
 ** DONE Jirsa 2014			  :computation:epilepsy:bifurcations:
    Epileptor
-- Powerful model
-- Closely related to Santos (HR model)
-- Could be matched to data
-- Probably spawned helpful things
-   
+   - Powerful model
+   - Closely related to Santos (HR model)
+   - Could be matched to data
+   - Probably spawned helpful things
+
 ** TODO Taylor 2014			     :computation:epilepsy:treatment:
    Seizure abatement
 
 ** DONE Martens 2013 						    :chimera:
    Mechanical chimera states
-- Very cool
-- Might not be helpful
-  
+   - Very cool
+   - Might not be helpful
+
 ** TODO Taylor 2012
    Patient-specific models
 
-** TODO [#B] Baier 2012
+** TODO [#B] Baier 2012                                :computation:epilepsy:
+   - Overview of epilepsy modeling
+
 ** DONE [#A] Wang 2012				      :epilepsy:bifurcations:
    Phase space approach to medling epilepsy
-- Coupled oscillator model
-- Could be *very* valuable
+   - Coupled oscillator model
+   - Could be *very* valuable
 
 ** DONE Scheffer 2009					       :bifurcations:
    Critical slowing down
-- Not necessarily directly useful, but could be mildly helpful
+   - Not necessarily directly useful, but could be mildly helpful
 
 ** DONE Lytton 2008				       :epilepsy:computation:
    Modeling epilepsy
-- Good general overview
-- Outdated?
+   - Good general overview
+   - Outdated?
 
 ** TODO [#C] Wendling 2005			       :epilepsy:computation:
    Modeling transition from interictal to ictal states
-- Outdated?  Likely.
+   - Outdated?  Likely.
 
 * Tasks
-** IP Look at papers citing Jirsa
-** TODO Talk to Rod Scott
+** DONE Look at papers citing Jirsa
+
 * Proposal
 ** DONE Abstract
 ** DONE Description
