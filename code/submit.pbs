@@ -10,5 +10,5 @@
 #PBS -M hmmitche@uvm.edu
 #PBS -m bea
 
-cd $HOME/chimera
-$HOME/pyenv/bin/python3 test.py
+cd $HOME/thesis/code/python
+$HOME/pyenv/bin/jupyter-nbconvert --execute --to notebook --ExecutePreprocessor.timeout=-1 sim.ipynb
