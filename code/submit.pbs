@@ -13,6 +13,6 @@
 cd $HOME/thesis/code/python
 $HOME/pyenv/bin/jupyter-nbconvert --execute --to notebook --ExecutePreprocessor.timeout=-1 sim.ipynb
 cd $HOME/thesis
-git add .
+git add -a .
 git commit -m "Using git lfs on VACC"
 git push
