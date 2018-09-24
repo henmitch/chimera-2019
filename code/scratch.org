@@ -1,10 +1,10 @@
 * The Plan
-  1. Use the VACC to generate loads of data.
-One run per parameter set, for now
+  1. Use the VACC to generate loads of data. One run per parameter set, for now
      1. Waveforms
      2. Phases
      3. Recurrence Plots
      4. Non-central sparseness values
-  2. Save data (one file per parameter value).
-Pickle/package together parameters, waveform, phase, RP, non-central sparseness, sigma
-Save as <alpha><beta>.pkl
+     5. Sigma
+  2. Save the data
+  Pickle/package together parameters, waveform, phase, RP, non-central sparseness, sigma
+  Save as <alpha><beta>.pkl
