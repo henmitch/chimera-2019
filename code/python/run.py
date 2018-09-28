@@ -2,7 +2,6 @@ import argparse
 import numpy as np
 import pickle
 
-from itertools import cycle
 from scipy.integrate import solve_ivp
 
 parser = argparse.ArgumentParser(description="Simulate a brain")
