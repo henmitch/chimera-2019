@@ -3,9 +3,9 @@
 # It should be allowed to run for up to 20 minutes
 #PBS -l walltime=00:20:00
 # Name of job.
-#PBS -N chimera_{}_{}
+#PBS -N chimera_{:0.3f}_{:0.3f}
 # Join STDERR TO STDOUT.
 #PBS -j oe
 
 cd $HOME/thesis/code/python
-$HOME/pyenv/bin/python run.py {} {}
+$HOME/pyenv/bin/python run.py {:0.3f} {:0.3f}
