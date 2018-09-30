@@ -2,7 +2,6 @@ import argparse
 import numpy as np
 import pickle
 
-from itertools import cycle
 from scipy.integrate import solve_ivp
 
 parser = argparse.ArgumentParser(description="Simulate a brain")
@@ -203,25 +202,25 @@ N = 100*tmax
 t = np.linspace(0, tmax, N)
 
 params = (b, i0, x_rev, λ, θ, μ, s, x_rest, α, n1, β, n2, G1, G2)
-print("Finding solution... ")
+print("Finding solution... ", end="")
 sol = solve_ivp(fun=lambda t_in, y_in: hr_dots(y_in, t_in, *params),
-                    t_span=(0, tmax), y0=ivs.reshape(ivs.size), events=events,
-                    dense_output=True, method="RK45")
+                t_span=(0, tmax), y0=ivs.reshape(ivs.size), events=events,
+                dense_output=True, method="RK45")
 print("Found solution")
-print("Finding phase... ")
+print("Finding phase... ", end="")
 phase = ϕ(sol, t)
 print("Found phase")
-print("Finding recurrence plot... ")
+print("Finding recurrence plot... ", end="")
 recurrence_plot = rp(phase[-1])
 print("Found recurrence plot")
-print("Finding non-central sparseness... ")
+print("Finding non-central sparseness... ", end="")
 ncs = non_central_sparseness(phase[-1])
 print("Found non-central sparseness")
-print("Finding sigma... ")
+print("Finding sigma... ", end="")
 sig = σ(sol)
 print("Found sigma")
 
-print("Writing... ")
+print("Writing... ", end="")
 with open(f"../../data/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
     pickle.dump([params, sol, phase, recurrence_plot, ncs, sig], f)
 print("Wrote")
