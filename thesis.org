@@ -1,10 +1,10 @@
 * DONE Find papers from Strogatz (and past 5 years) on Josephson junctions
   DEADLINE: <2018-02-14 Wed 14:00>
-* TODO Organize brain by cortex
 * DONE Look at 3D plots from Wang 2012
 * DONE Code up model
 * Meeting Danforth
   <2018-08-21 Tue 13:00-14:00>
+  <2018-09-10 Mon 13:00-14:00>
 * Meeting Dave Dewhurst
   <2018-08-21 Tue 14:00-15:00>
 * Thesis
@@ -50,3 +50,24 @@
   <2018-12-07 Fri 09:40-10:30>
 * DONE Email Batista
   DEADLINE: <2018-08-22 Wed>
+* DONE Reread Strogatz on chimeras
+  Specifically quantification
+  DEADLINE: <2018-09-21 Fri 10:30>
+* TODO Meet with Danforth re: timeline
+* HON 201
+  <2018-09-19 Wed 16:25-17:25>
+** People to know/resources
+   1. Amelia Wilcox (liaison)
+   2. Jacques Bailey (chair)
+   3. Rory Waterman (CAS associate dean)
+   [[http://uvm.edu/~ashonors]["One Stop Shop"]]
+   [[https://scholarworks.uvm.edu/hcoltheses/][Scholarworks]] (previous theses)
+** Process
+*** IN-PROGRESS Committee
+    1. Chair from outside department - can be outside college (Matt?)
+    2. Thesis supervisor - Danforth
+    3. Person #3 - Dodds?
+*** TODO Book a room and schedule
+    DEADLINE: <2019-04-05 Fri>
+*** TODO Submit schedule
+    DEADLINE: <2019-04-20 Sat>
