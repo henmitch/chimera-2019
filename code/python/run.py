@@ -1,5 +1,6 @@
 import argparse
 import numpy as np
+import pandas as pd
 import pickle
 
 from scipy.integrate import solve_ivp
@@ -155,18 +156,38 @@ def σ(sol):
     return np.array([np.var(d) for d in diff])
 
 
-cortices = [[0, 18],
-            [18, 28],
-            [28, 46],
-            [46, 65]]
+cortices = [[0, 38],
+            [38, 73],
+            [73, 98],
+            [98, 119],
+            [119, 139],
+            [139, 152],
+            [152, 164],
+            [164, 175],
+            [175, 186],
+            [186, 195],
+            [195, 203],
+            [203, 210],
+            [210, 213]]
 
+data = pd.read_excel("../connectomes/mouse.xlsx", sheet_name=None)
+metadata = pd.read_excel("../connectomes/mouse_meta.xlsx", sheet_name=None)
 
-n = np.loadtxt("../connectomes/cat_matrix.dat")/3
+m = metadata["Voxel Count_295 Structures"]
+m = m.loc[m["Represented in Linear Model Matrix"] == "Yes"]
+
+columns = []
+for region in m["Major Region"].unique():
+    [columns.append(acronym) for acronym in m.loc[m["Major Region"] == region, "Acronym"].values]
+
+d = data["W_ipsi"]
+d.columns = columns
+d.index = columns
+
+n = d.values/d.values.max()
 cortex_mask = np.zeros_like(n)
-cortex_mask[:18, :18] = 1
-cortex_mask[18:28, 18:28] = 2
-cortex_mask[28:46, 28:46] = 3
-cortex_mask[46:, 46:] = 4
+for i, cortex in enumerate(cortices):
+    cortex_mask[cortex[0]:cortex[1], cortex[0]:cortex[1]] += i + 1
 G1 = n.copy()
 G1[cortex_mask == 0] = 0
 G2 = n.copy()
@@ -174,7 +195,6 @@ G2[cortex_mask != 0] = 0
 events = [lambda t_in, y_in, i=i: event(t_in, y_in, i) for i in range(n.shape[0])]
 for e in events:
     e.direction = 1.0
-
 
 b = 3.2                           # Controls spiking frequency
 i0 = 4.4*np.ones(n.shape[0])      # Input current ---- It's an array so we can add noise later
@@ -223,4 +243,5 @@ print("Found sigma")
 print("Writing... ", end="")
 with open(f"../../data/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
     pickle.dump([params, sol, phase, recurrence_plot, ncs, sig], f)
+
 print("Wrote")
