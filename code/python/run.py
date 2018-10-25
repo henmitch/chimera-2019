@@ -1,4 +1,5 @@
 import argparse
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import pickle
@@ -12,6 +13,7 @@ parser.add_argument("b", metavar="beta", type=float, nargs=1,
                    help="The beta value to use (intra connection strength)")
 args = parser.parse_args()
 
+
 def Θ(x, x_rev, λ, θ):
     xk, xj = np.meshgrid(x, x)
     return (xj - x_rev)/(1 + np.exp(-λ*(xk - θ)))
@@ -19,15 +21,19 @@ def Θ(x, x_rev, λ, θ):
 
 def dΘ_dx(x, λ, θ):
     final = np.ones((x.size, x.size))/(1 + np.exp(-λ*(x - θ)))
-    np.fill_diagonal(final, final.diagonal() + x*λ*np.exp(-λ*(x - θ))/(1+np.exp(-λ*(x - θ)))**2)
+    np.fill_diagonal(final,
+                     final.diagonal() +
+                     x*λ*np.exp(-λ*(x - θ))/(1+np.exp(-λ*(x - θ)))**2)
     return final
 
 
-def hr_dots(current, _, b, i0, x_rev, λ, θ, μ, s, x_rest, α, n1, β, n2, G1, G2):
+def hr_dots(current, _, b, i0, x_rev, λ, θ, μ, s, x_rest,
+            α, n1, β, n2, G1, G2):
     x, y, z = map(lambda k: k.flatten(), np.split(current, 3))
     theta = Θ(x, x_rev, λ, θ)
     dots = np.zeros_like(current).reshape(3, -1)
-    dots[0] = y - (x**3) + b*(x**2) + i0 - z - (α/n1)*np.sum(G1*theta, axis=1) - (β/n2)*np.sum(G2*theta, axis=1)
+    dots[0] = y - (x**3) + b*(x**2) + i0 - z -\
+        (α/n1)*np.sum(G1*theta, axis=1) - (β/n2)*np.sum(G2*theta, axis=1)
     dots[1] = 1 - 5*(x**2) - y
     dots[2] = μ*(s*(x - x_rest) - z)
     return np.hstack(dots)
@@ -70,7 +76,8 @@ def plot_final_state(
         cortices = [[0, y.size]]
     m = iter(markers[:len(cortices)])
     for cortex in cortices:
-        plt.plot(range(*cortex), y[-1, channel, cortex[0]:cortex[1]], next(m), label=f"{cortex[0]} - {cortex[1] - 1}")
+        plt.plot(range(*cortex), y[-1, channel, cortex[0]:cortex[1]],
+                 next(m), label=f"{cortex[0]} - {cortex[1] - 1}")
     if legend:
         plt.legend(loc="best")
     if title:
@@ -78,16 +85,17 @@ def plot_final_state(
     plt.ylim(ylim)
 
 
-def plot_beginning_and_end(y, start, end, p=0.99, legend=False, title=True, channel=0):
-    l = y.shape[0]
+def plot_beginning_and_end(y, start, end, p=0.99,
+                           legend=False, title=True, channel=0):
+    length= y.shape[0]
     fig, [ax1, ax2] = plt.subplots(1, 2, sharey=True)
     for i in range(start, end):
-        ax1.plot(y[:int(p*l), channel, i], label=i)
+        ax1.plot(y[:int(p*length), channel, i], label=i)
         ax1.grid(True)
-        ax1.set_xlim([0, int(p*l)])
-        ax2.plot(y[int((1 - p)*l):, channel, i], label=i)
+        ax1.set_xlim([0, int(p*length)])
+        ax2.plot(y[int((1 - p)*length):, channel, i], label=i)
         ax2.grid(True)
-        ax2.set_xlim([0, int(p*l)])
+        ax2.set_xlim([0, int(p*length)])
         plt.ylim([-1.5, 2.25])
     if legend:
         ax1.legend(loc="lower left")
@@ -95,7 +103,8 @@ def plot_beginning_and_end(y, start, end, p=0.99, legend=False, title=True, chan
         plt.suptitle(f"First and last {100*p}\% of neurons {start} - {end}")
 
 
-def plot_state_diagram(y, cortices=None, lim=[-1.5, 2.5], markers=["ro", "k^", "gX", "bD"]):
+def plot_state_diagram(y, cortices=None, lim=[-1.5, 2.5],
+                       markers=["ro", "k^", "gX", "bD"]):
     if cortices is None:
         cortices = [[0, y.size]]
     m = iter(markers[:len(cortices)])
@@ -109,6 +118,8 @@ def plot_state_diagram(y, cortices=None, lim=[-1.5, 2.5], markers=["ro", "k^", "
 
 def event(t, y, i):
     return y[i]
+
+
 event.direction = 1.0
 
 
@@ -156,20 +167,7 @@ def σ(sol):
     return np.array([np.var(d) for d in diff])
 
 
-cortices = [[0, 38],
-            [38, 73],
-            [73, 98],
-            [98, 119],
-            [119, 139],
-            [139, 152],
-            [152, 164],
-            [164, 175],
-            [175, 186],
-            [186, 195],
-            [195, 203],
-            [203, 210],
-            [210, 213]]
-
+# DATA PREPARATION - specific to the data in question
 data = pd.read_excel("../connectomes/mouse.xlsx", sheet_name=None)
 metadata = pd.read_excel("../connectomes/mouse_meta.xlsx", sheet_name=None)
 
@@ -177,13 +175,18 @@ m = metadata["Voxel Count_295 Structures"]
 m = m.loc[m["Represented in Linear Model Matrix"] == "Yes"]
 
 columns = []
+cortices = [[0, 0]]
 for region in m["Major Region"].unique():
-    [columns.append(acronym) for acronym in m.loc[m["Major Region"] == region, "Acronym"].values]
+    i = [columns.append(acronym) for acronym in
+         m.loc[m["Major Region"] == region, "Acronym"].values]
+    cortices.append([cortices[-1][-1], cortices[-1][-1] + len(i)])
+cortices.remove([0, 0])
 
 d = data["W_ipsi"]
 d.columns = columns
 d.index = columns
 
+# MODEL PREPARATION - back to generic
 n = d.values/d.values.max()
 cortex_mask = np.zeros_like(n)
 for i, cortex in enumerate(cortices):
@@ -192,27 +195,28 @@ G1 = n.copy()
 G1[cortex_mask == 0] = 0
 G2 = n.copy()
 G2[cortex_mask != 0] = 0
-events = [lambda t_in, y_in, i=i: event(t_in, y_in, i) for i in range(n.shape[0])]
+events = [lambda t_in, y_in, i=i: event(t_in, y_in, i)
+          for i in range(n.shape[0])]
 for e in events:
     e.direction = 1.0
 
-b = 3.2                           # Controls spiking frequency
-i0 = 4.4*np.ones(n.shape[0])      # Input current ---- It's an array so we can add noise later
-x_rev = 2                         # Reverse potential
-λ = 10                            # Sigmoidal function parameter
-θ = -0.25                         # Sigmoidal function parameter
-μ = 0.01                          # Time scale of slow current
-s = 4.0                           # Governs adaptation (whatever that means)
-x_rest = -1.6                     # Resting potential ------ INCORRECT IN SANTOS PAPER
-α = args.a[0]                     # Intra connection strength ---- VARIED PARAMETER
-n1 = np.count_nonzero(G1, axis=1) # Number of intra connections from a given neuron
-n1[n1 == 0] = 1                   # This is to remove a divide-by-zero; if n1 is 0, then so is G1
-β = args.b[0]                     # Inter connection strength ---- VARIED PARAMETER
-n2 = np.count_nonzero(G2, axis=1) # Number of inter connections from a given neuron
-n2[n2 == 0] = 1                   # This is to remove a divide-by-zero; if n2 is 0, then so is G2
+b = 3.2                            # Controls spiking frequency
+i0 = 4.4*np.ones(n.shape[0])       # Input current --- An array to add noise
+x_rev = 2                          # Reverse potential
+λ = 10                             # Sigmoidal function parameter
+θ = -0.25                          # Sigmoidal function parameter
+μ = 0.01                           # Time scale of slow current
+s = 4.0                            # Governs adaptation (whatever that means)
+x_rest = -1.6                      # Resting potential --- INCORRECT IN SANTOS PAPER
+α = args.a[0]                      # Intra connection strength ---- VARIED PARAMETER
+n1 = np.count_nonzero(G1, axis=1)  # Number of intra connections from a given neuron
+n1[n1 == 0] = 1                    # This is to remove a divide-by-zero; if n1 is 0, then so is G1
+β = args.b[0]                      # Inter connection strength ---- VARIED PARAMETER
+n2 = np.count_nonzero(G2, axis=1)  # Number of inter connections from a given neuron
+n2[n2 == 0] = 1                    # This is to remove a divide-by-zero; if n2 is 0, then so is G2
 
 
-ivs = np.zeros([3, n.shape[0]])   # Initial values [[x], [y], [z]]
+ivs = np.zeros([3, n.shape[0]])    # Initial values [[x], [y], [z]]
 ivs[0] = 3.0*np.random.random(n.shape[0]) - 1.0
 ivs[1] = 0.2*np.random.random(n.shape[0])
 ivs[2] = 0.2*np.random.random(n.shape[0])

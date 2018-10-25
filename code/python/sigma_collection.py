@@ -1,3 +1,5 @@
+import gc
+import matplotlib.pyplot as plt
 import numpy as np
 import os
 import pandas as pd
@@ -31,10 +33,19 @@ tmax = 4000
 N = 100*tmax
 t = np.linspace(0, tmax, N)
 
-cortices = [[0, 18],
-            [18, 28],
-            [28, 46],
-            [46, 65]]
+cortices = [[0, 38],
+            [38, 73],
+            [73, 98],
+            [98, 119],
+            [119, 139],
+            [139, 152],
+            [152, 164],
+            [164, 175],
+            [175, 186],
+            [186, 195],
+            [195, 203],
+            [203, 210],
+            [210, 213]]
 
 for i in os.listdir("../../data/"):
     with open(f"../../data/{i}", "rb") as f:
@@ -42,13 +53,20 @@ for i in os.listdir("../../data/"):
     params = data[0]
     α, β = params[8], params[10]
     ncs, sig = data[-2], data[-1]
-    vals = data[1].sol(t).T.reshape(-1, 3, 65)
+    vals = data[1].sol(t).T.reshape(N, 3, -1)
     phase = data[2]
     end = {"alpha": α,
            "beta": β,
            "metastability": metastability(phase, cortices, 0.2),
            "chimera": chimera(phase, cortices, 0.2)}
     out = out.append(end, ignore_index=True)
+    plt.imshow(vals[:, 0, :], aspect="auto")
+    plt.title(f"alpha = {α}, beta = {β}")
+    plt.colorbar()
+    plt.savefig(f"../../figure/{α:.03f}-{β:.03f}.png", format="png")
+    plt.clf()
+    gc.collect()
+
 
 with open("../../data/hizandis_params.pkl", "wb") as f:
     pickle.dump(out, f)

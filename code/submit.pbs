@@ -1,11 +1,11 @@
 # job needs 1 compute node with 1 processor per node.
-#PBS -l nodes=1:ppn=1,pmem=4gb,pvmem=5gb
-# It should be allowed to run for up to 20 minutes
-#PBS -l walltime=10:00:00
+#PBS -l nodes=1:ppn=1,pmem=5gb,pvmem=6gb
+# It should be allowed to run for up to 2 hours
+#PBS -l walltime=02:00:00
 # Name of job.
-#PBS -N lambda_collection
+#PBS -N chimera_1.600_0.274
 # Join STDERR TO STDOUT.
 #PBS -j oe
 
 cd $HOME/thesis/code/python
-$HOME/pyenv/bin/python sigma_collection.py
+$HOME/pyenv/bin/python run.py 1.600 0.274

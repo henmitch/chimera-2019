@@ -1,7 +1,7 @@
 # job needs 1 compute node with 1 processor per node.
-#PBS -l nodes=1:ppn=1,pmem=4gb,pvmem=5gb
-# It should be allowed to run for up to 20 minutes
-#PBS -l walltime=00:20:00
+#PBS -l nodes=1:ppn=1,pmem=5gb,pvmem=6gb
+# It should be allowed to run for up to 2 hours
+#PBS -l walltime=02:00:00
 # Name of job.
 #PBS -N chimera_{:0.3f}_{:0.3f}
 # Join STDERR TO STDOUT.
