@@ -182,12 +182,28 @@ for region in m["Major Region"].unique():
     cortices.append([cortices[-1][-1], cortices[-1][-1] + len(i)])
 cortices.remove([0, 0])
 
+data = pd.read_excel("../connectomes/mouse.xlsx", sheet_name=None)
+
 d = data["W_ipsi"]
+p = data["PValue_ipsi"]
 d.columns = columns
+p.columns = columns
 d.index = columns
+p.index = columns
+
+d = d.values
+p = p.values
+
+p[np.isnan(p)] = 0
+
+d[p < 0.01] = 0
+
+n = np.zeros_like(d)
+
+for i in [1e-4, 1e-2, 1]:
+    n[d >= i] += 1
 
 # MODEL PREPARATION - back to generic
-n = d.values/d.values.max()
 cortex_mask = np.zeros_like(n)
 for i, cortex in enumerate(cortices):
     cortex_mask[cortex[0]:cortex[1], cortex[0]:cortex[1]] += i + 1

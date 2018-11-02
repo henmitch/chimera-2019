@@ -1,5 +1,4 @@
 import gc
-import matplotlib.pyplot as plt
 import numpy as np
 import os
 import pandas as pd
@@ -47,8 +46,8 @@ cortices = [[0, 38],
             [203, 210],
             [210, 213]]
 
-for i in os.listdir("../../data/"):
-    with open(f"../../data/{i}", "rb") as f:
+for i in os.listdir("/users/h/m/hmmitche/thesis/data"):
+    with open(f"/users/h/m/hmmitche/thesis/data/{i}", "rb") as f:
         data = pickle.load(f)
     params = data[0]
     α, β = params[8], params[10]
@@ -60,11 +59,6 @@ for i in os.listdir("../../data/"):
            "metastability": metastability(phase, cortices, 0.2),
            "chimera": chimera(phase, cortices, 0.2)}
     out = out.append(end, ignore_index=True)
-    plt.imshow(vals[:, 0, :], aspect="auto")
-    plt.title(f"alpha = {α}, beta = {β}")
-    plt.colorbar()
-    plt.savefig(f"../../figure/{α:.03f}-{β:.03f}.png", format="png")
-    plt.clf()
     gc.collect()
 
 
