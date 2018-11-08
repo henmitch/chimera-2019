@@ -1,0 +1,89 @@
+* Papers
+** TODO [#A] Abrams 2004                                            :chimera:
+** TODO [#A] Breakspear 2005                           :seizure:bifurcations:
+** TODO [#A] Breakspear 2017                           :seizure:bifurcations:
+** IN-PROGRESS [#A] Deco 2008                                 :seizure:brain:
+   Overview of brain models
+** TODO [#A] Leistritz 2007                         :computation:EEG:seizure:
+** TODO [#A] Naze 2015                        :seizure:neuronal:bifurcations:
+** TODO [#A] Schmidt 2017                                  :neuronal:chimera:
+   Chimera states in 2D neuron networks
+** TODO [#A] Svozilova 2016                                             :EEG:
+** DONE Baier 2012                                      :computation:seizure:
+   Overview of seizure modeling
+   - Very general
+   - Had some (potentially) good citations
+
+** DONE Andrzejak 2016                             :neuronal:chimera:seizure:
+   Sudden collapse of chimera states
+   - Misleading title
+   - Not particularly groundbreaking observations
+   - Useful visualization techniques
+
+** DONE Hizandis 2016                                      :chimera:neuronal:
+   Chimera states in neuronal networks with modular structure
+   - Similar figures to Santos 2017
+   - Useful parameters
+     - Metastability index
+     - Chimera-like index
+** DONE Jirsa 2014                         :computation:seizure:bifurcations:
+   Epileptor
+   - Powerful model
+   - Closely related to Santos (HR model)
+   - Could be matched to data
+   - Probably spawned helpful things
+
+** TODO [#B] Khambhati 2017                                   :brain:network:
+** TODO [#B] Kuramoto 2002                                          :chimera:
+** DONE Lytton 2008                                     :seizure:computation:
+   Modeling seizure
+   - Good general overview
+   - Outdated?
+** DONE Martens 2013                                                :chimera:
+   Mechanical chimera states
+   - Very cool
+   - Might not be helpful
+
+** DONE Oh 2014                                    :connectome:network:brain:
+   Mouse connectome
+   - See SI (table 2) for connection strengths
+     - In `thesis/code/connectomes/mouse.xlsx`
+     - Metadata in `thesis/code/connectomes/mouse_meta.xlsx`
+** DONE Ramsay 2007                                    :parameter_estimation:
+   Parameter estimation for ODEs
+   - Could maybe use, given data
+   - Allows for noise, which is good
+** DONE Santos 2015                                                 :chimera:
+   Quantifying chimera states via recurrence plots
+   - Maybe useful for chimera qunatification
+     - Hizandis 2016 likely better
+** DONE Santos 2017                :chimera:neuronal:bifurcations:connectome:
+   Chimera states in cat brain models
+   - No data = opportunity?
+   - Could apply to mouse, match w/ data
+   - Connectome used in `thesis/code/connectomes/cat_matrix.dat`:
+** DONE Scheffer 2009                                          :bifurcations:
+   Critical slowing down
+   - Not necessarily directly useful, but could be mildly helpful
+
+** TODO [#B] Taylor 2012                                        :seizure:EEG:
+   Patient-specific models
+
+** TODO [#B] Taylor 2014                      :computation:seizure:treatment:
+   Seizure abatement
+
+** TODO [#B] Tsigkri-DeSmedt 2017                          :neuronal:chimera:
+   Chimera states in LIF neural networks
+
+** DONE Wang 2012                                      :seizure:bifurcations:
+   Phase space approach to medling seizure
+   - Coupled oscillator model
+   - Could be *very* valuable
+
+** TODO [#C] Kruk 2018                                              :chimera:
+** TODO [#C] Panaggio 2015                                          :chimera:
+** TODO [#C] Shanahan 2010                                          :chimera:
+** TODO [#C] Wendling 2005                              :seizure:computation:
+   Modeling transition from interictal to ictal states
+   - Outdated?  Likely.
+** TODO [#C] Xie 2014                                               :chimera:
