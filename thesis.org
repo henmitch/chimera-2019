@@ -5,6 +5,7 @@
 * Meeting Danforth
   <2018-08-21 Tue 13:00-14:00>
   <2018-09-10 Mon 13:00-14:00>
+  <2018-10-30 Tue 09:00>
 * Meeting Dave Dewhurst
   <2018-08-21 Tue 14:00-15:00>
 * Thesis
@@ -54,6 +55,8 @@
   Specifically quantification
   DEADLINE: <2018-09-21 Fri 10:30>
 * TODO Meet with Danforth re: timeline
+* Meeting Matt
+  <2018-10-26 Fri 09:40-10:00>
 * HON 201
   <2018-09-19 Wed 16:25-17:25>
 ** People to know/resources
@@ -71,3 +74,5 @@
     DEADLINE: <2019-04-05 Fri>
 *** TODO Submit schedule
     DEADLINE: <2019-04-20 Sat>
+* TODO Email Matt
+  DEADLINE: <2018-11-16 Fri>

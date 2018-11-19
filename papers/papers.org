@@ -2,10 +2,16 @@
 ** TODO [#A] Abrams 2004                                            :chimera:
 ** TODO [#A] Breakspear 2005                           :seizure:bifurcations:
 ** TODO [#A] Breakspear 2017                           :seizure:bifurcations:
-** IN-PROGRESS [#A] Deco 2008                                 :seizure:brain:
+** DONE [#A] Deco 2008                                        :seizure:brain:
    Overview of brain models
+   - Very theoretical/mathematical
+   - Physically based
+     - Everything has a reasonable dimension
+   - Didn't *super* clearly present a model
+     - That can be overcome with a closer reading
 ** TODO [#A] Leistritz 2007                         :computation:EEG:seizure:
 ** TODO [#A] Naze 2015                        :seizure:neuronal:bifurcations:
+** TODO [#A] Robinson 2003                                :brain:computation:
 ** TODO [#A] Schmidt 2017                                  :neuronal:chimera:
    Chimera states in 2D neuron networks
 ** TODO [#A] Svozilova 2016                                             :EEG:
