@@ -1,34 +1,50 @@
 * Papers
-** TODO [#A] Abrams 2004                                            :chimera:
 ** TODO [#A] Breakspear 2005                           :seizure:bifurcations:
-** DONE [#A] Breakspear 2017                           :seizure:bifurcations:
-Recent, general overview of brain models
-- Its citations could be *very* useful
-  - Didn't specifically cover much math, but described good models
-** DONE [#A] Deco 2008                                        :seizure:brain:
-   Overview of brain models
-   - Very theoretical/mathematical
-   - Physically based
-     - Everything has a reasonable dimension
-   - Didn't *super* clearly present a model
-     - That can be overcome with a closer reading
+   Difference between absence and tonic-clonic seizures is a bifurcation
 ** TODO [#A] Leistritz 2007                         :computation:EEG:seizure:
+   Coupled oscialltor EEG model
 ** TODO [#A] Naze 2015                        :seizure:neuronal:bifurcations:
+   Network model, finding correct parameters
+** TODO [#A] Robinson 2002                                    :brain:seizure:
+   EEG model with physiological basis
 ** TODO [#A] Robinson 2003                                :brain:computation:
+   Connecting EEG to a multi-scale model of the brain
 ** TODO [#A] Schmidt 2017                                  :neuronal:chimera:
    Chimera states in 2D neuron networks
 ** TODO [#A] Svozilova 2016                                             :EEG:
-** DONE Baier 2012                                      :computation:seizure:
-   Overview of seizure modeling
-   - Very general
-   - Had some (potentially) good citations
-
+   EEG model
+** TODO [#A] Friston 2015                                     :seizure:brain:
+   Local field potentials and oscillator models
+** IN-PROGRESS [#A] Jirsa 2016                          :computation:seizure:
+   Hard-core model, largely based on Epileptor
+** TODO [#A] Petkov 2014                  :network:brain:computation:seizure:
+   Network structure as it relates to suizure dynamics
+** TODO [#A] Roberts 2014                        :parameter_estimation:brain:
+   Finding critical values for parameters of models
+** TODO [#B] Abrams 2004                                            :chimera:
+   Exact solution for chimera states
 ** DONE Andrzejak 2016                             :neuronal:chimera:seizure:
    Sudden collapse of chimera states
    - Misleading title
    - Not particularly groundbreaking observations
    - Useful visualization techniques
 
+** DONE Baier 2012                                      :computation:seizure:
+   Overview of seizure modeling
+   - Very general
+   - Had some (potentially) good citations
+
+** DONE Breakspear 2017                                :seizure:bifurcations:
+   Recent, general overview of brain models
+   - Its citations could be *very* useful
+     - Didn't specifically cover much math, but described good models
+** DONE Deco 2008                                             :seizure:brain:
+   Overview of brain models
+   - Very theoretical/mathematical
+   - Physically based
+     - Everything has a reasonable dimension
+   - Didn't *super* clearly present a model
+     - That can be overcome with a closer reading
 ** DONE Hizandis 2016                                      :chimera:neuronal:
    Chimera states in neuronal networks with modular structure
    - Similar figures to Santos 2017
@@ -41,9 +57,10 @@ Recent, general overview of brain models
    - Closely related to Santos (HR model)
    - Could be matched to data
    - Probably spawned helpful things
-
 ** TODO [#B] Khambhati 2017                                   :brain:network:
+   Model of the network of a brain over time
 ** TODO [#B] Kuramoto 2002                                          :chimera:
+   First chimera paper
 ** DONE Lytton 2008                                     :seizure:computation:
    Modeling seizure
    - Good general overview
@@ -90,9 +107,13 @@ Recent, general overview of brain models
    - Could be *very* valuable
 
 ** TODO [#C] Kruk 2018                                              :chimera:
+   Chimeras in self-propelled particles
 ** TODO [#C] Panaggio 2015                                          :chimera:
+   Chimera review/overview
 ** TODO [#C] Shanahan 2010                                          :chimera:
+   Generic chimera paper.  Maybe good for detection?
 ** TODO [#C] Wendling 2005                              :seizure:computation:
    Modeling transition from interictal to ictal states
    - Outdated?  Likely.
 ** TODO [#C] Xie 2014                                               :chimera:
+   Traveling chimeras
