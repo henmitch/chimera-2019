@@ -1,7 +1,10 @@
 * Papers
 ** TODO [#A] Abrams 2004                                            :chimera:
 ** TODO [#A] Breakspear 2005                           :seizure:bifurcations:
-** TODO [#A] Breakspear 2017                           :seizure:bifurcations:
+** DONE [#A] Breakspear 2017                           :seizure:bifurcations:
+Recent, general overview of brain models
+- Its citations could be *very* useful
+  - Didn't specifically cover much math, but described good models
 ** DONE [#A] Deco 2008                                        :seizure:brain:
    Overview of brain models
    - Very theoretical/mathematical
