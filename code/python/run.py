@@ -194,9 +194,9 @@ p.index = columns
 d = d.values
 p = p.values
 
-p[np.isnan(p)] = 0
+p[np.isnan(p)] = 1
 
-d[p < 0.01] = 0
+d[p > 0.01] = 0
 
 n = np.zeros_like(d)
 
