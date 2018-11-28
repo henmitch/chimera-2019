@@ -6,12 +6,21 @@ import pickle
 
 from scipy.integrate import solve_ivp
 
-parser = argparse.ArgumentParser(description="Simulate a brain")
-parser.add_argument("a", metavar="alpha", type=float, nargs=1,
-                    help="The alpha value to use (inter connection strength)")
-parser.add_argument("b", metavar="beta", type=float, nargs=1,
-                   help="The beta value to use (intra connection strength)")
-args = parser.parse_args()
+
+def prep_masks(n, cortices):
+    cortex_mask = np.zeros_like(n)
+    for i, cortex in enumerate(cortices):
+        cortex_mask[cortex[0]:cortex[1], cortex[0]:cortex[1]] += i + 1
+    G1 = n.copy()
+    G1[cortex_mask == 0] = 0
+    G2 = n.copy()
+    G2[cortex_mask != 0] = 0
+    events = [lambda t_in, y_in, i=i: event(t_in, y_in, i)
+            for i in range(n.shape[0])]
+    for e in events:
+        e.direction = 1.0
+
+    return G1, G2, events
 
 
 def Θ(x, x_rev, λ, θ):
@@ -120,9 +129,6 @@ def event(t, y, i):
     return y[i]
 
 
-event.direction = 1.0
-
-
 def time_to_index(t, tmax, N, as_int=True):
     out = (N*t/tmax)
     if as_int:
@@ -167,101 +173,102 @@ def σ(sol):
     return np.array([np.var(d) for d in diff])
 
 
-# DATA PREPARATION - specific to the data in question
-data = pd.read_excel("../connectomes/mouse.xlsx", sheet_name=None)
-metadata = pd.read_excel("../connectomes/mouse_meta.xlsx", sheet_name=None)
 
-m = metadata["Voxel Count_295 Structures"]
-m = m.loc[m["Represented in Linear Model Matrix"] == "Yes"]
+def main():
+    parser = argparse.ArgumentParser(description="Simulate a brain")
+    parser.add_argument("a", metavar="alpha", type=float, nargs=1,
+                        help="The alpha value to use (inter connection strength)")
+    parser.add_argument("b", metavar="beta", type=float, nargs=1,
+                    help="The beta value to use (intra connection strength)")
+    args = parser.parse_args()
 
-columns = []
-cortices = [[0, 0]]
-for region in m["Major Region"].unique():
-    i = [columns.append(acronym) for acronym in
-         m.loc[m["Major Region"] == region, "Acronym"].values]
-    cortices.append([cortices[-1][-1], cortices[-1][-1] + len(i)])
-cortices.remove([0, 0])
+    # DATA PREPARATION - specific to the data in question
+    data = pd.read_excel("../connectomes/mouse.xlsx", sheet_name=None)
+    metadata = pd.read_excel("../connectomes/mouse_meta.xlsx", sheet_name=None)
 
-data = pd.read_excel("../connectomes/mouse.xlsx", sheet_name=None)
+    m = metadata["Voxel Count_295 Structures"]
+    m = m.loc[m["Represented in Linear Model Matrix"] == "Yes"]
 
-d = data["W_ipsi"]
-p = data["PValue_ipsi"]
-d.columns = columns
-p.columns = columns
-d.index = columns
-p.index = columns
+    columns = []
+    cortices = [[0, 0]]
+    for region in m["Major Region"].unique():
+        i = [columns.append(acronym) for acronym in
+             m.loc[m["Major Region"] == region, "Acronym"].values]
+        cortices.append([cortices[-1][-1], cortices[-1][-1] + len(i)])
+    cortices.remove([0, 0])
 
-d = d.values
-p = p.values
+    data = pd.read_excel("../connectomes/mouse.xlsx", sheet_name=None)
 
-p[np.isnan(p)] = 1
+    d = data["W_ipsi"]
+    p = data["PValue_ipsi"]
+    d.columns = columns
+    p.columns = columns
+    d.index = columns
+    p.index = columns
 
-d[p > 0.01] = 0
+    d = d.values
+    p = p.values
 
-n = np.zeros_like(d)
+    p[np.isnan(p)] = 1
 
-for i in [1e-4, 1e-2, 1]:
-    n[d >= i] += 1
+    d[p > 0.01] = 0
 
-# MODEL PREPARATION - back to generic
-cortex_mask = np.zeros_like(n)
-for i, cortex in enumerate(cortices):
-    cortex_mask[cortex[0]:cortex[1], cortex[0]:cortex[1]] += i + 1
-G1 = n.copy()
-G1[cortex_mask == 0] = 0
-G2 = n.copy()
-G2[cortex_mask != 0] = 0
-events = [lambda t_in, y_in, i=i: event(t_in, y_in, i)
-          for i in range(n.shape[0])]
-for e in events:
-    e.direction = 1.0
+    n = np.zeros_like(d)
 
-b = 3.2                            # Controls spiking frequency
-i0 = 4.4*np.ones(n.shape[0])       # Input current --- An array to add noise
-x_rev = 2                          # Reverse potential
-λ = 10                             # Sigmoidal function parameter
-θ = -0.25                          # Sigmoidal function parameter
-μ = 0.01                           # Time scale of slow current
-s = 4.0                            # Governs adaptation (whatever that means)
-x_rest = -1.6                      # Resting potential --- INCORRECT IN SANTOS PAPER
-α = args.a[0]                      # Intra connection strength ---- VARIED PARAMETER
-n1 = np.count_nonzero(G1, axis=1)  # Number of intra connections from a given neuron
-n1[n1 == 0] = 1                    # This is to remove a divide-by-zero; if n1 is 0, then so is G1
-β = args.b[0]                      # Inter connection strength ---- VARIED PARAMETER
-n2 = np.count_nonzero(G2, axis=1)  # Number of inter connections from a given neuron
-n2[n2 == 0] = 1                    # This is to remove a divide-by-zero; if n2 is 0, then so is G2
+    for i in [1e-4, 1e-2, 1]:
+        n[d >= i] += 1
 
+    G1, G2, events = prep_masks(n, cortices)
 
-ivs = np.zeros([3, n.shape[0]])    # Initial values [[x], [y], [z]]
-ivs[0] = 3.0*np.random.random(n.shape[0]) - 1.0
-ivs[1] = 0.2*np.random.random(n.shape[0])
-ivs[2] = 0.2*np.random.random(n.shape[0])
+    # SPECIFIC PARAMETERS
+    b = 3.2                            # Controls spiking frequency
+    i0 = 4.4*np.ones(n.shape[0])       # Input current --- An array to add noise
+    x_rev = 2                          # Reverse potential
+    λ = 10                             # Sigmoidal function parameter
+    θ = -0.25                          # Sigmoidal function parameter
+    μ = 0.01                           # Time scale of slow current
+    s = 4.0                            # Governs adaptation (whatever that means)
+    x_rest = -1.6                      # Resting potential --- INCORRECT IN SANTOS PAPER
+    α = args.a[0]                      # Intra connection strength ---- VARIED PARAMETER
+    n1 = np.count_nonzero(G1, axis=1)  # Number of intra connections from a given neuron
+    n1[n1 == 0] = 1                    # This is to remove a divide-by-zero; if n1 is 0, then so is G1
+    β = args.b[0]                      # Inter connection strength ---- VARIED PARAMETER
+    n2 = np.count_nonzero(G2, axis=1)  # Number of inter connections from a given neuron
+    n2[n2 == 0] = 1                    # This is to remove a divide-by-zero; if n2 is 0, then so is G2
 
-tmax = 4000
-N = 100*tmax
-t = np.linspace(0, tmax, N)
+    ivs = np.zeros([3, n.shape[0]])    # Initial values [[x], [y], [z]]
+    ivs[0] = 3.0*np.random.random(n.shape[0]) - 1.0
+    ivs[1] = 0.2*np.random.random(n.shape[0])
+    ivs[2] = 0.2*np.random.random(n.shape[0])
 
-params = (b, i0, x_rev, λ, θ, μ, s, x_rest, α, n1, β, n2, G1, G2)
-print("Finding solution... ", end="")
-sol = solve_ivp(fun=lambda t_in, y_in: hr_dots(y_in, t_in, *params),
-                t_span=(0, tmax), y0=ivs.reshape(ivs.size), events=events,
-                dense_output=True, method="RK45")
-print("Found solution")
-print("Finding phase... ", end="")
-phase = ϕ(sol, t)
-print("Found phase")
-print("Finding recurrence plot... ", end="")
-recurrence_plot = rp(phase[-1])
-print("Found recurrence plot")
-print("Finding non-central sparseness... ", end="")
-ncs = non_central_sparseness(phase[-1])
-print("Found non-central sparseness")
-print("Finding sigma... ", end="")
-sig = σ(sol)
-print("Found sigma")
+    tmax = 4000
+    N = 100*tmax
+    t = np.linspace(0, tmax, N)
 
-print("Writing... ", end="")
-with open(f"../../data/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
-    pickle.dump([params, sol, phase, recurrence_plot, ncs, sig], f)
+    params = (b, i0, x_rev, λ, θ, μ, s, x_rest, α, n1, β, n2, G1, G2)
+    print("Finding solution... ", end=" ")
+    sol = solve_ivp(fun=lambda t_in, y_in: hr_dots(y_in, t_in, *params),
+                    t_span=(0, tmax), y0=ivs.reshape(ivs.size), events=events,
+                    dense_output=True, method="RK45")
+    print("Found solution")
+    print("Finding phase... ", end=" ")
+    phase = ϕ(sol, t)
+    print("Found phase")
+    print("Finding recurrence plot... ", end=" ")
+    recurrence_plot = rp(phase[-1])
+    print("Found recurrence plot")
+    print("Finding non-central sparseness... ", end=" ")
+    ncs = non_central_sparseness(phase[-1])
+    print("Found non-central sparseness")
+    print("Finding sigma... ", end=" ")
+    sig = σ(sol)
+    print("Found sigma")
 
-print("Wrote")
+    print("Writing... ", end=" ")
+    with open(f"../../data/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
+        pickle.dump([params, sol, phase, recurrence_plot, ncs, sig], f)
+
+    print("Wrote")
+
+if __name__ == "__main__":
+    main()
