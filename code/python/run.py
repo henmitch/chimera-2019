@@ -254,19 +254,10 @@ def main():
     print("Finding phase... ", end=" ")
     phase = ϕ(sol, t)
     print("Found phase")
-    print("Finding recurrence plot... ", end=" ")
-    recurrence_plot = rp(phase[-1])
-    print("Found recurrence plot")
-    print("Finding non-central sparseness... ", end=" ")
-    ncs = non_central_sparseness(phase[-1])
-    print("Found non-central sparseness")
-    print("Finding sigma... ", end=" ")
-    sig = σ(sol)
-    print("Found sigma")
 
     print("Writing... ", end=" ")
     with open(f"../../data/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
-        pickle.dump([params, sol, phase, recurrence_plot, ncs, sig], f)
+        pickle.dump([params, sol, phase], f)
 
     print("Wrote")
 

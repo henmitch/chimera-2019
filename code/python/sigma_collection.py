@@ -51,7 +51,6 @@ for i in os.listdir("/users/h/m/hmmitche/thesis/data"):
         data = pickle.load(f)
     params = data[0]
     α, β = params[8], params[10]
-    ncs, sig = data[-2], data[-1]
     vals = data[1].sol(t).T.reshape(N, 3, -1)
     phase = data[2]
     end = {"alpha": α,
