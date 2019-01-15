@@ -155,23 +155,7 @@ def ϕ(sol, t):
     T = np.vstack(n_areas*[t]).T
     t_events = [sol.t_events[i] for i in range(n_areas)]
     k_mask, t_mask, tp1_mask = firing_time_mask(t_events, t[-1], t.size)
-    return 2*np.pi*(k_mask + (T - t_mask)/(tp1_mask - t_mask))
-
-
-def rp(state, ϵ=0.3):
-    ϕi, ϕj = np.meshgrid(state, state)
-    return np.heaviside(ϵ - np.abs(ϕi - ϕj), 0)
-
-
-def non_central_sparseness(state):
-    xx, yy = np.meshgrid(range(state.size), range(state.size))
-    return np.sum(np.abs(xx - yy)*rp(state))
-
-
-def σ(sol):
-    diff = [np.diff(ts) for ts in sol.t_events]
-    return np.array([np.var(d) for d in diff])
-
+    return 2*np.pi*(T - t_mask)/(tp1_mask - t_mask)
 
 
 def main():
@@ -260,6 +244,7 @@ def main():
         pickle.dump([params, sol, phase], f)
 
     print("Wrote")
+
 
 if __name__ == "__main__":
     main()
