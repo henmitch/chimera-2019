@@ -16,7 +16,7 @@ def prep_masks(n, cortices):
     G2 = n.copy()
     G2[cortex_mask != 0] = 0
     events = [lambda t_in, y_in, i=i: event(t_in, y_in, i)
-            for i in range(n.shape[0])]
+              for i in range(n.shape[0])]
     for e in events:
         e.direction = 1.0
 
@@ -96,7 +96,7 @@ def plot_final_state(
 
 def plot_beginning_and_end(y, start, end, p=0.99,
                            legend=False, title=True, channel=0):
-    length= y.shape[0]
+    length = y.shape[0]
     fig, [ax1, ax2] = plt.subplots(1, 2, sharey=True)
     for i in range(start, end):
         ax1.plot(y[:int(p*length), channel, i], label=i)
@@ -163,7 +163,7 @@ def main():
     parser.add_argument("a", metavar="alpha", type=float, nargs=1,
                         help="The alpha value to use (inter connection strength)")
     parser.add_argument("b", metavar="beta", type=float, nargs=1,
-                    help="The beta value to use (intra connection strength)")
+                        help="The beta value to use (intra connection strength)")
     args = parser.parse_args()
 
     # DATA PREPARATION - specific to the data in question
@@ -206,19 +206,27 @@ def main():
 
     # SPECIFIC PARAMETERS
     b = 3.2                            # Controls spiking frequency
-    i0 = 4.4*np.ones(n.shape[0])       # Input current --- An array to add noise
+    # Input current --- An array to add noise
+    i0 = 4.4*np.ones(n.shape[0])
     x_rev = 2                          # Reverse potential
     λ = 10                             # Sigmoidal function parameter
     θ = -0.25                          # Sigmoidal function parameter
     μ = 0.01                           # Time scale of slow current
-    s = 4.0                            # Governs adaptation (whatever that means)
+    # Governs adaptation (whatever that means)
+    s = 4.0
     x_rest = -1.6                      # Resting potential --- INCORRECT IN SANTOS PAPER
-    α = args.a[0]                      # Intra connection strength ---- VARIED PARAMETER
-    n1 = np.count_nonzero(G1, axis=1)  # Number of intra connections from a given neuron
-    n1[n1 == 0] = 1                    # This is to remove a divide-by-zero; if n1 is 0, then so is G1
-    β = args.b[0]                      # Inter connection strength ---- VARIED PARAMETER
-    n2 = np.count_nonzero(G2, axis=1)  # Number of inter connections from a given neuron
-    n2[n2 == 0] = 1                    # This is to remove a divide-by-zero; if n2 is 0, then so is G2
+    # Intra connection strength ---- VARIED PARAMETER
+    α = args.a[0]
+    # Number of intra connections from a given neuron
+    n1 = np.count_nonzero(G1, axis=1)
+    # This is to remove a divide-by-zero; if n1 is 0, then so is G1
+    n1[n1 == 0] = 1
+    # Inter connection strength ---- VARIED PARAMETER
+    β = args.b[0]
+    # Number of inter connections from a given neuron
+    n2 = np.count_nonzero(G2, axis=1)
+    # This is to remove a divide-by-zero; if n2 is 0, then so is G2
+    n2[n2 == 0] = 1
 
     ivs = np.zeros([3, n.shape[0]])    # Initial values [[x], [y], [z]]
     ivs[0] = 3.0*np.random.random(n.shape[0]) - 1.0
