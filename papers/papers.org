@@ -15,12 +15,12 @@
    EEG model
 ** TODO [#A] Friston 2015                                     :seizure:brain:
    Local field potentials and oscillator models
-** IN-PROGRESS [#A] Jirsa 2016                          :computation:seizure:
-   Hard-core model, largely based on Epileptor
 ** TODO [#A] Petkov 2014                  :network:brain:computation:seizure:
    Network structure as it relates to suizure dynamics
 ** TODO [#A] Roberts 2014                        :parameter_estimation:brain:
    Finding critical values for parameters of models
+** IN-PROGRESS [#A] Shanahan 2010                                   :chimera:
+   Generic chimera paper.  Maybe good for detection?
 ** TODO [#B] Abrams 2004                                            :chimera:
    Exact solution for chimera states
 ** DONE Andrzejak 2016                             :neuronal:chimera:seizure:
@@ -106,12 +106,14 @@
    - Coupled oscillator model
    - Could be *very* valuable
 
+** IN-PROGRESS [#C] Jirsa 2016                          :computation:seizure:
+   Hard-core model, largely based on Epileptor
+   Probably not all that helpful for chimera things, honestly
+
 ** TODO [#C] Kruk 2018                                              :chimera:
    Chimeras in self-propelled particles
 ** TODO [#C] Panaggio 2015                                          :chimera:
    Chimera review/overview
-** TODO [#C] Shanahan 2010                                          :chimera:
-   Generic chimera paper.  Maybe good for detection?
 ** TODO [#C] Wendling 2005                              :seizure:computation:
    Modeling transition from interictal to ictal states
    - Outdated?  Likely.
