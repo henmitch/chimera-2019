@@ -3,7 +3,7 @@
 # It should be allowed to run for up to 20 hours
 #PBS -l walltime=20:00:00
 # Name of job.
-#PBS -N hizandis_params
+#PBS -N hizanidis_params
 # Join STDERR TO STDOUT.
 #PBS -j oe
 #PBS -M hmmitche@uvm.edu

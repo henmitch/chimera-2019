@@ -39,4 +39,4 @@ while jobs != 0:
     jobs = max(0, int(subprocess.check_output('qstat | wc -l', shell=True)) - 2)
     time.sleep(10)
 print("Done")
-subprocess.Popen(["qsub", 'hizandis.pbs'])
+subprocess.Popen(["qsub", 'hizanidis.pbs'])
