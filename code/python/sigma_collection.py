@@ -4,8 +4,10 @@ import os
 import pandas as pd
 import pickle
 
+
 def order(phases):
     return np.abs(np.sum(np.exp(phases*1j), axis=1)/phases.shape[1])
+
 
 def metastability(phase, cortices, p, channel=0):
     metastabilities = []
@@ -14,6 +16,7 @@ def metastability(phase, cortices, p, channel=0):
         ph = phase[N:, cortex[0]:cortex[1]]
         metastabilities.append(np.sum((order(ph) - np.mean(order(ph)))**2)/(N - 1))
     return np.mean(metastabilities)
+
 
 def chimera(phase, cortices, p, channel=0):
     N = int((1-p)*phase.shape[0])
@@ -25,6 +28,7 @@ def chimera(phase, cortices, p, channel=0):
         ph = phase[N:, cortex[0]:cortex[1]]
         s += (order(ph) - average)**2
     return np.mean(s/(M - 1))
+
 
 out = pd.DataFrame(columns=["alpha", "beta", "metastability", "chimera"])
 
@@ -46,6 +50,7 @@ cortices = [[0, 38],
             [203, 210],
             [210, 213]]
 
+
 for i in os.listdir("/users/h/m/hmmitche/thesis/data"):
     with open(f"/users/h/m/hmmitche/thesis/data/{i}", "rb") as f:
         data = pickle.load(f)
@@ -61,5 +66,5 @@ for i in os.listdir("/users/h/m/hmmitche/thesis/data"):
     gc.collect()
 
 
-with open("../../data/hizandis_params.pkl", "wb") as f:
+with open("../../data/hizanidis_params.pkl", "wb") as f:
     pickle.dump(out, f)
