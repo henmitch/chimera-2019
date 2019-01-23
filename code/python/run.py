@@ -247,11 +247,14 @@ def main():
     phase = ϕ(sol, t)
     print("Found phase")
 
-    print("Writing... ", end=" ")
-    with open(f"../../data/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
-        pickle.dump([params, sol, phase], f)
+    if np.any(phase > 2*np.pi):
+        main()
+    else:
+        print("Writing... ", end=" ")
+        with open(f"../../data/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
+            pickle.dump([params, sol, phase], f)
 
-    print("Wrote")
+        print("Wrote")
 
 
 if __name__ == "__main__":
