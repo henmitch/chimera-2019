@@ -36,8 +36,8 @@ def dΘ_dx(x, λ, θ):
     return final
 
 
-def hr_dots(current, _, b, i0, x_rev, λ, θ, μ, s, x_rest,
-            α, n1, β, n2, G1, G2):
+def hr_dots(current, _,
+            b, i0, x_rev, λ, θ, μ, s, x_rest, α, n1, β, n2, G1, G2):
     x, y, z = map(lambda k: k.flatten(), np.split(current, 3))
     theta = Θ(x, x_rev, λ, θ)
     dots = np.zeros_like(current).reshape(3, -1)
@@ -48,7 +48,8 @@ def hr_dots(current, _, b, i0, x_rev, λ, θ, μ, s, x_rest,
     return np.hstack(dots)
 
 
-def jac(_, y_in):
+def jac(_, y_in,
+        b, i0, x_rev, λ, θ, μ, s, x_rest, α, n1, β, n2, G1, G2):
     x, y, z = map(lambda k: k.flatten(), np.split(y_in, 3))
     dtheta_dx = dΘ_dx(x, λ, θ)
     dẋ_dx = -3*x**2 + 2*b*x - (α/n1)*G1*dtheta_dx - (β/n2)*G2*dtheta_dx
@@ -109,7 +110,7 @@ def plot_beginning_and_end(y, start, end, p=0.99,
     if legend:
         ax1.legend(loc="lower left")
     if title:
-        plt.suptitle(f"First and last {100*p}\% of neurons {start} - {end}")
+        plt.suptitle(f"First and last {100*p}% of neurons {start} - {end}")
 
 
 def plot_state_diagram(y, cortices=None, lim=[-1.5, 2.5],
@@ -186,10 +187,14 @@ def metastability(phase, cortices, p, channel=0):
 
 def main():
     parser = argparse.ArgumentParser(description="Simulate a brain")
-    parser.add_argument("a", metavar="alpha", type=float, nargs=1,
-                        help="The alpha value to use (inter connection strength)")
-    parser.add_argument("b", metavar="beta", type=float, nargs=1,
-                        help="The beta value to use (intra connection strength)")
+    parser.add_argument(
+        "a", metavar="alpha", type=float, nargs=1,
+        help="The alpha value to use (inter connection strength)"
+    )
+    parser.add_argument(
+        "b", metavar="beta", type=float, nargs=1,
+        help="The beta value to use (intra connection strength)"
+    )
     args = parser.parse_args()
 
     # DATA PREPARATION - specific to the data in question
@@ -229,16 +234,16 @@ def main():
     G1, G2, events = prep_masks(n, cortices)
 
     # SPECIFIC PARAMETERS
-    b = 3.2                            # Controls spiking frequency
+    b = 3.2                 # Controls spiking frequency
     # Input current --- An array to add noise
     i0 = 4.4*np.ones(n.shape[0])
-    x_rev = 2                          # Reverse potential
-    λ = 10                             # Sigmoidal function parameter
-    θ = -0.25                          # Sigmoidal function parameter
-    μ = 0.01                           # Time scale of slow current
+    x_rev = 2               # Reverse potential
+    λ = 10                  # Sigmoidal function parameter
+    θ = -0.25               # Sigmoidal function parameter
+    μ = 0.01                # Time scale of slow current
     # Governs adaptation (whatever that means)
     s = 4.0
-    x_rest = -1.6                      # Resting potential --- INCORRECT IN SANTOS PAPER
+    x_rest = -1.6            # Resting potential --- INCORRECT IN SANTOS PAPER
     # Intra connection strength ---- VARIED PARAMETER
     α = args.a[0]
     # Number of intra connections from a given neuron
@@ -257,17 +262,17 @@ def main():
     ivs[1] = 0.2*np.random.random(n.shape[0])
     ivs[2] = 0.2*np.random.random(n.shape[0])
 
-    tmax = 400
+    tmax = 4000
     N = 100*tmax
     t = np.linspace(0, tmax, N)
 
     params = (b, i0, x_rev, λ, θ, μ, s, x_rest, α, n1, β, n2, G1, G2)
     print("Finding solution... ", end=" ")
     sol = solve_ivp(fun=lambda t_in, y_in: hr_dots(y_in, t_in, *params),
-                    t_span=(-100, tmax + 100), t_eval=t, y0=ivs.reshape(ivs.size),
-                    events=events, method="RK45")
+                    t_span=(-1000, tmax + 1000), t_eval=t,
+                    y0=ivs.reshape(ivs.size), events=events, method="RK45")
     print("Found solution")
-    y = sol.y.T.reshape(N, 3, -1)
+
     print("Finding phase... ", end=" ")
     phase = ϕ(sol, t)
     print("Found phase")
