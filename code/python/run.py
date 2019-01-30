@@ -152,10 +152,36 @@ def firing_time_mask(firing_timeses, tmax, N):
 
 def ϕ(sol, t):
     n_areas = len(sol.t_events)
-    T = np.vstack(n_areas*[t]).T
-    t_events = [sol.t_events[i] for i in range(n_areas)]
-    k_mask, t_mask, tp1_mask = firing_time_mask(t_events, t[-1], t.size)
+    T = np.vstack(n_areas*[sol.t]).T
+    k_mask, t_mask, tp1_mask = firing_time_mask(
+        sol.t_events, sol.t[-1], sol.t.size)
     return 2*np.pi*(T - t_mask)/(tp1_mask - t_mask)
+
+
+def order(phases):
+    return np.abs(np.sum(np.exp(phases*1j), axis=1)/phases.shape[1])
+
+
+def chimera(phase, cortices, p, channel=0):
+    N = int((1-p)*phase.shape[0])
+    M = len(cortices)
+    average = np.mean([order(phase[N:, cortex[0]:cortex[1]])
+                       for cortex in cortices])
+    s = np.zeros(phase.shape[0] - N)
+    for cortex in cortices:
+        ph = phase[N:, cortex[0]:cortex[1]]
+        s += (order(ph) - average)**2
+    return np.mean(s/(M - 1))
+
+
+def metastability(phase, cortices, p, channel=0):
+    metastabilities = []
+    N = int((1-p)*phase.shape[0])
+    for cortex in cortices:
+        ph = phase[N:, cortex[0]:cortex[1]]
+        metastabilities.append(
+            np.sum((order(ph) - np.mean(order(ph)))**2)/(N - 1))
+    return np.mean(metastabilities)
 
 
 def main():
@@ -176,7 +202,7 @@ def main():
     columns = []
     cortices = [[0, 0]]
     for region in m["Major Region"].unique():
-        i = [columns.append(acronym) for acronym in
+        i = [columns.append(acronym.replace(" ", "")) for acronym in
              m.loc[m["Major Region"] == region, "Acronym"].values]
         cortices.append([cortices[-1][-1], cortices[-1][-1] + len(i)])
     cortices.remove([0, 0])
@@ -185,10 +211,8 @@ def main():
 
     d = data["W_ipsi"]
     p = data["PValue_ipsi"]
-    d.columns = columns
-    p.columns = columns
-    d.index = columns
-    p.index = columns
+    d = d[columns].reindex(columns)
+    p = p[columns].reindex(columns)
 
     d = d.values
     p = p.values
@@ -233,28 +257,34 @@ def main():
     ivs[1] = 0.2*np.random.random(n.shape[0])
     ivs[2] = 0.2*np.random.random(n.shape[0])
 
-    tmax = 4000
+    tmax = 400
     N = 100*tmax
     t = np.linspace(0, tmax, N)
 
     params = (b, i0, x_rev, λ, θ, μ, s, x_rest, α, n1, β, n2, G1, G2)
     print("Finding solution... ", end=" ")
     sol = solve_ivp(fun=lambda t_in, y_in: hr_dots(y_in, t_in, *params),
-                    t_span=(0, tmax), y0=ivs.reshape(ivs.size), events=events,
-                    dense_output=True, method="RK45")
+                    t_span=(-100, tmax + 100), t_eval=t, y0=ivs.reshape(ivs.size),
+                    events=events, method="RK45")
     print("Found solution")
+    y = sol.y.T.reshape(N, 3, -1)
     print("Finding phase... ", end=" ")
     phase = ϕ(sol, t)
     print("Found phase")
 
-    if np.any(phase > 2*np.pi):
-        main()
-    else:
-        print("Writing... ", end=" ")
-        with open(f"../../data/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
-            pickle.dump([params, sol, phase], f)
+    print("Finding chimera index... ", end=" ")
+    χ = chimera(phase, cortices, 1)
+    print("Found chimera index")
 
-        print("Wrote")
+    print("Finding metastability index... ", end=" ")
+    m = metastability(phase, cortices, 1)
+    print("Found metastability index")
+
+    print("Writing... ", end=" ")
+    with open(f"../../data/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
+        pickle.dump([params, sol, phase, χ, m], f)
+
+    print("Wrote")
 
 
 if __name__ == "__main__":
