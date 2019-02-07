@@ -19,8 +19,11 @@
    Network structure as it relates to suizure dynamics
 ** TODO [#A] Roberts 2014                        :parameter_estimation:brain:
    Finding critical values for parameters of models
-** IN-PROGRESS [#A] Shanahan 2010                                   :chimera:
+** DONE Shanahan 2010                                               :chimera:
    Generic chimera paper.  Maybe good for detection?
+
+   Good techniques for chimera state detection
+
 ** TODO [#B] Abrams 2004                                            :chimera:
    Exact solution for chimera states
 ** DONE Andrzejak 2016                             :neuronal:chimera:seizure:
