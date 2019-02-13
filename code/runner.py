@@ -17,17 +17,20 @@ def qsub(α, β):
 
 
 def auto_run(max_jobs=200):
-    jobs = max(0, int(subprocess.check_output('qstat | wc -l', shell=True)) - 2)
+    jobs = max(0, int(subprocess.check_output(
+        'qstat | wc -l', shell=True)) - 2)
     print("Jobs: ", jobs)
-    for params in product(linspace(0, 1.6, 80), linspace(0, 0.4, 20)):
+    for params in product(linspace(0.0, 3.2, 80), linspace(0.0, 0.8, 40)):
         α, β = params
         if f"{α:.03f}-{β:.03f}.pkl" not in os.listdir("../data"):
             print("Jobs: ", jobs)
             print(α, β)
-            jobs = max(0, int(subprocess.check_output('qstat | wc -l', shell=True)) - 2)
+            jobs = max(0, int(subprocess.check_output(
+                'qstat | wc -l', shell=True)) - 2)
             while jobs >= max_jobs:
                 time.sleep(60)
-                jobs = max(0, int(subprocess.check_output('qstat | wc -l', shell=True)) - 2)
+                jobs = max(0, int(subprocess.check_output(
+                    'qstat | wc -l', shell=True)) - 2)
             qsub(α, β)
             time.sleep(10)
 
@@ -36,7 +39,8 @@ auto_run()
 
 jobs = max(0, int(subprocess.check_output('qstat | wc -l', shell=True)) - 2)
 while jobs != 0:
-    jobs = max(0, int(subprocess.check_output('qstat | wc -l', shell=True)) - 2)
+    jobs = max(0, int(subprocess.check_output(
+        'qstat | wc -l', shell=True)) - 2)
     time.sleep(10)
 print("Done")
 subprocess.Popen(["qsub", 'hizanidis.pbs'])
