@@ -167,7 +167,7 @@ def chimera(phase, cortices, p, channel=0):
     N = int((1-p)*phase.shape[0])
     M = len(cortices)
     average = np.mean([order(phase[N:, cortex[0]:cortex[1]])
-                       for cortex in cortices])
+                       for cortex in cortices], axis=0)
     s = np.zeros(phase.shape[0] - N)
     for cortex in cortices:
         ph = phase[N:, cortex[0]:cortex[1]]
