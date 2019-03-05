@@ -26,7 +26,7 @@ def auto_run(template, args, max_jobs=200):
             jobs = max(0, int(subprocess.check_output(
                 'qstat | wc -l', shell=True)) - 2)
         print("Jobs: ", jobs)
-        qsub(template, *params)
+        qsub(template, params)
         time.sleep(10)
 
 
@@ -39,7 +39,6 @@ def main():
         help="The type of job to run.  Either 'calc' or 'plot'."
     )
     c_args = parser.parse_args()
-    print(c_args)
 
     if c_args.t[0] == "calc":
         template_file = "template.pbs"
@@ -48,14 +47,23 @@ def main():
                 in product(linspace(0.0, 3.2, 80), linspace(0.0, 0.8, 40))
                 if f"{α:.03f}-{β:.03f}.pkl" not in os.listdir("../../data")]
     elif c_args.t[0] == "plot":
-        template_file = "mean_plots_template.pbs"
+        template_file = "plots_template.pbs"
         with open("../data/hizanidis_params.pkl", "rb") as f:
-            params = pickle.load()
+            params = pickle.load(f)
         good = params[params["max_phase"] <= 2*pi]
-        args = [[f"{α:.03f}-{β:.03f}.pkl", f"{α:.03f}_{β:.03f}"]
+        args = [[f"{α:.03f}_{β:.03f}", f"{α:.03f}-{β:.03f}.pkl"]
                 for row, [α, β]
-                in good[["alpha", "beta"]].iterrows()]
-        print("Uh...")
+                in good[["alpha", "beta"]].iterrows()
+                if all([(f"{front}-{α:.03f}-{β:.03f}.png"
+                         not in os.listdir("figure"))
+                        for front in [
+                    "overhead",
+                    "cos_mean",
+                    "by_cortex_cos_mean",
+                    "order"
+                    "by_cortex_variance",
+                    "chi"
+                ]])]
     else:
         print("Please use 'calc' or 'plot' as the type of job.")
         exit(1)

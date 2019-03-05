@@ -49,7 +49,7 @@ title = f"alpha: {α:.03f}, beta: {β:.03f}, chi: {χ:.04f}"
 plt.matshow(phase, aspect="auto")
 plt.title(title)
 plt.colorbar()
-plt.savefig(f"overhead-{α:.03f}-{β:.03f}.png",
+plt.savefig(f"../figure/overhead-{α:.03f}-{β:.03f}.png",
             dpi=500, bbox_inches="tight", format="png")
 plt.cla()
 plt.clf()
@@ -60,7 +60,7 @@ plt.xlabel("time")
 plt.ylabel("cos(mean(phase))")
 fig = plt.gcf()
 fig.set_size_inches(*size, forward=True)
-plt.savefig(f"cos_mean-{α:.03f}-{β:.03f}.png",
+plt.savefig(f"../figure/cos_mean-{α:.03f}-{β:.03f}.png",
             dpi=500, bbox_inches="tight", format="png")
 plt.cla()
 plt.clf()
@@ -75,7 +75,7 @@ plt.legend(bbox_to_anchor=(1, 1))
 plt.title(title)
 fig = plt.gcf()
 fig.set_size_inches(*size, forward=True)
-plt.savefig(f"by_cortex_cos_mean-{α:.03f}-{β:.03f}.png",
+plt.savefig(f"../figure/by_cortex_cos_mean-{α:.03f}-{β:.03f}.png",
             dpi=500, bbox_inches="tight", format="png")
 plt.cla()
 plt.clf()
@@ -86,7 +86,7 @@ plt.ylabel("rho")
 plt.title(title)
 fig = plt.gcf()
 fig.set_size_inches(*size, forward=True)
-plt.savefig(f"order-{α:.03f}-{β:.03f}.png", dpi=500,
+plt.savefig(f"../figure/order-{α:.03f}-{β:.03f}.png", dpi=500,
             bbox_inches="tight", format="png")
 plt.cla()
 plt.clf()
@@ -101,7 +101,7 @@ plt.legend(bbox_to_anchor=(1, 1))
 plt.title(title)
 fig = plt.gcf()
 fig.set_size_inches(*size, forward=True)
-plt.savefig(f"by_cortex_variance-{α:.03f}-{β:.03f}.png",
+plt.savefig(f"../figure/by_cortex_variance-{α:.03f}-{β:.03f}.png",
             dpi=500, bbox_inches="tight", format="png")
 plt.cla()
 plt.clf()
@@ -112,7 +112,7 @@ plt.ylabel("sigma(chi(t))")
 plt.title(title)
 fig = plt.gcf()
 fig.set_size_inches(*size, forward=True)
-plt.savefig(f"chi-{α:.03f}-{β:.03f}.png", dpi=500,
+plt.savefig(f"../figure/chi-{α:.03f}-{β:.03f}.png", dpi=500,
             bbox_inches="tight", format="png")
 plt.cla()
 plt.clf()

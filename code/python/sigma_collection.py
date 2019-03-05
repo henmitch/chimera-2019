@@ -17,6 +17,7 @@ for i in os.listdir("/users/h/m/hmmitche/thesis/data"):
         vals = sol.y.T.reshape(N, 3, -1)
         end = {"alpha": α,
                "beta": β,
+               "max_phase": phase.max(),
                "chimera": χ,
                "metastability": m}
         out = out.append(end, ignore_index=True)

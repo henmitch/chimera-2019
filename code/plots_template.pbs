@@ -11,4 +11,4 @@
 #PBS -m a
 
 cd $HOME/thesis/code/python
-$HOME/pyenv/bin/python mean_plot.py $HOME/thesis/data/{}
+$HOME/pyenv/bin/python plots.py $HOME/thesis/data/{}
