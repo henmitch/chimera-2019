@@ -39,6 +39,7 @@ def main():
         help="The type of job to run.  Either 'calc' or 'plot'."
     )
     c_args = parser.parse_args()
+    print(c_args)
 
     if c_args.t[0] == "calc":
         template_file = "template.pbs"
@@ -54,6 +55,7 @@ def main():
         args = [[f"{α:.03f}-{β:.03f}.pkl", f"{α:.03f}_{β:.03f}"]
                 for row, [α, β]
                 in good[["alpha", "beta"]].iterrows()]
+        print("Uh...")
     else:
         print("Please use 'calc' or 'plot' as the type of job.")
         exit(1)
@@ -75,5 +77,5 @@ def main():
         subprocess.Popen(["qsub", 'hizanidis.pbs'])
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     main()
