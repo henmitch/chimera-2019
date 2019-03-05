@@ -51,7 +51,7 @@ def main():
         with open("../data/hizanidis_params.pkl", "rb") as f:
             params = pickle.load()
         good = params[params["max_phase"] <= 2*pi]
-        args = [2*[f"{α:.03f}-{β:.03f}.pkl"]
+        args = [[f"{α:.03f}-{β:.03f}.pkl", f"{α:.03f}_{β:.03f}"]
                 for row, [α, β]
                 in good[["alpha", "beta"]].iterrows()]
     else:

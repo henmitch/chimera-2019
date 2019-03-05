@@ -163,7 +163,7 @@ def order(phases):
     return np.abs(np.sum(np.exp(phases*1j), axis=1)/phases.shape[1])
 
 
-def chimera(phase, cortices, p, channel=0):
+def chimera(phase, cortices, p=1, channel=0):
     N = int((1-p)*phase.shape[0])
     M = len(cortices)
     average = np.mean([order(phase[N:, cortex[0]:cortex[1]])
@@ -278,7 +278,7 @@ def main():
     print("Found phase")
 
     print("Finding chimera index... ", end=" ")
-    χ = chimera(phase, cortices, 1)
+    χ = chimera(phase, cortices)
     print("Found chimera index")
 
     print("Finding metastability index... ", end=" ")
