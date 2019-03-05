@@ -8,4 +8,4 @@
 .misc
 misc
 data
-__pycache__
+*.pyc
