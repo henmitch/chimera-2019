@@ -64,6 +64,9 @@ def main():
                     "by_cortex_variance",
                     "chi"
                 ]])]
+    elif c_args.t[0] == "fix":
+        template_file = "fix.pbs"
+        args = os.listdir("../../data")
     else:
         print("Please use 'calc' or 'plot' as the type of job.")
         exit(1)
