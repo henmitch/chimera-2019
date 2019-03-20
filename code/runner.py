@@ -17,15 +17,14 @@ def qsub(template, args):
 
 
 def auto_run(template, args, max_jobs=200):
-    jobs = max(0, int(subprocess.check_output(
-        'qstat | wc -l', shell=True)) - 2)
-    print("Jobs: ", jobs)
     for params in args:
+        jobs = max(0, int(subprocess.check_output(
+            'qstat | wc -l', shell=True)) - 2)
+        print("Jobs: ", jobs)
         while jobs >= max_jobs:
             time.sleep(60)
             jobs = max(0, int(subprocess.check_output(
                 'qstat | wc -l', shell=True)) - 2)
-        print("Jobs: ", jobs)
         qsub(template, params)
         time.sleep(10)
 
@@ -36,7 +35,7 @@ def main():
     )
     parser.add_argument(
         "t", metavar="type", type=str, nargs=1,
-        help="The type of job to run.  Either 'calc' or 'plot'."
+        help="The type of job to run.  Either 'calc', 'plot', or 'fix'."
     )
     c_args = parser.parse_args()
 
@@ -45,7 +44,7 @@ def main():
         args = [[α, β, α, β]
                 for α, β
                 in product(linspace(0.0, 3.2, 80), linspace(0.0, 0.8, 40))
-                if f"{α:.03f}-{β:.03f}.pkl" not in os.listdir("../../data")]
+                if f"{α:.03f}-{β:.03f}.pkl" not in os.listdir("../data")]
     elif c_args.t[0] == "plot":
         template_file = "plots_template.pbs"
         with open("../data/hizanidis_params.pkl", "rb") as f:
@@ -62,11 +61,14 @@ def main():
                     "by_cortex_cos_mean",
                     "order"
                     "by_cortex_variance",
-                    "chi"
+                    "chi",
+                    "all"
                 ]])]
     elif c_args.t[0] == "fix":
-        template_file = "fix.pbs"
-        args = os.listdir("../../data")
+        template_file = "fix_template.pbs"
+        args = [(i.rstrip(), i.rstrip())
+                for i
+                in os.listdir("../data/")]
     else:
         print("Please use 'calc' or 'plot' as the type of job.")
         exit(1)
@@ -84,7 +86,7 @@ def main():
         time.sleep(10)
     print("Done")
 
-    if c_args.t[0] == "calc":
+    if c_args.t[0] in ["calc", "fix"]:
         subprocess.Popen(["qsub", 'hizanidis.pbs'])
 
 

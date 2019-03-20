@@ -31,6 +31,7 @@ with open(file, "rb") as f:
     [params, sol, phase, χ, m] = pickle.load(f)
 
 χ = run.chimera(phase, cortices)
+m = run.metastability(phase, cortices)
 
 with open(file, "wb") as f:
     pickle.dump([params, sol, phase, χ, m], f)

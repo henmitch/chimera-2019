@@ -139,17 +139,16 @@ cos_mean_ax.plot(np.cos(np.mean(phase, axis=1)), lw=0.1)
 for cortex in cortices:
     [low, high] = cortex
     by_cortex_cos_mean_ax.plot(np.cos(np.mean(phase[:, low:high], axis=1)),
-                            label=f"{low + 1}-{high}", lw=0.07)
+                               label=f"{low + 1}-{high}", lw=0.07)
 
 order_ax.plot(order(phase), lw=0.1)
-order_ax.set_ylim([])
 
 variance_ax.plot(chi, lw=0.1)
 
 for cortex in cortices:
     [low, high] = cortex
     by_cortex_variance_ax.plot(((order(phase[:, low:high]) - ρ_bar)**2),
-                            label=f"{low + 1}-{high}", lw=0.07)
+                               label=f"{low + 1}-{high}", lw=0.07)
 
 fig.set_size_inches(*size, forward=True)
 plt.savefig(f"../figure/all-{α:.03f}-{β:.03f}.png", dpi=500,

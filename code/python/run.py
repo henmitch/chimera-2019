@@ -175,13 +175,15 @@ def chimera(phase, cortices, p=1, channel=0):
     return np.mean(s/(M - 1))
 
 
-def metastability(phase, cortices, p, channel=0):
+def metastability(phase, cortices, p=1, channel=0):
     metastabilities = []
     N = int((1-p)*phase.shape[0])
+    average = np.mean([order(phase[N:, cortex[0]:cortex[1]])
+                       for cortex in cortices])
     for cortex in cortices:
         ph = phase[N:, cortex[0]:cortex[1]]
         metastabilities.append(
-            np.sum((order(ph) - np.mean(order(ph)))**2)/(N - 1))
+            np.sum((order(ph) - average)**2)/(int(p*phase.shape[0]) - 1))
     return np.mean(metastabilities)
 
 
