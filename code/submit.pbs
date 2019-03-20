@@ -1,18 +1,14 @@
 # job needs 1 compute node with 1 processor per node.
-#PBS -l nodes=1:ppn=1,pmem=8gb,pvmem=9gb
-# It should be allowed to run for up to 1 hour.
-#PBS -l walltime=01:00:00
+#PBS -l nodes=1:ppn=1,pmem=20gb,pvmem=22gb
+# It should be allowed to run for up to 2 hours
+#PBS -l walltime=02:00:00
 # Name of job.
-#PBS -N chimera
+#PBS -N mean_plot_0.122_0.677
 # Join STDERR TO STDOUT.
-#PBS -j oe   
-# Send me mail on job start, job end and if job aborts
+#PBS -j oe
+# Email me upon failure
 #PBS -M hmmitche@uvm.edu
-#PBS -m bea
+#PBS -m a
 
 cd $HOME/thesis/code/python
-$HOME/pyenv/bin/jupyter-nbconvert --execute --to notebook --ExecutePreprocessor.timeout=-1 sim.ipynb
-cd $HOME/thesis
-git add -a .
-git commit -m "Using git lfs on VACC"
-git push
+$HOME/pyenv/bin/python plots.py $HOME/thesis/data/0.122-0.677.pkl

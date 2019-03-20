@@ -1,0 +1,14 @@
+# job needs 1 compute node with 1 processor per node.
+#PBS -l nodes=1:ppn=1,pmem=8gb,pvmem=9gb
+# It should be allowed to run for up to 3 hours
+#PBS -l walltime=03:00:00
+# Name of job.
+#PBS -N fix_run_{}
+# Join STDERR TO STDOUT.
+#PBS -j oe
+# Email me upon failure
+#PBS -M hmmitche@uvm.edu
+#PBS -m a
+
+cd $HOME/thesis/code/python
+$HOME/pyenv/bin/python fix.py $HOME/thesis/data/{}

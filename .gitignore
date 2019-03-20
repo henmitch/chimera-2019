@@ -7,3 +7,7 @@
 .local
 .misc
 misc
+data
+**/__pycache__
+**/*.py[cod]
+code/figure/
