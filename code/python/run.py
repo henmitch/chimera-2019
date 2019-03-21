@@ -160,7 +160,7 @@ def ϕ(sol, t):
 
 
 def order(phases):
-    return np.abs(np.sum(np.exp(phases*1j), axis=1)/phases.shape[1])
+    return np.absolute(np.mean(np.exp(phases*1j), axis=1))
 
 
 def chimera(phase, cortices, p=1, channel=0):
