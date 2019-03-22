@@ -113,13 +113,19 @@ def plot_beginning_and_end(y, start, end, p=0.99,
         plt.suptitle(f"First and last {100*p}% of neurons {start} - {end}")
 
 
+def plot_phase_diagram(y, **kwargs):
+    ydot = y[1:] - y[:-1]
+    plt.plot(y[1:], ydot, **kwargs)
+    
+    
 def plot_state_diagram(y, cortices=None, lim=[-1.5, 2.5],
-                       markers=["ro", "k^", "gX", "bD"]):
+                       markers=["ro", "k^", "gX", "bD"],
+                       delay=1):
     if cortices is None:
         cortices = [[0, y.size]]
     m = iter(markers[:len(cortices)])
-    ytp1 = y[:-1]
-    yt = y[1:]
+    ytp1 = y[:-delay]
+    yt = y[delay:]
     for cortex in cortices:
         plt.plot(yt[cortex[0]:cortex[1]], ytp1[cortex[0]:cortex[1]], next(m))
     plt.xlim(lim)
