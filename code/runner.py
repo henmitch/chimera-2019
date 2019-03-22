@@ -43,7 +43,7 @@ def main():
         template_file = "submit_scripts/template.pbs"
         args = [[α, β, α, β]
                 for α, β
-                in product(linspace(0.0, 3.2, 80), linspace(0.0, 0.8, 40))
+                in product(linspace(0.0, 0.2, 80), linspace(0.0, 0.1, 40))
                 if f"{α:.03f}-{β:.03f}.pkl" not in os.listdir("../data")]
     elif c_args.t[0] == "plot":
         template_file = "submit_scripts/plots_template.pbs"
