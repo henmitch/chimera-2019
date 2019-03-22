@@ -22,11 +22,11 @@ def auto_run(template, args, max_jobs=200):
             "qstat | wc -l", shell=True)) - 2)
         print("Jobs: ", jobs)
         while jobs >= max_jobs:
-            time.sleep(60)
+            time.sleep(30)
             jobs = max(0, int(subprocess.check_output(
                 "qstat | wc -l", shell=True)) - 2)
         qsub(template, params)
-        time.sleep(10)
+        time.sleep(5)
 
 
 def main():
