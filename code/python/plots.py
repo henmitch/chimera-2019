@@ -173,7 +173,7 @@ fig, [means_ax,
       overhead_ax,
       order_ax,
       variance_ax,
-      by_cortex_variance_ax] = plt.subplots(7, 1, sharex=True, squeeze=True)
+      by_cortex_variance_ax] = plt.subplots(5, 1, sharex=True, squeeze=True)
 
 means_ax.set_title(title)
 
