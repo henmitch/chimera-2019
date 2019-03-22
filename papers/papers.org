@@ -24,7 +24,7 @@
 
    Good techniques for chimera state detection
 
-** TODO [#B] Abrams 2004                                            :chimera:
+** DONE Abrams 2004                                                 :chimera:
    Exact solution for chimera states
 ** DONE Andrzejak 2016                             :neuronal:chimera:seizure:
    Sudden collapse of chimera states
@@ -109,7 +109,7 @@
    - Coupled oscillator model
    - Could be *very* valuable
 
-** IN-PROGRESS [#C] Jirsa 2016                          :computation:seizure:
+** DONE Jirsa 2016                                      :computation:seizure:
    Hard-core model, largely based on Epileptor
    Probably not all that helpful for chimera things, honestly
 
