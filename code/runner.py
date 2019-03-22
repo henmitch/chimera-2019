@@ -11,20 +11,20 @@ from numpy import linspace, pi
 
 def qsub(template, args):
     submit_script = template.format(*args)
-    with open("submit.pbs", "w") as f:
+    with open("submit_scripts/submit.pbs", "w") as f:
         f.write(submit_script)
-    subprocess.Popen(["qsub", "-q", "shortq", "submit.pbs"])
+    subprocess.Popen(["qsub", "-q", "shortq", "submit_scripts/submit.pbs"])
 
 
 def auto_run(template, args, max_jobs=200):
     for params in args:
         jobs = max(0, int(subprocess.check_output(
-            'qstat | wc -l', shell=True)) - 2)
+            "qstat | wc -l", shell=True)) - 2)
         print("Jobs: ", jobs)
         while jobs >= max_jobs:
             time.sleep(60)
             jobs = max(0, int(subprocess.check_output(
-                'qstat | wc -l', shell=True)) - 2)
+                "qstat | wc -l", shell=True)) - 2)
         qsub(template, params)
         time.sleep(10)
 
@@ -40,13 +40,13 @@ def main():
     c_args = parser.parse_args()
 
     if c_args.t[0] == "calc":
-        template_file = "template.pbs"
+        template_file = "submit_scripts/template.pbs"
         args = [[α, β, α, β]
                 for α, β
                 in product(linspace(0.0, 3.2, 80), linspace(0.0, 0.8, 40))
                 if f"{α:.03f}-{β:.03f}.pkl" not in os.listdir("../data")]
     elif c_args.t[0] == "plot":
-        template_file = "plots_template.pbs"
+        template_file = "submit_scripts/plots_template.pbs"
         with open("../data/hizanidis_params.pkl", "rb") as f:
             params = pickle.load(f)
         good = params[params["max_phase"] <= 2*pi]
@@ -65,7 +65,7 @@ def main():
                     "all"
                 ]])]
     elif c_args.t[0] == "fix":
-        template_file = "fix_template.pbs"
+        template_file = "submit_scripts/fix_template.pbs"
         args = [(i.rstrip(), i.rstrip())
                 for i
                 in os.listdir("../data/")]
@@ -79,15 +79,15 @@ def main():
     auto_run(template, args)
 
     jobs = max(0, int(subprocess.check_output(
-        'qstat | wc -l', shell=True)) - 2)
+        "qstat | wc -l", shell=True)) - 2)
     while jobs != 0:
         jobs = max(0, int(subprocess.check_output(
-            'qstat | wc -l', shell=True)) - 2)
+            "qstat | wc -l", shell=True)) - 2)
         time.sleep(10)
     print("Done")
 
     if c_args.t[0] in ["calc", "fix"]:
-        subprocess.Popen(["qsub", 'hizanidis.pbs'])
+        subprocess.Popen(["qsub", "submit_scripts/hizanidis.pbs"])
 
 
 if __name__ == "__main__":
