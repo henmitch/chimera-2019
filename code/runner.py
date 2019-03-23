@@ -69,6 +69,11 @@ def main():
         args = [(i.rstrip(), i.rstrip())
                 for i
                 in os.listdir("../data/")]
+    elif c_args.t[0] == "network":
+        template_file = "submit_scripts/network_template.pbs"
+        args = [(t, t)
+                for t
+                in range(1000)]
     else:
         print("Please use 'calc' or 'plot' as the type of job.")
         exit(1)
