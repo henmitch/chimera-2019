@@ -44,7 +44,7 @@ def main():
         args = [[α, β, α, β]
                 for α, β
                 in product(linspace(0.0, 0.2, 80), linspace(0.0, 0.1, 40))
-                if f"{α:.03f}-{β:.03f}.pkl" not in os.listdir("../data")]
+                if f"{α:0.3f}-{β:0.3f}.pkl" not in os.listdir("../data/zoom")]
     elif c_args.t[0] == "plot":
         template_file = "submit_scripts/plots_template.pbs"
         with open("../data/hizanidis_params.pkl", "rb") as f:

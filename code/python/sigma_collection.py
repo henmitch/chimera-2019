@@ -1,10 +1,7 @@
 import gc
-import numpy as np
 import os
 import pandas as pd
 import pickle
-
-from run import chimera
 
 out = pd.DataFrame(columns=["alpha", "beta", "metastability", "chimera"])
 
@@ -26,11 +23,10 @@ cortices.remove([0, 0])
 del(metadata)
 del(m)
 
-for i in os.listdir("/users/h/m/hmmitche/thesis/data"):
+for i in os.listdir("/users/h/m/hmmitche/thesis/data/zoom"):
     print(i)
-    with open(f"/users/h/m/hmmitche/thesis/data/{i}", "rb") as f:
+    with open(f"/users/h/m/hmmitche/thesis/data/zoom/{i}", "rb") as f:
         params, sol, phase, χ, m = pickle.load(f)
-    χ = chimera(phase, cortices)
     α, β = params[8], params[10]
     vals = sol.y.T.reshape(N, 3, -1)
     end = {"alpha": α,
@@ -39,10 +35,8 @@ for i in os.listdir("/users/h/m/hmmitche/thesis/data"):
            "chimera": χ,
            "metastability": m}
     out = out.append(end, ignore_index=True)
-    with open(f"/users/h/m/hmmitche/thesis/data/{i}", "wb") as f:
-        pickle.dump([params, sol, phase, χ, m], f)
     gc.collect()
 
 
-with open("../../data/hizanidis_params.pkl", "wb") as f:
+with open("../../data/zoom/hizanidis_params.pkl", "wb") as f:
     pickle.dump(out, f)

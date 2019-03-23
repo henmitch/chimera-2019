@@ -116,8 +116,8 @@ def plot_beginning_and_end(y, start, end, p=0.99,
 def plot_phase_diagram(y, **kwargs):
     ydot = y[1:] - y[:-1]
     plt.plot(y[1:], ydot, **kwargs)
-    
-    
+
+
 def plot_state_diagram(y, cortices=None, lim=[-1.5, 2.5],
                        markers=["ro", "k^", "gX", "bD"],
                        delay=1):
@@ -294,7 +294,7 @@ def main():
     print("Found metastability index")
 
     print("Writing... ", end=" ")
-    with open(f"../../data/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
+    with open(f"../../data/zoom/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
         pickle.dump([params, sol, phase, χ, m], f)
 
     print("Wrote")
