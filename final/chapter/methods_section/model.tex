@@ -1,0 +1,44 @@
+An example of a neural mass network is the modified Hindmarsh-Rose model \cite{Santos2017}.
+\begin{align}
+  \label{eq:hr_x}
+  \dot{\hrx}_{j}
+  &=
+    \hry_{j}
+    -
+    \hrx^{3}
+    +
+    b \hrx_{j}^{2}
+    +
+    I_{j}
+    -
+    \hrz_{j}
+    -
+    \frac{\hra}{n'_{j}} \sum_{k = 1}^{N} G'_{j k} \Theta(\hrx_{k})
+    -
+    \frac{\hrb}{n''_{j}} \sum_{k = 1}^{N} G'_{j k} \Theta(\hrx_{k}) \\
+  \label{eq:hr_y}
+  \dot{\hry}_{j}
+  &=
+    1
+    -
+    5 \hrx_{j}^{2}
+    -
+    \hry_{j} \\
+  \label{eq:hr_z}
+  \dot{\hrz}_{j}
+  &=
+    \mu \pqty{s \pqty{\hrx_{j} - \hrx_{\text{rest}}} - \hrz_{j}}
+\end{align}
+where
+\begin{equation}
+  \label{eq:hr_sigmoid}
+  \Theta(\hrx_{k})
+  =
+  \frac{\hrx_{j} - \hrx_{\text{rev}}}{1 + e^{-\lambda \pqty{\hrx_{k} - \theta}}}
+\end{equation}
+In this model, $\hrx_{j}$ is the membrane potential of the $j$th neural mass, $\hry_{j}$ is from the fast processes
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../main"
+%%% End:
