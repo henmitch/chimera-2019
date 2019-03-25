@@ -62,7 +62,7 @@
    - Probably spawned helpful things
 ** TODO [#B] Khambhati 2017                                   :brain:network:
    Model of the network of a brain over time
-** TODO [#B] Kuramoto 2002                                          :chimera:
+** DONE Kuramoto 2002                                          :chimera:
    First chimera paper
 ** DONE Lytton 2008                                     :seizure:computation:
    Modeling seizure
