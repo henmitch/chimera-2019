@@ -35,9 +35,10 @@ When these metronomes are started with the same frequency, out of phase with eac
   \label{fig:metronome_demo}
 \end{figure}
 
-One example of more complex behavior arising from similar mechanisms is the coexistence of synchrony and asynchrony within a system of identical coupled oscillators, a phenomenon known as a chimera state \cite{Kuramoto2002,Abrams2004}.
+One example of more complex behavior arising from similar mechanisms is the coexistence of synchrony and asynchrony within a system of identical coupled oscillators, a phenomenon known as a \textit{chimera state} \cite{Kuramoto2002,Abrams2004}.
 The existence of these chimera states are surprising, as they represent asymmetry within symmetric systems.
-The first time this behavior was observed was in a ring of nonlocally coupled oscillators \cite{Kuramoto2002}.
+The first time this behavior was observed was in a ring of \textit{nonlocally coupled} oscillators \cite{Kuramoto2002}.
+While global coupling is an all-to-all interaction and local coupling is a nearest-neighbor interaction, nonlocal coupling is a mixture of the two.
 The model is expressible in one dimension as
 \begin{equation}
   \label{eq:kuramoto}
@@ -73,16 +74,19 @@ which reduces to the phase equation
   =
   \frac{b - a}{1 + a b}.
 \end{equation}
-When numerically simulated, this system quickly falls into a chimera state (\cref{fig:kuramoto_chimera}).
-\todo{Fill in time and position.}
+When numerically simulated using a discrete approximation, this system quickly falls into a chimera state (\cref{fig:kuramoto_chimera}).
 \begin{figure}[ht]
   \centering
   \begin{subfigure}{0.6\textwidth}
+    \centering
+    \includegraphics{figure/kuramoto_overhead}
     \caption{The time series of the Kuramoto simulation.}
     \label{fig:kuramoto_overhead}
   \end{subfigure} %
   \begin{subfigure}{0.3\textwidth}
-    \caption{A snapshot at $t = $.}
+    \centering
+    \includegraphics{figure/kuramoto_snapshot}
+    \caption{A snapshot at $t = 120$.}
     \label{fig:kuramoto_snapshot}
   \end{subfigure}
   \caption[Kuramoto simulation]{The results of a simulation of a Kuramoto oscillator, as described in \cref{eq:kuramoto_phase}.
@@ -91,7 +95,7 @@ When numerically simulated, this system quickly falls into a chimera state (\cre
     The behavior represented there is quite complex, with several distinct qualitative changes to the patterns in the system.
     However, in-depth analysis of this system is beyond the purview of this work.
     \Cref{fig:kuramoto_snapshot} shows a snapshot of the state of the system at $t = $.
-    Note the juxtaposition of asynchronous (oscillators RANGE) and synchronous (oscillators RANGE).
+    Note the juxtaposition of asynchronous ($0 \lesssim x \lesssim 0.3$ and $0.78 \lesssim x \lesssim 1$) and synchronous (oscillators $0.3 \lesssim x \lesssim 0.78$).
   }
   \label{fig:kuramoto_chimera}
 \end{figure}
@@ -125,6 +129,37 @@ This system is directly analogous to the Abrams model.
 The metronomes on the same platform are coupled through the motion of the swing, which heavily influences the motion of the metronomes.
 This intra-community coupling is represented by $\mu$ in the Abrams model.
 The metronomes on opposite platforms are coupled through the springs, which is a much weaker interaction, represented in the Abrams model by $\nu$.
+
+While chimera states my present themselves obviously when observed in a plot or the physical world, they can be harder to pin down analytically.
+One useful pair of measures for the presence of a chimera state are the \textit{chimera-like index} $\chimera$ and the \textit{metastability index} $\meta$ \cite{Shanahan2010,Hizanidis2016}.
+We will investigate a system of $M$ communities of nonlocally-coupled oscillators, and we sample their phases at times $t \in \bqty{1, \ldots, T}$.
+In order to develop these two measures, one must first develop the \textit{order parameter} $\ordparam(t) = \abs{\expval{e^{i \phase_{k}(t)}}_{k \in C}}$, where $\phase$ is the phase of oscillator $k$, and $\ev{f}_{k \in c}$ is the average of $f$ over all $k$ in community $C$.
+$\ordparam$ indicates the instantaneous synchrony of a community (how similar the phases of the oscillators are to the others in $C$), and not its overall coherence (how similar the trajectories of the oscillators are).
+From this, we find the two measures:
+\begin{align}
+  \meta
+  &=
+    \expval{\sigma_{\text{met}}}_{C}
+  &
+    \qq{where}
+    \sigma_{\text{met}}(c)
+  &=
+    \frac{1}{T - 1} \sum_{t \leq T}{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{T}}^{2} \\
+  \chimera
+  &=
+    \expval{\sigma_{\text{chi}}}_{T}
+  &
+    \qq{where}
+    \sigma_{\text{chi}}(t)
+  &=
+    \frac{1}{M - 1} \sum_{c \in C}{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{C}}^{2}
+\end{align}
+To put this into words, the metastability index is the average across communities of the variance of the order parameter within a given community over time, while the chimera-like index is the average over time of the variance of the order parameter across communities.
+
+This gives us some maximum possible values for these measures \cite{Shanahan2010}.
+If a community $c$ spends equal time in all stages of synchronization (i.e., the phase parameter of $c$ is uniformly distributed), then $\sigma_{\text{met}}(c)$ is at its maximum, the variance of the uniform distribution: $\meta_{\text{max}} = \frac{1}{12}$.
+If a community spends equal time in a maximally chimeric state and a minimally chimeric state, then its chimera-like index will be at its maximum\footnote{While it is possible for half of a system's communities to be synchronous and the other half asynchronous for all times (resulting in a chimera-like index of $\frac{2}{7}$), this is transient due to the effects of metastability \cite{Shanahan2010}.  Therefore, we will ignore this case.}: $\chimera_{\text{max}} = \frac{1}{7}$.
+Therefore, when the normalized chimera-like and metastability indices are presented, they will be presented normalized to $\frac{1}{7}$ and $\frac{1}{12}$, respectively.
 
 Chimera states have been observed in many other systems, whether they be purely mathematical, biological, electrical, or mechanical \cite{Shanahan2010,Abrams2004,Andrzejak2016,Hizanidis2016,Kuramoto2002,Martens2013,Panaggio2015,Santos2015,Santos2017,Kruk2018,Xie2014}.
 \todo{Find a transition.}

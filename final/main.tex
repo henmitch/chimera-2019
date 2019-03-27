@@ -1,21 +1,24 @@
-\documentclass[12pt,draft]{report}
+\documentclass[12pt]{report}
 
 \usepackage{color}
 \usepackage[arrowdel]{physics}
 \usepackage{siunitx}
 \usepackage{amsmath}
-\usepackage[margin=1in]{geometry}
+\usepackage{amssymb}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=0.5in]{caption}
 \usepackage[style=numeric-comp,backend=biber]{biblatex}
-% \usepackage[doublespacing]{setspace}
+%% \usepackage[doublespacing]{setspace}
 \usepackage[noblocks]{authblk}
 \usepackage{graphicx}
 \usepackage{subcaption}
-\usepackage{cleveref}
 \setlength{\marginparwidth}{2cm}
 \usepackage{todonotes}
 \usepackage{tikz}
 \usepackage{mhchem}
 \usepackage{tipa}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
 
 \usetikzlibrary{patterns}
 
@@ -31,6 +34,12 @@
 \newcommand*\hra{\alpha}
 \newcommand*\hrb{\beta}
 
+%% For the chimera-like index
+\newcommand*\chimera{\chi}
+\newcommand*\meta{m}
+\newcommand*\ordparam{\phi}
+\newcommand*\phase{\theta}
+
 \author[1,2]{Henry Mitchell}
 \author[1,4]{Chris Danforth}
 \author[3,4]{Matt Mahoney}
@@ -44,11 +53,11 @@
 \begin{document}
 \begin{titlepage}
   \maketitle
-  \thispagestyle{empty}
-  \begin{abstract}
-    \input{abstract}
-  \end{abstract}
 \end{titlepage}
+
+\begin{abstract}
+  \input{abstract}
+\end{abstract}
 
 \tableofcontents
 
@@ -57,7 +66,7 @@
 \todo{Pick better title}
 \input{chapter/intro}
 
-\chapter{Literative Review}
+\chapter{Literature Review}
 \label{chap:lit_review}
 \input{chapter/lit_review}
 
@@ -69,12 +78,14 @@
 \label{chap:results}
 \input{chapter/results}
 
+\chapter{Conclusion}
+\label{chap:conclusion}
+\input{chapter/conclusion}
+
 \begin{appendix}
   \listoffigures
 \end{appendix}
 
-% \todo{Remove nocite}
-% \nocite{*}
 \printbibliography
 
 \end{document}
