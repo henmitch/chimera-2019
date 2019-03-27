@@ -16,7 +16,7 @@ def qsub(template, args):
     subprocess.Popen(["qsub", "-q", "shortq", "submit_scripts/submit.pbs"])
 
 
-def auto_run(template, args, max_jobs=200):
+def auto_run(template, args, max_jobs=150):
     for params in args:
         jobs = max(0, int(subprocess.check_output(
             "qstat | grep ' [RQ] ' | wc -l", shell=True)) - 2)
@@ -26,7 +26,7 @@ def auto_run(template, args, max_jobs=200):
             jobs = max(0, int(subprocess.check_output(
                 "qstat | grep ' [RQ] ' | wc -l", shell=True)) - 2)
         qsub(template, params)
-        time.sleep(1)
+        time.sleep(5)
 
 
 def main():
