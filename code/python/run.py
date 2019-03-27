@@ -203,7 +203,12 @@ def main():
         "b", metavar="beta", type=float, nargs=1,
         help="The beta value to use (intra connection strength)"
     )
+    parser.add_argument(
+        "-d", metavar="data_dir", type=str, nargs=1, default="../../data",
+        help="The location to which to save the data"
+    )
     args = parser.parse_args()
+    data_dir = args.d[0]
 
     # DATA PREPARATION - specific to the data in question
     data = pd.read_excel("../connectomes/mouse.xlsx", sheet_name=None)
@@ -294,7 +299,7 @@ def main():
     print("Found metastability index")
 
     print("Writing... ", end=" ")
-    with open(f"../../data/zoom/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
+    with open(f"{data_dir}/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
         pickle.dump([params, sol, phase, χ, m], f)
 
     print("Wrote")

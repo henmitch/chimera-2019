@@ -41,4 +41,5 @@ potentials = np.array([G.nodes[i]["potential"][t][0] for i in G.nodes])
 nx.draw_networkx(G, pos=pos, node_size=node_size, arrowsize=1, width=0.05,
                  edge_color="#777777", node_color=potentials,
                  with_labels=False, vmin=args.min, vmax=args.max)
-plt.savefig(f"animated/{t:04}.png", dpi=700)
+plt.xlabel(t)
+plt.savefig(f"animated/{t:04}.png", dpi=100)
