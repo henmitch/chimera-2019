@@ -11,4 +11,4 @@ data
 **/__pycache__
 **/*.py[cod]
 code/figure/
-code/python/conversion/animated/*.png
+code/python/conversion/animated/**.png
