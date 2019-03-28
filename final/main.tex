@@ -1,0 +1,97 @@
+\documentclass[12pt]{report}
+
+\usepackage{color}
+\usepackage[arrowdel]{physics}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=0.5in]{caption}
+\usepackage[style=numeric-comp,backend=biber]{biblatex}
+%% \usepackage[doublespacing]{setspace}
+\usepackage[noblocks]{authblk}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\setlength{\marginparwidth}{2cm}
+\usepackage{todonotes}
+\usepackage{tikz}
+\usepackage{mhchem}
+\usepackage{tipa}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+\usetikzlibrary{patterns}
+
+\addbibresource{biblio.bib}
+
+\renewcommand\Affilfont{\small}
+\newcommand*\mean[1]{\bar{#1}}
+
+%% For the Hindmarsh-Rose model
+\newcommand*\hrx{x}
+\newcommand*\hry{y}
+\newcommand*\hrz{z}
+\newcommand*\hra{\alpha}
+\newcommand*\hrb{\beta}
+
+%% For the chimera-like index
+\newcommand*\chimera{\chi}
+\newcommand*\meta{m}
+\newcommand*\ordparam{\phi}
+\newcommand*\phase{\theta}
+
+\author[1,2]{Henry Mitchell}
+\author[1,4]{Chris Danforth}
+\author[3,4]{Matt Mahoney}
+\affil[1]{Department of Mathematics and Statistics, University of Vermont College of Engineering and Mathematical Sciences}
+\affil[2]{Department of Physics, University of Vermont College of Arts and Sciences}
+\affil[3]{Department of Neurology, University of Vermont Larner College of Medicince}
+\affil[4]{Department of Computer Science, University of Vermont College of Engineering and Mathematical Sciences}
+
+\title{Sudden Unison: Quantitative Analysis of Chimera State Collapse and Epileptic Seizures}
+
+\begin{document}
+\begin{titlepage}
+  \maketitle
+\end{titlepage}
+
+\begin{abstract}
+  \input{abstract}
+\end{abstract}
+
+\tableofcontents
+
+\chapter{Introduction}
+\label{chap:intro}
+\todo{Pick better title}
+\input{chapter/intro}
+
+\chapter{Literature Review}
+\label{chap:lit_review}
+\input{chapter/lit_review}
+
+\chapter{Methods}
+\label{chap:methods}
+\input{chapter/methods}
+
+\chapter{Results}
+\label{chap:results}
+\input{chapter/results}
+
+\chapter{Conclusion}
+\label{chap:conclusion}
+\input{chapter/conclusion}
+
+\begin{appendix}
+  \listoffigures
+\end{appendix}
+
+\printbibliography
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
