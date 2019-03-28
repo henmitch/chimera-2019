@@ -49,7 +49,7 @@ def main():
         args = [[α, β, α, β, data_dir]
                 for α, β
                 in product(linspace(0.0, 0.9, 80), linspace(0.0, 0.9, 80))
-                if f"{α:.05f}-{β:.05f}.pkl" not in os.listdir(data_dir)]
+                if f"{α:.03f}-{β:.03f}.pkl" not in os.listdir(data_dir)]
     elif c_args.t[0] == "plot":
         template_file = "submit_scripts/plots_template.pbs"
         with open(f"{data_dir}/hizanidis_params.pkl", "rb") as f:
@@ -70,7 +70,7 @@ def main():
                     "all"
                 ]])]
     elif c_args.t[0] == "fix":
-        template_file = "submit_scripts/fix_template.pbs"
+        template_file = "submit_scripts/tmp_template.pbs"
         args = [(i.rstrip(), i.rstrip())
                 for i
                 in os.listdir(data_dir)]

@@ -3,7 +3,7 @@
 # It should be allowed to run for up to 2 hours
 #PBS -l walltime=02:00:00
 # Name of job.
-#PBS -N chimera_0.61519_0.43291
+#PBS -N chimera_0.90000_0.90000
 # Join STDERR TO STDOUT.
 #PBS -j oe
 # Email me upon failure
@@ -11,4 +11,4 @@
 #PBS -m a
 
 cd $HOME/thesis/code/python
-$HOME/pyenv/bin/python run.py 0.61519 0.43291 -d ../../data/high_res/
+$HOME/pyenv/bin/python run.py 0.90000 0.90000 -d /users/h/m/hmmitche/thesis/data/high_res/

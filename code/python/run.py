@@ -271,7 +271,7 @@ def main():
     n2[n2 == 0] = 1
 
     ivs = np.zeros([3, n.shape[0]])    # Initial values [[x], [y], [z]]
-    ivs[0] = 3.0*np.random.random(n.shape[0]) - 1.0
+    ivs[0] = 4.0*np.random.random(n.shape[0]) - 2.0
     ivs[1] = 0.2*np.random.random(n.shape[0])
     ivs[2] = 0.2*np.random.random(n.shape[0])
 
@@ -282,7 +282,7 @@ def main():
     params = (b, i0, x_rev, λ, θ, μ, s, x_rest, α, n1, β, n2, G1, G2)
     print("Finding solution... ", end=" ")
     sol = solve_ivp(fun=lambda t_in, y_in: hr_dots(y_in, t_in, *params),
-                    t_span=(-1000, tmax + 1000), t_eval=t,
+                    t_span=(-1000, tmax), t_eval=t,
                     y0=ivs.reshape(ivs.size), events=events, method="RK45")
     print("Found solution")
 

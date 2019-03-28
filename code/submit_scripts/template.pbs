@@ -11,4 +11,4 @@
 #PBS -m a
 
 cd $HOME/thesis/code/python
-$HOME/pyenv/bin/python run.py {:.05f} {:.05f} -d ../{}
+$HOME/pyenv/bin/python run.py {:.05f} {:.05f} -d {}

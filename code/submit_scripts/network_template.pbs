@@ -11,4 +11,4 @@
 #PBS -m a
 
 cd $HOME/thesis/code/python/conversion
-$HOME/pyenv/bin/python make_plot.py {} test.gexf
+$HOME/pyenv/bin/python make_plot.py {} 0.608-0.267.gexf
