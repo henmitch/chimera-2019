@@ -79,22 +79,22 @@ When numerically simulated using a discrete approximation, this system quickly f
   \centering
   \begin{subfigure}{0.6\textwidth}
     \centering
-    \includegraphics{figure/kuramoto_overhead}
+    \includegraphics[width=\textwidth]{figure/kuramoto_overhead}
     \caption{The time series of the Kuramoto simulation.}
     \label{fig:kuramoto_overhead}
   \end{subfigure} %
-  \begin{subfigure}{0.3\textwidth}
+  \begin{subfigure}{0.35\textwidth}
     \centering
-    \includegraphics{figure/kuramoto_snapshot}
+    \includegraphics[width=\textwidth]{figure/kuramoto_snapshot}
     \caption{A snapshot at $t = 120$.}
     \label{fig:kuramoto_snapshot}
   \end{subfigure}
   \caption[Kuramoto simulation]{The results of a simulation of a Kuramoto oscillator, as described in \cref{eq:kuramoto_phase}.
     A 4th-order Runge-Kutta solver ($\dd{t} = 0.01$, $t_{\text{max}} = 1000$) was run on a system of 512 oscillators.
-    \Cref{fig:kuramoto_overhead} shows the entire time series of the simulation.
+    (a) The entire time series of the simulation.
     The behavior represented there is quite complex, with several distinct qualitative changes to the patterns in the system.
     However, in-depth analysis of this system is beyond the purview of this work.
-    \Cref{fig:kuramoto_snapshot} shows a snapshot of the state of the system at $t = $.
+    (b) A snapshot of the state of the system at $t = 120$.
     Note the juxtaposition of asynchronous ($0 \lesssim x \lesssim 0.3$ and $0.78 \lesssim x \lesssim 1$) and synchronous (oscillators $0.3 \lesssim x \lesssim 0.78$).
   }
   \label{fig:kuramoto_chimera}
@@ -120,7 +120,28 @@ The equation describing this system is given as
 In this model, $\mu$ represents the intra-population strength, and $\nu$ represents the inter-population strength, meaning $\mu > \nu$.
 Time can be scaled such that $\mu + \nu = 1$.
 If $\mu - \nu$ is not too large, and $\alpha$ is not too much less than $\frac{\pi}{2}$, then this system can produce chimera states.
-\todo{Insert pictures}
+\Cref{fig:abrams} shows a simulation of the Abrams model on two populations of 128 oscillators.
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{0.6\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figure/abrams_overhead}
+    \caption{The time series of the Abrams simulation.}
+    \label{fig:abrams_overhead}
+  \end{subfigure} %
+  \begin{subfigure}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figure/abrams_snapshot}
+    \caption{A snapshot at $t = 799.45$.}
+    \label{fig:abrams_snapshot}
+  \end{subfigure}
+  \caption[Abrams simulation]{A simulation of the Abrams model for two populations of 128 oscillators.
+    A 4th-order Runge-Kutta solver ($\dd{t} = 0.01$, $t_{\text{max}} = 1000$) was run.
+    (a) shows the time series of the simulation for $t \in \pqty{800, 1000}$.
+    (b) shows a snapshot at $t = 799.45$, chosen because the synchronous population (on the left) was almost perfectly 0.
+  }
+  \label{fig:abrams}
+\end{figure}
 
 A similar system was also analyzed in the physical world \cite{Martens2013}.
 Two swinging platforms were coupled together with springs of variable spring constant $\kappa$, and 15 metronomes---all tuned to the same frequency---were placed on each platform.
@@ -137,14 +158,7 @@ In order to develop these two measures, one must first develop the \textit{order
 $\ordparam$ indicates the instantaneous synchrony of a community (how similar the phases of the oscillators are to the others in $C$), and not its overall coherence (how similar the trajectories of the oscillators are).
 From this, we find the two measures:
 \begin{align}
-  \meta
-  &=
-    \expval{\sigma_{\text{met}}}_{C}
-  &
-    \qq{where}
-    \sigma_{\text{met}}(c)
-  &=
-    \frac{1}{T - 1} \sum_{t \leq T}{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{T}}^{2} \\
+  \label{eq:chimera}
   \chimera
   &=
     \expval{\sigma_{\text{chi}}}_{T}
@@ -152,7 +166,16 @@ From this, we find the two measures:
     \qq{where}
     \sigma_{\text{chi}}(t)
   &=
-    \frac{1}{M - 1} \sum_{c \in C}{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{C}}^{2}
+    \frac{1}{M - 1} \sum_{c \in C}{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{C}}^{2} \\
+  \label{eq:metastability}
+  \meta
+  &=
+    \expval{\sigma_{\text{met}}}_{C}
+  &
+    \qq{where}
+    \sigma_{\text{met}}(c)
+  &=
+    \frac{1}{T - 1} \sum_{t \leq T}{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{T}}^{2}
 \end{align}
 To put this into words, the metastability index is the average across communities of the variance of the order parameter within a given community over time, while the chimera-like index is the average over time of the variance of the order parameter across communities.
 

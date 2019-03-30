@@ -1,4 +1,4 @@
-\documentclass[12pt]{report}
+\documentclass[12pt,twoside]{report}
 
 \usepackage{color}
 \usepackage[arrowdel]{physics}
@@ -28,17 +28,17 @@
 \newcommand*\mean[1]{\bar{#1}}
 
 %% For the Hindmarsh-Rose model
-\newcommand*\hrx{x}
-\newcommand*\hry{y}
-\newcommand*\hrz{z}
-\newcommand*\hra{\alpha}
-\newcommand*\hrb{\beta}
+\newcommand*{\hrx}{x}
+\newcommand*{\hry}{y}
+\newcommand*{\hrz}{z}
+\newcommand*{\hra}{\alpha}
+\newcommand*{\hrb}{\beta}
 
 %% For the chimera-like index
-\newcommand*\chimera{\chi}
-\newcommand*\meta{m}
-\newcommand*\ordparam{\phi}
-\newcommand*\phase{\theta}
+\newcommand*{\chimera}{\chi}
+\newcommand*{\meta}{m}
+\newcommand*{\ordparam}{r}
+\newcommand*{\phase}{\phi}
 
 \author[1,2]{Henry Mitchell}
 \author[1,4]{Chris Danforth}
@@ -48,12 +48,13 @@
 \affil[3]{Department of Neurology, University of Vermont Larner College of Medicince}
 \affil[4]{Department of Computer Science, University of Vermont College of Engineering and Mathematical Sciences}
 
-\title{Sudden Unison: Quantitative Analysis of Chimera State Collapse and Epileptic Seizures}
+\title{Chimera States and Seizures in a Mouse Neuronal Model}
 
 \begin{document}
-\begin{titlepage}
-  \maketitle
-\end{titlepage}
+\pagenumbering{alph}
+\maketitle
+
+\pagenumbering{arabic}
 
 \begin{abstract}
   \input{abstract}
@@ -63,7 +64,6 @@
 
 \chapter{Introduction}
 \label{chap:intro}
-\todo{Pick better title}
 \input{chapter/intro}
 
 \chapter{Literature Review}
@@ -82,9 +82,11 @@
 \label{chap:conclusion}
 \input{chapter/conclusion}
 
-\begin{appendix}
-  \listoffigures
-\end{appendix}
+\appendix
+
+\listoffigures
+
+\listoftables
 
 \printbibliography
 

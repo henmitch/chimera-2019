@@ -131,6 +131,7 @@ However, it is not reasonable to carry the assumptions of un- or highly-correlat
 In order to make these models accurately depict the overall behavior of the brain as a whole, researchers turn to two main techniques: \textit{neural field models} and \textit{neural mass networks}.
 The first treats the brain as a continuous sheet of cortex, within which activity obeys wave equations.
 The second represents the brain as a discrete graph of cortices, or a network of coupled oscillators.
+The graph used for the coupling of the oscillators is determined by the brain's connectivity matrix, or \textit{connectome}.
 An example of a neural mass network model is the modified Hindmarsh-Rose model (\cref{eq:hr_x,eq:hr_y,eq:hr_z}), which is discussed later.
 
 One of the benefits of a neural mass network model is that its outputs are similar to those of an \textit{electroencephalograph}, or \textit{EEG}.
@@ -225,20 +226,20 @@ where
   f_{1}(x_{1}, x_{2})
   &=
     \begin{cases}
-      x_{1}^{3} - 3 x_{1}^{2}
-      & x_{1} < 0 \\
-      x_{1} \pqty{x_{2} - 0.6 \pqty{z - 4}^{2}}
-      &
+      x_{1}^{3} - 3 x_{1}^{2},
+      & \text{if } x_{1} < 0 \\
+      x_{1} \pqty{x_{2} - 0.6 \pqty{z - 4}^{2}},
+      & \text{if }
       x_{1} \geq 0
     \end{cases} \\
   \label{eq:epileptor_f2}
   f_{2}(x_{1}, x_{2})
   &=
     \begin{cases}
-      0
-      & x_{2} < -0.25 \\
-      6 \pqty{x_{2} + 0.25}
-      & x_{2} \geq -0.25
+      0,
+      & \text{if } x_{2} < -0.25 \\
+      6 \pqty{x_{2} + 0.25},
+      & \text{if } x_{2} \geq -0.25
     \end{cases}
 \end{align}
 The required parameters have the following values: $x_{0} = -1.6$, $y_{0} = 1$, $\tau_{0} = 2857$, $\tau_{1} = 1$, $\tau_{2} = 10$, $I_{\text{rest} 1} = 3.1$, $I_{\text{rest} 2} = 0.45$, $\gamma = 0.01$.
