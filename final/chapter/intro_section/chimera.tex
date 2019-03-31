@@ -4,7 +4,7 @@ He noticed that two clocks hung from the same beam would eventually synchronize 
 He supposed that this was due to minuscule energy transfers between the two clocks through the wooden beam.
 This hypothesis was proven nearly 350 years later which shows that even the simplest-seeming synchronization behavior results from complex dynamics \cite{PenaRamirez2016}.
 
-This behavior extends to larger systems that two clocks.
+This behavior extends to larger systems than two clocks.
 A classic demonstration in many classes on the mathematics of synchronization depicts the same phenomenon with more oscillators \cite{Pantaleone2002}.
 One places a platform on top of a set of rollers, and places at least two metronomes on that platform (see \cref{fig:metronome_demo} for a drawing).
 When these metronomes are started with the same frequency, out of phase with each other, over time their phases drift until they synchronize.
@@ -74,7 +74,7 @@ which reduces to the phase equation
   =
   \frac{b - a}{1 + a b}.
 \end{equation}
-When numerically simulated using a discrete approximation, this system quickly falls into a chimera state (\cref{fig:kuramoto_chimera}).
+We numerically simulated the Kuramoto system using a discrete approximation, and it quickly fell into a chimera state (\cref{fig:kuramoto_chimera}).
 \begin{figure}[ht]
   \centering
   \begin{subfigure}{0.6\textwidth}
@@ -89,7 +89,7 @@ When numerically simulated using a discrete approximation, this system quickly f
     \caption{A snapshot at $t = 120$.}
     \label{fig:kuramoto_snapshot}
   \end{subfigure}
-  \caption[Kuramoto simulation]{The results of a simulation of a Kuramoto oscillator, as described in \cref{eq:kuramoto_phase}.
+  \caption[Kuramoto simulation]{The results of our simulation of a Kuramoto oscillator, as described in \cref{eq:kuramoto_phase}.
     A 4th-order Runge-Kutta solver ($\dd{t} = 0.01$, $t_{\text{max}} = 1000$) was run on a system of 512 oscillators.
     (a) The entire time series of the simulation.
     The behavior represented there is quite complex, with several distinct qualitative changes to the patterns in the system.
@@ -138,7 +138,7 @@ If $\mu - \nu$ is not too large, and $\alpha$ is not too much less than $\frac{\
   \caption[Abrams simulation]{A simulation of the Abrams model for two populations of 128 oscillators.
     A 4th-order Runge-Kutta solver ($\dd{t} = 0.01$, $t_{\text{max}} = 1000$) was run.
     (a) shows the time series of the simulation for $t \in \pqty{800, 1000}$.
-    (b) shows a snapshot at $t = 799.45$, chosen because the synchronous population (on the left) was almost perfectly 0.
+    (b) shows a snapshot at $t = 799.45$, chosen because the synchronous population (on the left) was almost perfectly synchronized ($\phi \approx 0$).
   }
   \label{fig:abrams}
 \end{figure}
@@ -151,7 +151,7 @@ The metronomes on the same platform are coupled through the motion of the swing,
 This intra-community coupling is represented by $\mu$ in the Abrams model.
 The metronomes on opposite platforms are coupled through the springs, which is a much weaker interaction, represented in the Abrams model by $\nu$.
 
-While chimera states my present themselves obviously when observed in a plot or the physical world, they can be harder to pin down analytically.
+While chimera states may present themselves obviously when observed in a plot or the physical world, they can be harder to pin down analytically.
 One useful pair of measures for the presence of a chimera state are the \textit{chimera-like index} $\chimera$ and the \textit{metastability index} $\meta$ \cite{Shanahan2010,Hizanidis2016}.
 We will investigate a system of $M$ communities of nonlocally-coupled oscillators, and we sample their phases at times $t \in \bqty{1, \ldots, T}$.
 In order to develop these two measures, one must first develop the \textit{order parameter} $\ordparam(t) = \abs{\expval{e^{i \phase_{k}(t)}}_{k \in C}}$, where $\phase$ is the phase of oscillator $k$, and $\ev{f}_{k \in c}$ is the average of $f$ over all $k$ in community $C$.

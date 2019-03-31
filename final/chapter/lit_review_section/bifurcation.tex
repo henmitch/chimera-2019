@@ -51,12 +51,12 @@ This is closely related to the second aspect of the challenge this model provide
 For example, because the coupling strengths do not correspond directly to any measurable values, it is hard to gain actionable semantic knowledge from analysis of their effects on the system \cite{Jirsa2014}.
 
 However, it is possible to observe a bifurcation if the external input $P$ varies (\cref{eq:wc_x}).
-\Cref{fig:wc_bifurcation} shows the change from spike-wave behavior to simple wave behavior as $P$ increases.
+\Cref{fig:wc_bifurcation} shows the change from spike-wave behavior to simple wave behavior as $P$ increases past 3.92, at time 47.3.
 While it would be impossible to do an exhaustive sweep of parameter space, one can observe all of the dynamics of brain behavior in this model.
 \begin{figure}[ht]
   \centering
   \includegraphics{figure/wc_bifurcation}
-  \caption[Wilson-Cowan bifurcation]{A bifurcation from spike-wave behavior to simple wave behavior in the Wilson-Cowan model as a function of varying external input parameter $P$.
+  \caption[Wilson-Cowan bifurcation]{A bifurcation from spike-wave behavior to simple wave behavior in the Wilson-Cowan model as a function of continuously varying external input parameter $P$.
     Simulation used a 4th-order Runge-Kutta solver ($\dd{t} = 0.01$, $t_{max} = 100$) as $P$ linearly increased from 3 to 5.
   }
   \label{fig:wc_bifurcation}
@@ -64,30 +64,33 @@ While it would be impossible to do an exhaustive sweep of parameter space, one c
 
 \subsection{The Epileptor Model}
 \label{sec:lit_review_bifurcation_epileptor}
-In the Epileptor model (\cref{eq:epileptor_x1,eq:epileptor_y1,eq:epileptor_z,eq:epileptor_x2,eq:epileptor_y2,eq:epileptor_f1,eq:epileptor_f2,eq:epileptor_g,}), bifurcations depending on the slow permittivity variable $z$ (which acts as a parameter) determine whether the brain is behaving normally, or having a seizure \cite{Jirsa2014}.
+In the Epileptor model (\cref{eq:epileptor_x1,eq:epileptor_y1,eq:epileptor_z,eq:epileptor_x2,eq:epileptor_y2,eq:epileptor_f1,eq:epileptor_f2,eq:epileptor_g}), bifurcations depending on the slow permittivity variable $z$ determine whether the brain is behaving normally, or having a seizure \cite{Jirsa2014}.
+Given the time scale on which $z$ varies ($\frac{1}{2857}$ times as fast as $x_{1}$) and the bifurcations' dependence on it, it acts like an external parameter to the system, causing the model to go into and out of seizure.
+In \cref{fig:epileptor}, the transitions into and out of seizure are clear as critical points in $z$.
 Particularly, as is the case with many similar models, normal steady-state brain function corresponds to a stable fixed point, while seizure-like events are on stable limit cycles.
 This raises the question: what kinds of bifurcations occur during the transition from healthy brain activity to seizures and back?
 \begin{figure}[ht]
   \centering
   \includegraphics{figure/epileptor}
   \caption[Epileptor simulation]{A simulation of the Epileptor model showing the observable $x_{1}$ and the slow-changing permittivity variable $z$, using a 4th-order Runge-Kutta solver ($\dd{t} = 0.01$, $t_{\text{max}} = 2000$) and the parameters listed in \cref{sec:intro_seizures_aetiology_epileptor}.
-    The brain is exhibiting healthy behavior for $t \in \pqty{0, 375} = h_{1}$, then rapidly jumps into a seizure-like behavior.
-    It stays in this state for $t \in \pqty{375, 1360} = s$, until it returns to a healthy fixed point for $t \in \pqty{1360, 2000} = h_{2}$.
+    The brain is exhibiting healthy behavior for $t \in \pqty{0, 360} = h_{1}$, then rapidly jumps into a seizure-like behavior.
+    It stays in this state for $t \in \pqty{360, 1360} = s$, until it returns to a healthy fixed point for $t \in \pqty{1360, 2000} = h_{2}$.
     Note the DC shift, wherein $x_{1}(s) > x_{1}(h_{1}) \approx x_{1}(h_{2})$.
   }
   \label{fig:epileptor}
 \end{figure}
 
 To discuss the dynamics of Epileptor in general, we will use the stereotypical behavior displayed in \cref{fig:epileptor}.
-An important aspect of epileptor to note is that $x_{1}$ is the closest variable to an observable quantity, but it still does not resemble an EEG trace without some post-processing.
+An important aspect of epileptor to note is that $x_{1} + x_{2}$ is the closest variable to an observable quantity, but it still does not resemble an EEG trace without some post-processing.
 Particularly, $x_{1}$ would look a lot more like the output from an EEG if put through a high-pass filter.
-However, there is an invertible map directly between $x_{1}$ and the readings from an EEG, so the results can be treated as the same \cite{Jirsa2014}.
+However, there is an invertible map directly between $x_{1} + x_{2}$ and the readings from an EEG, so the results can be treated as the same \cite{Jirsa2014}.
 
-During seizure onset at $t = 375$, the stable fixed point of healthy activity disappears, replaced by a stable limit cycle.
+During seizure onset at $t = 360$, the stable fixed point of healthy activity disappears, replaced by a stable limit cycle.
 This indicates that the system undergoes either a Hopf or a saddle-node bifurcation.
 A hint towards the type of bifurcation involved is that seizures occur suddenly \cite{Kandel2013}.
 This means that the amplitude of oscillation does not steadily increase from 0, meaning that a supercritical Hopf bifurcation can be ruled out \cite{Strogatz2015}.
-Additionally, the DC shift at $t = 375$, which does appear in experiment, indicates that the bifurcation can not be a subcritical Hopf.
+At $t = 360$, the mean values of $x_{1} + x_{2}$ jump from $\expval{x_{1}(t) + x_{2}(t)}_{t \in h_{1}} = -2.5$ to $\expval{x_{1}(t) + x_{2}(t)}_{t \in s} = -0.8$.
+This DC shift does appear in experiment, and indicates that the bifurcation can not be a subcritical Hopf.
 This leaves only a saddle-node bifurcation for the transition into a seizure \cite{Jirsa2014}.
 
 As the seizure ends at $t = 1360$, the model returns from a limit cycle to a fixed point with another DC shift.

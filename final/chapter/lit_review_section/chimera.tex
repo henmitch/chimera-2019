@@ -13,7 +13,7 @@ there are some notable cases of investigations of chimera states in brains.
 One such example is an investigation of two different neural models
 (FitzHugh-Nagumo neurons and leaky integrate-and-fire neurons, both known to be accurate neural models \cite{Deco2008})
 run on a toroidal square network of $N \times N$ nonlocally coupled neurons \cite{Schmidt2017}.
-The most important results of this simulation is that similar behaviors appeared in each.
+The most important result of this simulation is that similar behaviors appeared in each.
 It was found that FitzHugh-Nagumo and leaky integrate-and-fire neurons not only can produce chimera states,
 but produce chimera states in similar shapes and patterns.
 
@@ -54,7 +54,10 @@ This model was simulated on the connectome of a cat (\cref{fig:cat_matrix}).
 \begin{figure}[ht]
   \centering
   \includegraphics{figure/cat_matrix}
-  \caption[Cat connectome]{The cat connectome, represented as a matrix.}
+  \caption[Cat connectome]{The cat connectome, represented as a matrix.
+    The cat brain was divided into 4 cortices (visual, auditory, somato-motor, and frontolimbic) with 65 subcortices.
+    The connection strength between the subcortices was measured and placed on a scale of 1, 2, or 3.
+  }
   \label{fig:cat_matrix}
 \end{figure}
 Parameter space for the two connection strengths $\hra$ and $\hrb$ was explored.
