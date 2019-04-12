@@ -108,15 +108,15 @@ An example of a neural mass model is the extremely simple Wilson-Cowan model \ci
   \label{eq:wc_x}
   \tau_{x} \dot{x}
   &=
-    -x S \pqty{C_{x x} x + C_{x y} y + C_{x z} z + P} \\
+    -x + S \pqty{C_{x x} x + C_{x y} y + C_{x z} z + P} \\
   \label{eq:wc_y}
   \tau_{y} \dot{y}
   &=
-    -y S \pqty{C_{y x} x + C_{y y} y + C_{y z} z + Q} \\
+    -y + S \pqty{C_{y x} x + C_{y y} y + C_{y z} z + Q} \\
   \label{eq:wc_z}
   \tau_{z} \dot{z}
   &=
-    -z S \pqty{C_{z x} x + C_{z y} y + C_{z z} z + R}
+    -z + S \pqty{C_{z x} x + C_{z y} y + C_{z z} z + R}
 \end{align}
 $x$ represents an excitatory process (like the flow of \ce{Na^{+}}), and $y$ and $z$ represent inhibitory processes (like the flow of \ce{K^{+}}).
 The time constants $\tau_{i}$ determine the rates of the dynamics of the three processes.
