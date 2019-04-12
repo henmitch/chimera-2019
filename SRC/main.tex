@@ -27,11 +27,11 @@
 \newcommand{\ordparam}{r}
 \newcommand{\phase}{\phi}
 
-\title[UVM Student Research Conference, 17 April 2019, Burlington, VT]{Chimera States and Seizures in a Mouse Neuronal Model}
+\title[UVM Student Research Conference, 17 April 2019, Burlington, VT]{Chimera States \& Seizures in a Mouse Neuronal Model}
 \author{Henry Mitchell\inst{1,2,5},
-  Chris Danforth\inst{1,4,5},
+  Peter Dodds\inst{1,4,5},
   Matt Mahoney\inst{3,4},
-  Peter Dodds\inst{1,4,5}
+  Chris Danforth\inst{1,4,5}
 }
 
 \institute{
@@ -51,7 +51,6 @@
   \begin{multicols}{3}
 
     \section{Abstract}
-    \the\columnwidth
     \textbf{Chimera states}--- the coexistence of synchrony and asynchrony in a nonlocally-coupled network of identical oscillators—are often sought as a model for epileptic \textbf{seizures}.
     This work investigates that connection, seeking chimera states in a network of modified Hindmarsh-Rose neurons connected in the graph of the mesoscale mouse connectome.
     The model was found to be of sufficient quality to produce superficially epileptiform activity.
@@ -60,7 +59,7 @@
 
 
     \section{Chimera states}
-    The coexistence of syncrhony and asyncrhony in a network of identical nonlocally coupled oscillators is called a \textbf{chimera state} \cite{Kuramoto2002,Abrams2004}.
+    The coexistence of synchrony and asynchrony in a network of identical nonlocally coupled oscillators is called a \textbf{chimera state} \cite{Kuramoto2002,Abrams2004}.
     \Cref{fig:abrams} shows an example with a pair of populations, one synchronous and the other asynchronous.
     \begin{figure}
       \begin{subfigure}{0.66\columnwidth}
@@ -106,16 +105,16 @@
       ={}&
         \hry_{j}
         -
-        \hrx^{3}
+        \hrx_{j}^{3}
         +
         b \hrx_{j}^{2}
         +
         I_{j}
         -
         \hrz_{j} \\
-        &-
+        &\quad -
         \frac{\hra}{n'_{j}} \sum_{k ={} 1}^{N} G'_{j k} \Theta_{j}(\hrx_{k}) \\
-        &{}-
+        &\qquad -
         \frac{\hrb}{n''_{j}} \sum_{k ={} 1}^{N} G''_{j k} \Theta_{j}(\hrx_{k})
       \end{split} \\
       \label{eq:hr_y}
@@ -129,18 +128,17 @@
       \label{eq:hr_z}
       \dot{\hrz}_{j}
       ={}&
-        \mu \pqty{s \pqty{\hrx_{j} - \hrx_{\text{rest}}} - \hrz_{j}}
+        \mu \pqty{s \bqty{\hrx_{j} - \hrx_{\text{rest}}} - \hrz_{j}}
     \end{align}
     where $\Theta_{j}(\hrx_{k})
       =
-      \frac{\hrx_{j} - \hrx_{\text{rev}}}{1 + e^{-\lambda \pqty{\hrx_{k} - \theta}}}$.
+      \frac{\hrx_{j} - \hrx_{\text{rev}}}{1 + \exp(-\lambda \bqty{\hrx_{k} - \theta})}$.
       The model was integrated for various values of $\hra$ and $\hrb$.
-      The parameter values are shown in \cref{tab:hr_params}.
-      is the sigmoidal activation function, making it a neural mass model.
       \Cref{tab:hr_params} shows the values and meanings of the symbols in the model.
 
       \begin{table}[ht]
         \centering
+        {\small
         \begin{tabular}{p{1in} | p{1in} | p{5in}}
           Symbol & Value & Meaning \\ \hline
           $\hrx_{j}$ & --- & Membrane potential of the $j$th neural mass \\
@@ -155,14 +153,15 @@
           $s$ & 4 & Governs adaptation \\
           $\hrx_{\text{rest}}$ & -1.6 & Resting/equilibrium potential \\ \hline
           $\hra$ & Varied & Connection strength within cortices \\
-          $n_{j}'$ & See \cref{fig:connectome_matrix} & Number of connections within a cortex from the $j$th neuron \\
-          $G_{j k}'$ & See \cref{fig:connectome_matrix} & Intra-cortical connection matrix \\
-          $\hrb$ & Varied & Connection strength between conrtices \\
-          $n_{j}''$ & See \cref{fig:connectome_matrix} & Number of connections between cortices from the $j$th neuron \\
-          $G_{j k}''$ & See \cref{fig:connectome_matrix} & Inter-cortical connection matrix
+          $n_{j}'$ & \Cref{fig:connectome_matrix} & Number of connections within a cortex from the $j$th neuron \\
+          $G_{j k}'$ & \Cref{fig:connectome_matrix} & Intra-cortical connection matrix \\
+          $\hrb$ & Varied & Connection strength between cortices \\
+          $n_{j}''$ & \Cref{fig:connectome_matrix} & Number of connections between cortices from the $j$th neuron \\
+          $G_{j k}''$ & \Cref{fig:connectome_matrix} & Inter-cortical connection matrix
         \end{tabular}
         \caption[Hindmarsh-Rose Parameters]{The list of parameters used in modeling the Hindmarsh-Rose network.}
         \label{tab:hr_params}
+        }
       \end{table}
 
 
@@ -223,24 +222,26 @@
     \subsection{References}
     \begin{thebibliography}{99}
     \bibitem{Abrams2004} Daniel M. Abrams and Steven H. Strogatz. ``Chimera States for Coupled Oscillators''.
-      In: \textit{Physical Review Letters} 93.17
+      In: \textit{Physical Review Letters} 93.17 (2004)
 
     \bibitem{Kuramoto2002} Yoshiki Kuramoto and Dorjsuren Battogtokh. ``Coexistence of Coherence and Incoherence in Nonlocally Coupled Phase Oscillators''.
-      In: \textit{arXiv e-prints} cond-mat/0210694
+      In: \textit{arXiv e-prints} cond-mat/0210694 (2002)
 
-    \bibitem{Kandel2013} Eric R. Kandel. ``Principles of Neural Science'' Fifth ed., pp. 1116-1139.
+    \bibitem{Kandel2013} Eric R. Kandel. ``Principles of Neural Science'' Fifth ed., pp. 1116-1139. (2013)
 
     \bibitem{Oh2014} Seung Wook Oh et al. ``A Mesoscale Connectome of the Mouse Brain''.
-      In: \textit{Nature} 508.7495
+      In: \textit{Nature} 508.7495 (2014)
 
     \bibitem{Santos2017} M.S. Santos et al. ``Chimera-like States in a Neuronal Network Model of the Cat Brain''.
-      In: \textit{Chaos, Solitons \& Fractals} 101
+      In: \textit{Chaos, Solitons \& Fractals} 101 (2017)
 
     \bibitem{Shanahan2010} Murray Shanahan. ``Metastable Chimera States in Community-Structured Oscillator Networks''.
-      In: \textit{Chaos} 20.1
+      In: \textit{Chaos} 20.1 (2010)
 
     \end{thebibliography}
 
+
+    \vspace{\fill}
     \includegraphics[width=\columnwidth]{figure/UVM}
   \end{multicols}
 
