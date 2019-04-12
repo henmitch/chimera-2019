@@ -3,7 +3,7 @@
 # It should be allowed to run for up to 2 hours
 #PBS -l walltime=02:00:00
 # Name of job.
-#PBS -N mean_plot_0.122_0.677
+#PBS -N chimera_0.90000_0.90000
 # Join STDERR TO STDOUT.
 #PBS -j oe
 # Email me upon failure
@@ -11,4 +11,4 @@
 #PBS -m a
 
 cd $HOME/thesis/code/python
-$HOME/pyenv/bin/python plots.py $HOME/thesis/data/0.122-0.677.pkl
+$HOME/pyenv/bin/python run.py 0.90000 0.90000 -d /users/h/m/hmmitche/thesis/data/high_res/

@@ -116,8 +116,8 @@ def plot_beginning_and_end(y, start, end, p=0.99,
 def plot_phase_diagram(y, **kwargs):
     ydot = y[1:] - y[:-1]
     plt.plot(y[1:], ydot, **kwargs)
-    
-    
+
+
 def plot_state_diagram(y, cortices=None, lim=[-1.5, 2.5],
                        markers=["ro", "k^", "gX", "bD"],
                        delay=1):
@@ -203,7 +203,12 @@ def main():
         "b", metavar="beta", type=float, nargs=1,
         help="The beta value to use (intra connection strength)"
     )
+    parser.add_argument(
+        "-d", metavar="data_dir", type=str, nargs=1, default="../../data",
+        help="The location to which to save the data"
+    )
     args = parser.parse_args()
+    data_dir = args.d[0]
 
     # DATA PREPARATION - specific to the data in question
     data = pd.read_excel("../connectomes/mouse.xlsx", sheet_name=None)
@@ -266,7 +271,7 @@ def main():
     n2[n2 == 0] = 1
 
     ivs = np.zeros([3, n.shape[0]])    # Initial values [[x], [y], [z]]
-    ivs[0] = 3.0*np.random.random(n.shape[0]) - 1.0
+    ivs[0] = 4.0*np.random.random(n.shape[0]) - 2.0
     ivs[1] = 0.2*np.random.random(n.shape[0])
     ivs[2] = 0.2*np.random.random(n.shape[0])
 
@@ -277,7 +282,7 @@ def main():
     params = (b, i0, x_rev, λ, θ, μ, s, x_rest, α, n1, β, n2, G1, G2)
     print("Finding solution... ", end=" ")
     sol = solve_ivp(fun=lambda t_in, y_in: hr_dots(y_in, t_in, *params),
-                    t_span=(-1000, tmax + 1000), t_eval=t,
+                    t_span=(-1000, tmax), t_eval=t,
                     y0=ivs.reshape(ivs.size), events=events, method="RK45")
     print("Found solution")
 
@@ -294,7 +299,7 @@ def main():
     print("Found metastability index")
 
     print("Writing... ", end=" ")
-    with open(f"../../data/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
+    with open(f"{data_dir}/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
         pickle.dump([params, sol, phase, χ, m], f)
 
     print("Wrote")
