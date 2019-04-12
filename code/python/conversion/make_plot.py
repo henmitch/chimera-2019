@@ -9,11 +9,11 @@ parser.add_argument(
     help="The timestep at which to plot"
 )
 parser.add_argument(
-    "-min", metavar="min", type=float, nargs=1, default=-np.pi,
+    "-min", metavar="min", type=float, nargs=1, default=-1,
     help="The minimum potential value (defaults to -pi)"
 )
 parser.add_argument(
-    "-max", metavar="max", type=float, nargs=1, default=np.pi,
+    "-max", metavar="max", type=float, nargs=1, default=1,
     help="The maximum potential value (defaults to pi)"
 )
 parser.add_argument(
@@ -43,5 +43,6 @@ nx.draw_networkx(G, pos=pos, node_size=node_size, arrowsize=1, width=0.05,
                  with_labels=False, vmin=args.min, vmax=args.max)
 plt.xticks([])
 plt.yticks([])
+plt.xlabel(f"{t/70:.02f} ms")
 
 plt.savefig(f"animated/{t:04}.png", dpi=100)
