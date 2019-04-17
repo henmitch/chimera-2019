@@ -1,5 +1,4 @@
 import argparse
-import fcntl
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -205,21 +204,8 @@ def main():
         help="The beta value to use (intra connection strength)"
     )
     parser.add_argument(
-        "-n", metavar="run", type=int, nargs=1, default=0,
-        help="The number run"
-    )
-    parser.add_argument(
         "-d", metavar="data_dir", type=str, nargs=1, default="../../data",
         help="The location to which to save the data"
-    )
-    parser.add_argument(
-        "-f", metavar="out_file", type=str, nargs=1, default="shanahan_params.csv",
-        help="The file in which to save the data"
-    )
-    parser.add_argument(
-        "--pickle", metavar="pickle", dest="pickle", action="store_const",
-        const=True, default=False,
-        help="Whether to pickle the data"
     )
     args = parser.parse_args()
     data_dir = args.d[0]
@@ -294,7 +280,7 @@ def main():
     t = np.linspace(0, tmax, N)
 
     params = (b, i0, x_rev, λ, θ, μ, s, x_rest, α, n1, β, n2, G1, G2)
-    print(f"Finding solution for (a, b) = ({α:0.3f}, {β:0.3f})... ", end=" ")
+    print("Finding solution... ", end=" ")
     sol = solve_ivp(fun=lambda t_in, y_in: hr_dots(y_in, t_in, *params),
                     t_span=(-1000, tmax + 1000), t_eval=t,
                     y0=ivs.reshape(ivs.size), events=events, method="RK45")
@@ -302,29 +288,19 @@ def main():
 
     print("Finding phase... ", end=" ")
     phase = ϕ(sol, t)
-    max_phase = np.max(phase)
-    print(f"Found phase (max {max_phase})")
+    print("Found phase")
 
     print("Finding chimera index... ", end=" ")
     χ = chimera(phase, cortices)
-    print(f"Found chimera index {χ}")
+    print("Found chimera index")
 
     print("Finding metastability index... ", end=" ")
     m = metastability(phase, cortices, 1)
-    print(f"Found metastability index {m}")
-
-    r_bar = np.mean(order(phase))
-    print(f"Mean order parameter: {r_bar}")
+    print("Found metastability index")
 
     print("Writing... ", end=" ")
-    if args.pickle:
-        with open(f"{data_dir}/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
-            pickle.dump([params, sol, phase, χ, m], f)
-    else:
-        with open(args.f[0], "a") as f:
-            fcntl.flock(f, fcntl.LOCK_EX)
-            f.write(f"{args.n},{α},{β},{max_phase},{χ},{m},{r_bar}\n")
-            fcntl.flock(f, fcntl.LOCK_UN)
+    with open(f"{data_dir}/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
+        pickle.dump([params, sol, phase, χ, m], f)
 
     print("Wrote")
 
