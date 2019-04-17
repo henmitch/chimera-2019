@@ -6,7 +6,7 @@ import subprocess
 import time
 
 from itertools import product
-from numpy import linspace, pi
+from numpy import arange, linspace, pi
 
 
 def qsub(template, args):
@@ -26,7 +26,7 @@ def auto_run(template, args, max_jobs=150):
             jobs = max(0, int(subprocess.check_output(
                 "qstat | grep ' [RQ] ' | wc -l", shell=True)) - 2)
         qsub(template, params)
-        time.sleep(5)
+        time.sleep(30)
 
 
 def main():
@@ -41,15 +41,21 @@ def main():
         "-d", metavar="data_dir", type=str, nargs=1, default="../data",
         help="The location to which to save the data"
     )
+    parser.add_argument(
+        "-f", metavar="out_file", type=str, nargs=1, default="shanahan_params.csv",
+        help="The file in which to save the data"
+    )
     c_args = parser.parse_args()
     data_dir = c_args.d[0]
+    out_file = c_args.f[0]
 
     if c_args.t[0] == "calc":
         template_file = "submit_scripts/template.pbs"
-        args = [[α, β, α, β, data_dir]
-                for α, β
-                in product(linspace(0.0, 0.9, 80), linspace(0.0, 0.9, 80))
-                if f"{α:.03f}-{β:.03f}.pkl" not in os.listdir(data_dir)]
+        args = [[α, β, num, α, β, out_file, num]
+                for α, β, num
+                in product(linspace(0.0, 1.0, 100),
+                           linspace(0.0, 1.0, 100),
+                           arange(10))]
     elif c_args.t[0] == "plot":
         template_file = "submit_scripts/plots_template.pbs"
         with open(f"{data_dir}/hizanidis_params.pkl", "rb") as f:
@@ -93,7 +99,7 @@ def main():
     while jobs != 0:
         jobs = max(0, int(subprocess.check_output(
             "qstat | wc -l", shell=True)) - 2)
-        time.sleep(10)
+        time.sleep(30)
     print("Done")
 
     if c_args.t[0] in ["calc", "fix"]:
