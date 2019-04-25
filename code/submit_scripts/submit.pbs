@@ -3,12 +3,12 @@
 # It should be allowed to run for up to 2 hours
 #PBS -l walltime=02:00:00
 # Name of job.
-#PBS -N network_plot_2499
+#PBS -N chimera_0.22222_0.09091_1
 # Join STDERR TO STDOUT.
 #PBS -j oe
 # Email me upon failure
 #PBS -M hmmitche@uvm.edu
 #PBS -m a
 
-cd $HOME/thesis/code/python/conversion
-$HOME/pyenv/bin/python make_plot.py 2499 0.058-0.010.gexf
+cd $HOME/thesis/code/python
+$HOME/pyenv/bin/python run.py 0.22222 0.09091 -f /users/h/m/hmmitche/thesis/data/shanahan.csv -n 1

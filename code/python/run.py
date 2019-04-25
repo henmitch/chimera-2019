@@ -323,7 +323,7 @@ def main():
     else:
         with open(args.f[0], "a") as f:
             fcntl.flock(f, fcntl.LOCK_EX)
-            f.write(f"{args.n},{α},{β},{max_phase},{χ},{m},{r_bar}\n")
+            f.write(f"{args.n[0]},{α},{β},{max_phase},{χ},{m},{r_bar}\n")
             fcntl.flock(f, fcntl.LOCK_UN)
 
     print("Wrote")

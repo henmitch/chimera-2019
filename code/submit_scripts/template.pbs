@@ -1,9 +1,9 @@
 # job needs 1 compute node with 1 processor per node.
-#PBS -l nodes=1:ppn=1,pmem=20gb,pvmem=22gb
+#PBS -l nodes=1:ppn=1,pmem=9gb,pvmem=10gb
 # It should be allowed to run for up to 2 hours
 #PBS -l walltime=02:00:00
 # Name of job.
-#PBS -N chimera_{:.05f}_{:.05f}_{}
+#PBS -N chimera_{:.03f}_{:.03f}_{}
 # Join STDERR TO STDOUT.
 #PBS -j oe
 # Email me upon failure
