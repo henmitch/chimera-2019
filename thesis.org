@@ -76,3 +76,12 @@
     DEADLINE: <2019-04-20 Sat>
 * TODO Email Matt
   DEADLINE: <2018-11-16 Fri>
+* Publication next steps
+  - Make lower-res
+  - Arxiv account
+    - Upload
+  - Appendix with video
+  - Journals
+    - Chaos
+    - Phys Rev E
+    - Ask Matt about epilepsy journals?

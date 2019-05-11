@@ -9,6 +9,15 @@ from scipy.integrate import solve_ivp
 
 
 def prep_masks(n, cortices):
+    """Create the intra- and inter-cortical matrices, and the list of events
+    n:        (numpy.ndarray) The connectome matrix in question
+    cortices: (List) A list of lists of `[start, end]` for each cortex
+
+    return G1:     (numpy.ndarray) The intra-cortical connection matrix
+    return G2:     (numpy.ndarray) The inter-cortical connection matrix
+    return events: (list) A list of lambda functions,
+    one corresponding to each neuron in the connectome
+    """
     cortex_mask = np.zeros_like(n)
     for i, cortex in enumerate(cortices):
         cortex_mask[cortex[0]:cortex[1], cortex[0]:cortex[1]] += i + 1
