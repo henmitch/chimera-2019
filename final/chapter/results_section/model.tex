@@ -15,14 +15,14 @@ Seizures and seizure-like activity present as higher-amplitude oscillations, as 
 One of the main challenges of simulating seizures is that only trained experts can truly identify seizures; as yet, there is no mathematical technique for identifying seizures \cite{Kandel2013}.
 
 However, one can indicate whether a model resembles epileptiform activity on a qualitative level.
-\Cref{fig:mean_608_267} shows the results of a simulation of the Hindmarsh-Rose network for $\pqty{\hra, \hrb} = \pqty{0.608, 0.267}$.
+\Cref{fig:mean_604_273} shows the results of a simulation of the Hindmarsh-Rose network for $\pqty{\hra, \hrb} = \pqty{0.604, 0.273}$.
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=\textwidth]{figure/means-0_608-0_267}
+  \includegraphics[width=\textwidth]{figure/means-0_604-0_273}
   \caption[Mean potential by cortex]{The mean membrane potential within each cortex.
     $\chimera$ and $\meta$ are normalized to $\frac{1}{7}$ and $\frac{1}{12}$, respectively.
   }
-  \label{fig:mean_608_267}
+  \label{fig:mean_604_273}
 \end{figure}
 Qualitatively, in our simulation,
 the thalamus, the pons, and the striatum look like the wild type EEG;
@@ -33,18 +33,13 @@ and the cortical subplate seems to be exhibiting seizure-like behavior over some
 This shows that the behavior visible on an EEG can be reproduced in this model.
 
 While getting a higher neuronal resolution from the EEG is not possible due to the nature of the method,
-one can see the neural dynamics of the model (\cref{fig:overhead_608_267}).
+one can see the neural dynamics of the model (\cref{fig:overhead_604_273}).
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=\textwidth]{figure/overhead-0_608-0_267}
+  \includegraphics[width=\textwidth]{figure/overhead-0_604-0_273}
   \caption[Hindmarsh-Rose time series]{The phase $\phase$ of the entire timeseries for a simulation of the Hindmarsh-Rose network.}
-  \label{fig:overhead_608_267}
+  \label{fig:overhead_604_273}
 \end{figure}
 It is evident that the thalamus, the pons, and the striatum are each highly asynchronous, which corresponds to their wild-type presentation.
 
-Both presentation methods have their benefits, as \cref{fig:mean_608_267} looks similar to an EEG (and therefore lends itself well to the comparison), where \cref{fig:overhead_608_267} allows us to view the individual subcortical behaviors leading to the net dynamics.
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "../../main"
-%%% End:
+Both presentation methods have their benefits, as \cref{fig:mean_604_273} looks similar to an EEG (and therefore lends itself well to the comparison), where \cref{fig:overhead_604_273} allows us to view the individual subcortical behaviors leading to the net dynamics.

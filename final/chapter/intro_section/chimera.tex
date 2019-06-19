@@ -148,7 +148,7 @@ Two swinging platforms were coupled together with springs of variable spring con
 For a wide range of values of $\kappa$, all of the metronomes on one platform would synchronize, while the metronomes on other platform would remain asynchronous.
 This system is directly analogous to the Abrams model.
 The metronomes on the same platform are coupled through the motion of the swing, which heavily influences the motion of the metronomes.
-This intra-community coupling is represented by $\mu$ in the Abrams model.
+This intra-population coupling is represented by $\mu$ in the Abrams model.
 The metronomes on opposite platforms are coupled through the springs, which is a much weaker interaction, represented in the Abrams model by $\nu$.
 
 While chimera states may present themselves obviously when observed in a plot or the physical world, they can be harder to pin down analytically.
@@ -166,7 +166,7 @@ From this, we find the two measures:
     \qq{where}
     \sigma_{\text{chi}}(t)
   &=
-    \frac{1}{M - 1} \sum_{c \in C}{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{C}}^{2} \\
+    \frac{1}{M - 1} \sum_{c \in C}\pqty{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{C}}^{2} \\
   \label{eq:metastability}
   \meta
   &=
@@ -175,7 +175,7 @@ From this, we find the two measures:
     \qq{where}
     \sigma_{\text{met}}(c)
   &=
-    \frac{1}{T - 1} \sum_{t \leq T}{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{T}}^{2}
+    \frac{1}{T - 1} \sum_{t \leq T}\pqty{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{T}}^{2}
 \end{align}
 To put this into words, the metastability index is the average across communities of the variance of the order parameter within a given community over time, while the chimera-like index is the average over time of the variance of the order parameter across communities.
 
@@ -189,5 +189,5 @@ One of the most common ways that chimera states are talked about is in regards t
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../../main"
+%%% TeX-master: "../../ms"
 %%% End:

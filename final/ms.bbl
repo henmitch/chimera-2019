@@ -1,0 +1,1953 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{nty/global/}
+    \entry{Abrams2004}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1b9e96561b87307561fb4935b1d1e743}{%
+           family={Abrams},
+           familyi={A\bibinitperiod},
+           given={Daniel\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=68fade108c3a43705e86ba210a516cf9}{%
+           family={Strogatz},
+           familyi={S\bibinitperiod},
+           given={Steven\bibnamedelima H.},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society ({APS})}%
+      }
+      \strng{namehash}{39d76ef571df0e2a020f762e6c85e749}
+      \strng{fullhash}{39d76ef571df0e2a020f762e6c85e749}
+      \strng{authornamehash}{39d76ef571df0e2a020f762e6c85e749}
+      \strng{authorfullhash}{39d76ef571df0e2a020f762e6c85e749}
+      \field{sortinit}{A}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review Letters}
+      \field{month}{10}
+      \field{number}{17}
+      \field{title}{Chimera States for Coupled Oscillators}
+      \field{volume}{93}
+      \field{year}{2004}
+      \verb{doi}
+      \verb 10.1103/physrevlett.93.174102
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1103/physrevlett.93.174102
+      \endverb
+    \endentry
+    \entry{Abrams2008}{article}{}
+      \name{author}{4}{}{%
+        {{hash=1b9e96561b87307561fb4935b1d1e743}{%
+           family={Abrams},
+           familyi={A\bibinitperiod},
+           given={Daniel\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=a39f13b3365ff1f2a254ff5a8c3ef1d3}{%
+           family={Mirollo},
+           familyi={M\bibinitperiod},
+           given={Rennie},
+           giveni={R\bibinitperiod}}}%
+        {{hash=68fade108c3a43705e86ba210a516cf9}{%
+           family={Strogatz},
+           familyi={S\bibinitperiod},
+           given={Steven\bibnamedelima H.},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=8f93b433b55d468cf5f4848c1e7b568a}{%
+           family={Wiley},
+           familyi={W\bibinitperiod},
+           given={Daniel\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society ({APS})}%
+      }
+      \strng{namehash}{0d997d684c08269f22a50027f7a20cb0}
+      \strng{fullhash}{ead8f310041ee9f54fa992057dfbb551}
+      \strng{authornamehash}{0d997d684c08269f22a50027f7a20cb0}
+      \strng{authorfullhash}{ead8f310041ee9f54fa992057dfbb551}
+      \field{sortinit}{A}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review Letters}
+      \field{month}{8}
+      \field{number}{8}
+      \field{title}{Solvable Model for Chimera States of Coupled Oscillators}
+      \field{volume}{101}
+      \field{year}{2008}
+      \verb{doi}
+      \verb 10.1103/physrevlett.101.084103
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1103/physrevlett.101.084103
+      \endverb
+    \endentry
+    \entry{Andrzejak2016}{article}{}
+      \name{author}{4}{}{%
+        {{hash=8f5004c1ec6667f7fa87d65c95b20983}{%
+           family={Andrzejak},
+           familyi={A\bibinitperiod},
+           given={Ralph\bibnamedelima G.},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=dddca2d36ec60109667f3feec4fbb28f}{%
+           family={Rummel},
+           familyi={R\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=b1ff42027936d38244fde0bb54b591a3}{%
+           family={Mormann},
+           familyi={M\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=7c693e77daa5179008f4c60bb93fac2b}{%
+           family={Schindler},
+           familyi={S\bibinitperiod},
+           given={Kaspar},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature}%
+      }
+      \strng{namehash}{4015f9c8f0de0e8fe6f480bcfe7a0e2e}
+      \strng{fullhash}{bf72dbe6a8d733bf6436c7ba7e886f97}
+      \strng{authornamehash}{4015f9c8f0de0e8fe6f480bcfe7a0e2e}
+      \strng{authorfullhash}{bf72dbe6a8d733bf6436c7ba7e886f97}
+      \field{sortinit}{A}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific Reports}
+      \field{month}{3}
+      \field{number}{1}
+      \field{title}{All together now: Analogies between chimera state collapses and epileptic seizures}
+      \field{volume}{6}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1038/srep23000
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1038/srep23000
+      \endverb
+    \endentry
+    \entry{Baier2012}{article}{}
+      \name{author}{5}{}{%
+        {{hash=c84f3e8cc9037cf25fa44ad6244c772d}{%
+           family={Baier},
+           familyi={B\bibinitperiod},
+           given={Gerold},
+           giveni={G\bibinitperiod}}}%
+        {{hash=aeea0f3acb6564570031ea3d92213754}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+        {{hash=cc2706787921bbe14f6ee69f85fcd451}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={Peter\bibnamedelima N.},
+           giveni={P\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=96c2a8c61be8bcee5894229c2b0a4a9a}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yujiang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=4a64c2314762bea4146f77e03325703b}{%
+           family={Garry},
+           familyi={G\bibinitperiod},
+           given={Daniel\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers Media {SA}}%
+      }
+      \strng{namehash}{335b174445bea756744a10e423b11428}
+      \strng{fullhash}{14e04ff14b3dc9e3944c855a6c286c4f}
+      \strng{authornamehash}{335b174445bea756744a10e423b11428}
+      \strng{authorfullhash}{14e04ff14b3dc9e3944c855a6c286c4f}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers in Physiology}
+      \field{title}{The importance of modeling epileptic seizure dynamics as spatio-temporal patterns}
+      \field{volume}{3}
+      \field{year}{2012}
+      \verb{doi}
+      \verb 10.3389/fphys.2012.00281
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.3389/fphys.2012.00281
+      \endverb
+    \endentry
+    \entry{Bansal2019}{article}{}
+      \name{author}{6}{}{%
+        {{hash=eb3fbd0836426a50a6ee7c91a6e2cd89}{%
+           family={Bansal},
+           familyi={B\bibinitperiod},
+           given={Kanika},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3cdb5f9397e47fc7562a4f0a6ec3002c}{%
+           family={Garcia},
+           familyi={G\bibinitperiod},
+           given={Javier\bibnamedelima O.},
+           giveni={J\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=457c95bfd76d107bda278d58c09c8a92}{%
+           family={Tompson},
+           familyi={T\bibinitperiod},
+           given={Steven\bibnamedelima H.},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=cc4dcec00051d9871fcbba6b6e1450aa}{%
+           family={Verstynen},
+           familyi={V\bibinitperiod},
+           given={Timothy},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3fc52ebabc1bf965aac8e4e454a06c07}{%
+           family={Vettel},
+           familyi={V\bibinitperiod},
+           given={Jean\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=1d1f7117a2956f85162fa942214f5848}{%
+           family={Muldoon},
+           familyi={M\bibinitperiod},
+           given={Sarah\bibnamedelima F.},
+           giveni={S\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science ({AAAS})}%
+      }
+      \strng{namehash}{3c7686387c2dcebaeded47a832c4ca5a}
+      \strng{fullhash}{3b4a02e54705c49452c9b5aa14bdd25d}
+      \strng{authornamehash}{3c7686387c2dcebaeded47a832c4ca5a}
+      \strng{authorfullhash}{3b4a02e54705c49452c9b5aa14bdd25d}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science Advances}
+      \field{month}{4}
+      \field{number}{4}
+      \field{title}{Cognitive chimera states in human brain networks}
+      \field{volume}{5}
+      \field{year}{2019}
+      \field{pages}{eaau8535}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1126/sciadv.aau8535
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1126/sciadv.aau8535
+      \endverb
+    \endentry
+    \entry{Breakspear2017}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0dd409f1c19e54fd9f63dcfe9101289d}{%
+           family={Breakspear},
+           familyi={B\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature}%
+      }
+      \strng{namehash}{0dd409f1c19e54fd9f63dcfe9101289d}
+      \strng{fullhash}{0dd409f1c19e54fd9f63dcfe9101289d}
+      \strng{authornamehash}{0dd409f1c19e54fd9f63dcfe9101289d}
+      \strng{authorfullhash}{0dd409f1c19e54fd9f63dcfe9101289d}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Neuroscience}
+      \field{month}{3}
+      \field{number}{3}
+      \field{title}{Dynamic models of large-scale brain activity}
+      \field{volume}{20}
+      \field{year}{2017}
+      \field{pages}{340\bibrangedash 352}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1038/nn.4497
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1038/nn.4497
+      \endverb
+    \endentry
+    \entry{Breakspear2005}{article}{}
+      \name{author}{6}{}{%
+        {{hash=cb97cee11f3e8579c89219d0e2cc8618}{%
+           family={Breakspear},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=dda1b137312fd7369f6e555c5bc2e565}{%
+           family={Roberts},
+           familyi={R\bibinitperiod},
+           given={J.\bibnamedelimi A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=72a2707ac39750bb5695b1c4f618e577}{%
+           family={Terry},
+           familyi={T\bibinitperiod},
+           given={J.\bibnamedelimi R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=4cf098e1c0cb71f6067a5b517a78f4e5}{%
+           family={Rodrigues},
+           familyi={R\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0f6493800bf50f7acf5b6b200bf78762}{%
+           family={Mahant},
+           familyi={M\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=caa90760cf12777e656eaec21bbb7c71}{%
+           family={Robinson},
+           familyi={R\bibinitperiod},
+           given={P.\bibnamedelimi A.},
+           giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press ({OUP})}%
+      }
+      \strng{namehash}{fa5ab21edb0d4a6cf25bedc3f5a36e29}
+      \strng{fullhash}{1ee352607eea9c4c134402f0592cff27}
+      \strng{authornamehash}{fa5ab21edb0d4a6cf25bedc3f5a36e29}
+      \strng{authorfullhash}{1ee352607eea9c4c134402f0592cff27}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cerebral Cortex}
+      \field{month}{11}
+      \field{number}{9}
+      \field{title}{A Unifying Explanation of Primary Generalized Seizures Through Nonlinear Brain Modeling and Bifurcation Analysis}
+      \field{volume}{16}
+      \field{year}{2005}
+      \field{pages}{1296\bibrangedash 1313}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1093/cercor/bhj072
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/cercor/bhj072
+      \endverb
+    \endentry
+    \entry{Chouzouris2018}{article}{}
+      \name{author}{6}{}{%
+        {{hash=7938906dc34e91f0dedc9cd16477120e}{%
+           family={Chouzouris},
+           familyi={C\bibinitperiod},
+           given={Teresa},
+           giveni={T\bibinitperiod}}}%
+        {{hash=2dedf91446ce913c8c2b11814085ceb4}{%
+           family={Omelchenko},
+           familyi={O\bibinitperiod},
+           given={Iryna},
+           giveni={I\bibinitperiod}}}%
+        {{hash=bd68bfccb51beeb2574f7910bae6021e}{%
+           family={Zakharova},
+           familyi={Z\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6c65b9f1fd233457ea5b9c2cc63e5a8e}{%
+           family={Hlinka},
+           familyi={H\bibinitperiod},
+           given={Jaroslav},
+           giveni={J\bibinitperiod}}}%
+        {{hash=004ccc0cdd2effa93083f6663403c42f}{%
+           family={Jiruska},
+           familyi={J\bibinitperiod},
+           given={Premysl},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3a9de2cc5de173eaac20a5fb3c4fa354}{%
+           family={Sch\"{o}ll},
+           familyi={S\bibinitperiod},
+           given={Eckehard},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {{AIP} Publishing}%
+      }
+      \strng{namehash}{55451843b3ece449deddf8995e90ee6c}
+      \strng{fullhash}{250a90d09e49acdba8673c6f4a29a12f}
+      \strng{authornamehash}{55451843b3ece449deddf8995e90ee6c}
+      \strng{authorfullhash}{250a90d09e49acdba8673c6f4a29a12f}
+      \field{sortinit}{C}
+      \field{sortinithash}{095692fd22cc3c74d7fe223d02314dbd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Chaos: An Interdisciplinary Journal of Nonlinear Science}
+      \field{month}{4}
+      \field{number}{4}
+      \field{title}{Chimera states in brain networks: Empirical neural vs. modular fractal connectivity}
+      \field{volume}{28}
+      \field{year}{2018}
+      \field{pages}{045112}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1063/1.5009812
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1063/1.5009812
+      \endverb
+    \endentry
+    \entry{Deco2008}{article}{}
+      \name{author}{5}{}{%
+        {{hash=8bc37608f28b0a3bd36843b4760135ad}{%
+           family={Deco},
+           familyi={D\bibinitperiod},
+           given={Gustavo},
+           giveni={G\bibinitperiod}}}%
+        {{hash=bf35e156000f4564a6966484f96ec48d}{%
+           family={Jirsa},
+           familyi={J\bibinitperiod},
+           given={Viktor\bibnamedelima K.},
+           giveni={V\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=c16a62c2f79f323b9712d89850721d08}{%
+           family={Robinson},
+           familyi={R\bibinitperiod},
+           given={Peter\bibnamedelima A.},
+           giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=0dd409f1c19e54fd9f63dcfe9101289d}{%
+           family={Breakspear},
+           familyi={B\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9f452a84796a900973333b32a5f8bc61}{%
+           family={Friston},
+           familyi={F\bibinitperiod},
+           given={Karl},
+           giveni={K\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=45ad603551aca6e1246f0e73c18c6eed}{%
+           family={Sporns},
+           familyi={S\bibinitperiod},
+           given={Olaf},
+           giveni={O\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Public Library of Science ({PLoS})}%
+      }
+      \strng{namehash}{1a19df9f167b60694dc0008441f25839}
+      \strng{fullhash}{70006eff26570fd7800a827472745bfc}
+      \strng{authornamehash}{1a19df9f167b60694dc0008441f25839}
+      \strng{authorfullhash}{70006eff26570fd7800a827472745bfc}
+      \strng{editornamehash}{45ad603551aca6e1246f0e73c18c6eed}
+      \strng{editorfullhash}{45ad603551aca6e1246f0e73c18c6eed}
+      \field{sortinit}{D}
+      \field{sortinithash}{d10b5413de1f3d197b20897dd0d565bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{PLoS} Computational Biology}
+      \field{month}{8}
+      \field{number}{8}
+      \field{title}{The Dynamic Brain: From Spiking Neurons to Neural Masses and Cortical Fields}
+      \field{volume}{4}
+      \field{year}{2008}
+      \field{pages}{e1000092}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pcbi.1000092
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1371/journal.pcbi.1000092
+      \endverb
+    \endentry
+    \entry{Fadiman1998}{book}{}
+      \name{author}{1}{}{%
+        {{hash=70d508af7248f192adfe4fe1db111ec5}{%
+           family={Fadiman},
+           familyi={F\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Farrar, Straus}%
+        {Giroux}%
+      }
+      \strng{namehash}{70d508af7248f192adfe4fe1db111ec5}
+      \strng{fullhash}{70d508af7248f192adfe4fe1db111ec5}
+      \strng{authornamehash}{70d508af7248f192adfe4fe1db111ec5}
+      \strng{authorfullhash}{70d508af7248f192adfe4fe1db111ec5}
+      \field{sortinit}{F}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9781429931113}
+      \field{series}{FSG Classics}
+      \field{title}{The Spirit Catches You and You Fall Down: A Hmong Child, Her American Doctors, and the Collision of Two Cultures}
+      \field{year}{1998}
+      \verb{url}
+      \verb https://books.google.com/books?id=DUHAXXvSUeYC
+      \endverb
+    \endentry
+    \entry{Graben2008}{book}{}
+      \name{author}{4}{}{%
+        {{hash=ea40e41aee62b3aef7675a5b6a5890e0}{%
+           family={Graben},
+           familyi={G\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f45998c28e76ee1438ff765f242dcfc1}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=9540ff24fb8dd7379fd0690ba0d62ff0}{%
+           family={Thiel},
+           familyi={T\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9fe8d59db779fd02f652ae717750ac51}{%
+           family={Kurths},
+           familyi={K\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{8dfb50ede9dcb2136c7a0f1e601af342}
+      \strng{fullhash}{b95272490df02867e31740de2f51f014}
+      \strng{authornamehash}{8dfb50ede9dcb2136c7a0f1e601af342}
+      \strng{authorfullhash}{b95272490df02867e31740de2f51f014}
+      \field{sortinit}{G}
+      \field{sortinithash}{618d986594b7198ba52cf8b00d348f3f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9783540731597}
+      \field{series}{Understanding Complex Systems}
+      \field{title}{Lectures in Supercomputational Neuroscience: Dynamics in Complex Brain Networks}
+      \field{year}{2007}
+      \verb{url}
+      \verb https://books.google.com/books?id=GW36HNEs4ucC
+      \endverb
+    \endentry
+    \entry{Hizanidis2016}{article}{}
+      \name{author}{5}{}{%
+        {{hash=9c2b54d1c47750ab4d0aba1a5dd72816}{%
+           family={Hizanidis},
+           familyi={H\bibinitperiod},
+           given={Johanne},
+           giveni={J\bibinitperiod}}}%
+        {{hash=def30e55ffb1c65824022b1248377f0b}{%
+           family={Kouvaris},
+           familyi={K\bibinitperiod},
+           given={Nikos\bibnamedelima E.},
+           giveni={N\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=29dd19b8457634f0e99e202bc0a9d5f3}{%
+           family={Zamora-L\'{o}pez},
+           familyi={Z\bibinithyphendelim L\bibinitperiod},
+           given={Gorka},
+           giveni={G\bibinitperiod}}}%
+        {{hash=cfbccb868c0b2e753bc4447a1af9d4eb}{%
+           family={D\'{\i}az-Guilera},
+           familyi={D\bibinithyphendelim G\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1975b881cc11022f934c295a6501631b}{%
+           family={Antonopoulos},
+           familyi={A\bibinitperiod},
+           given={Chris\bibnamedelima G.},
+           giveni={C\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature}%
+      }
+      \strng{namehash}{4973cb6ab05dc8a692aff6a5746bddfa}
+      \strng{fullhash}{241625b72bfa6e86e4e38f4555d25c6d}
+      \strng{authornamehash}{4973cb6ab05dc8a692aff6a5746bddfa}
+      \strng{authorfullhash}{241625b72bfa6e86e4e38f4555d25c6d}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific Reports}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Chimera-like States in Modular Neural Networks}
+      \field{volume}{6}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1038/srep19845
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1038/srep19845
+      \endverb
+    \endentry
+    \entry{Hohlein2019}{online}{}
+      \name{author}{3}{}{%
+        {{hash=64803eeab3f59802ff32991d870ee47e}{%
+           family={H\"{o}hlein},
+           familyi={H\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=632a84d918c6138c45b7bf2980500268}{%
+           family={Kemeth},
+           familyi={K\bibinitperiod},
+           given={Felix\bibnamedelima P.},
+           giveni={F\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=c4965f1f2d9625b553e9880e0335ebd8}{%
+           family={Krischer},
+           familyi={K\bibinitperiod},
+           given={Katharina},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{259e0a862e59b2b0825ced16a6172290}
+      \strng{fullhash}{259e0a862e59b2b0825ced16a6172290}
+      \strng{authornamehash}{259e0a862e59b2b0825ced16a6172290}
+      \strng{authorfullhash}{259e0a862e59b2b0825ced16a6172290}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{title}{Lyapunov Analysis of Chimera States in Globally Coupled Stuart-Landau oscillators}
+      \field{year}{2019}
+      \verb{eprint}
+      \verb 1905.00218
+      \endverb
+    \endentry
+    \entry{Jirsa2014}{article}{}
+      \name{author}{5}{}{%
+        {{hash=bf35e156000f4564a6966484f96ec48d}{%
+           family={Jirsa},
+           familyi={J\bibinitperiod},
+           given={Viktor\bibnamedelima K.},
+           giveni={V\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=aca862a41a4169573215d69dd850ad4f}{%
+           family={Stacey},
+           familyi={S\bibinitperiod},
+           given={William\bibnamedelima C.},
+           giveni={W\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=02008a7bf4a3bb56d04299e07596079b}{%
+           family={Quilichini},
+           familyi={Q\bibinitperiod},
+           given={Pascale\bibnamedelima P.},
+           giveni={P\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=2b703f09927943397a2aec2e3528f8a2}{%
+           family={Ivanov},
+           familyi={I\bibinitperiod},
+           given={Anton\bibnamedelima I.},
+           giveni={A\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=0f9e75532c26f83efdf23a8ef0fa9ecd}{%
+           family={Bernard},
+           familyi={B\bibinitperiod},
+           given={Christophe},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press ({OUP})}%
+      }
+      \strng{namehash}{e127f9457044b10c91ea1b7f4656dc99}
+      \strng{fullhash}{ceb2b9a71e20bc47885faace774b6fac}
+      \strng{authornamehash}{e127f9457044b10c91ea1b7f4656dc99}
+      \strng{authorfullhash}{ceb2b9a71e20bc47885faace774b6fac}
+      \field{sortinit}{J}
+      \field{sortinithash}{c86bd6cced82a15683b396c2169909ef}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Brain}
+      \field{month}{6}
+      \field{number}{8}
+      \field{title}{On the nature of seizure dynamics}
+      \field{volume}{137}
+      \field{year}{2014}
+      \field{pages}{2210\bibrangedash 2230}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1093/brain/awu133
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/brain/awu133
+      \endverb
+    \endentry
+    \entry{Jirsa2017}{article}{}
+      \name{author}{11}{}{%
+        {{hash=7779c8d23a5a78888104fa0b7cd78841}{%
+           family={Jirsa},
+           familyi={J\bibinitperiod},
+           given={V.K.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=b7bcbef09328a8628c3687e8163f5662}{%
+           family={Proix},
+           familyi={P\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f884ea9490e8ff01580495fac5088849}{%
+           family={Perdikis},
+           familyi={P\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=4e9fc85a9077eb61aa7dbd9df0e91fdb}{%
+           family={Woodman},
+           familyi={W\bibinitperiod},
+           given={M.M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=19e9dfaf1dd53f55f48dd4ae859b151b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=0a207b7e8874d7ec90695db097317d9d}{%
+           family={Gonzalez-Martinez},
+           familyi={G\bibinithyphendelim M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=11e6669a8cb0cd39fdb7451324db849d}{%
+           family={Bernard},
+           familyi={B\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=9ac91263ebe601068e0d4aa3612be67b}{%
+           family={B\'{e}nar},
+           familyi={B\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4eb126d445a233e8e8dd7358b5cd5d11}{%
+           family={Guye},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=47a7e6d9ad7d6066d7f9c9ffaeafb7cf}{%
+           family={Chauvel},
+           familyi={C\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=ebc596bb6b82ffb09cbe1d340d986f45}{%
+           family={Bartolomei},
+           familyi={B\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier {BV}}%
+      }
+      \strng{namehash}{8e04744a1c97931559271f7b6009545a}
+      \strng{fullhash}{4a49332f89c17e33f4178b2abfc47b80}
+      \strng{authornamehash}{8e04744a1c97931559271f7b6009545a}
+      \strng{authorfullhash}{4a49332f89c17e33f4178b2abfc47b80}
+      \field{sortinit}{J}
+      \field{sortinithash}{c86bd6cced82a15683b396c2169909ef}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{NeuroImage}}
+      \field{month}{1}
+      \field{title}{The Virtual Epileptic Patient: Individualized whole-brain models of epilepsy spread}
+      \field{volume}{145}
+      \field{year}{2017}
+      \field{pages}{377\bibrangedash 388}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.neuroimage.2016.04.049
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.neuroimage.2016.04.049
+      \endverb
+    \endentry
+    \entry{Knox2019}{article}{}
+      \name{author}{8}{}{%
+        {{hash=ed7870a143765007393dfc76bcf205b7}{%
+           family={Knox},
+           familyi={K\bibinitperiod},
+           given={Joseph\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=4ed8d292c62cf53999d874cf4a543d1e}{%
+           family={Harris},
+           familyi={H\bibinitperiod},
+           given={Kameron\bibnamedelima Decker},
+           giveni={K\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=abac765fc2081f40415d331a557094cd}{%
+           family={Graddis},
+           familyi={G\bibinitperiod},
+           given={Nile},
+           giveni={N\bibinitperiod}}}%
+        {{hash=2c632c051fa27c81dd56cb27935d1c46}{%
+           family={Whitesell},
+           familyi={W\bibinitperiod},
+           given={Jennifer\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=8eb902ca52d925881b25041257bfc3d6}{%
+           family={Zeng},
+           familyi={Z\bibinitperiod},
+           given={Hongkui},
+           giveni={H\bibinitperiod}}}%
+        {{hash=7c53921b1408c363e813be7664bb83b3}{%
+           family={Harris},
+           familyi={H\bibinitperiod},
+           given={Julie\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=b1e3eed8b93fe5fad7220cdb0bba9771}{%
+           family={Shea-Brown},
+           familyi={S\bibinithyphendelim B\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=b5ae1335b2aad9ee17d3b3625882d1d5}{%
+           family={Mihalas},
+           familyi={M\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {{MIT} Press - Journals}%
+      }
+      \strng{namehash}{6a7c20d35340e94adc4fa2d19f221c6e}
+      \strng{fullhash}{8e4474427ecb952621c41b556f06545e}
+      \strng{authornamehash}{6a7c20d35340e94adc4fa2d19f221c6e}
+      \strng{authorfullhash}{8e4474427ecb952621c41b556f06545e}
+      \field{sortinit}{K}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Network Neuroscience}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{High-resolution data-driven model of the mouse connectome}
+      \field{volume}{3}
+      \field{year}{2019}
+      \field{pages}{217\bibrangedash 236}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1162/netn_a_00066
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1162/netn_a_00066
+      \endverb
+    \endentry
+    \entry{Kruk2018}{article}{}
+      \name{author}{3}{}{%
+        {{hash=c6840b148d33eca28e89b48e892c35f3}{%
+           family={Kruk},
+           familyi={K\bibinitperiod},
+           given={Nikita},
+           giveni={N\bibinitperiod}}}%
+        {{hash=29fbc50d207d9ea2a430c4a4bdb3def1}{%
+           family={Maistrenko},
+           familyi={M\bibinitperiod},
+           given={Yuri},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=836aadfafb99a418e0308c121a0ac626}{%
+           family={Koeppl},
+           familyi={K\bibinitperiod},
+           given={Heinz},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society ({APS})}%
+      }
+      \strng{namehash}{b32cb8c8c2830378fb373889165b88db}
+      \strng{fullhash}{b32cb8c8c2830378fb373889165b88db}
+      \strng{authornamehash}{b32cb8c8c2830378fb373889165b88db}
+      \strng{authorfullhash}{b32cb8c8c2830378fb373889165b88db}
+      \field{sortinit}{K}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review E}
+      \field{month}{9}
+      \field{number}{3}
+      \field{title}{Self-propelled chimeras}
+      \field{volume}{98}
+      \field{year}{2018}
+      \verb{doi}
+      \verb 10.1103/physreve.98.032219
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1103/physreve.98.032219
+      \endverb
+    \endentry
+    \entry{Kuramoto2002}{article}{}
+      \name{author}{2}{}{%
+        {{hash=33cc8eda7edf802aa364c0d9e695b43c}{%
+           family={Kuramoto},
+           familyi={K\bibinitperiod},
+           given={Yoshiki},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=3b66f7793878b8a8ce6505c6cc1c465a}{%
+           family={Battogtokh},
+           familyi={B\bibinitperiod},
+           given={Dorjsuren},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{a9bccbfa5e883ae3257a326576e16e8f}
+      \strng{fullhash}{a9bccbfa5e883ae3257a326576e16e8f}
+      \strng{authornamehash}{a9bccbfa5e883ae3257a326576e16e8f}
+      \strng{authorfullhash}{a9bccbfa5e883ae3257a326576e16e8f}
+      \field{sortinit}{K}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eid}{cond-mat/0210694}
+      \field{eprintclass}{cond-mat.stat-mech}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{arXiv e-prints}
+      \field{month}{10}
+      \field{title}{Coexistence of Coherence and Incoherence in Nonlocally Coupled Phase Oscillators}
+      \field{year}{2002}
+      \field{pages}{cond\bibrangedash mat/0210694}
+      \range{pages}{-1}
+      \verb{eprint}
+      \verb cond-mat/0210694
+      \endverb
+      \keyw{Condensed Matter - Statistical Mechanics}
+    \endentry
+    \entry{Leistritz2007}{article}{}
+      \name{author}{7}{}{%
+        {{hash=f4c371b7402b6f281f184b61ec8fe287}{%
+           family={Leistritz},
+           familyi={L\bibinitperiod},
+           given={Lutz},
+           giveni={L\bibinitperiod}}}%
+        {{hash=efecea86440f5a18128590dd12af1b58}{%
+           family={Putsche},
+           familyi={P\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f32283d39702c5d64af98ee94007b6d0}{%
+           family={Schwab},
+           familyi={S\bibinitperiod},
+           given={Karin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ceb62be1c3710c0b37f0a33d88a3ea40}{%
+           family={Hesse},
+           familyi={H\bibinitperiod},
+           given={Wolfram},
+           giveni={W\bibinitperiod}}}%
+        {{hash=b9961f9a5b8972936b7342a001e0ac42}{%
+           family={S\"{u}{\ss{}}e},
+           familyi={S\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=501d816c0004d4f33cbde0458589cd29}{%
+           family={Haueisen},
+           familyi={H\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d002c8b4f274b5c88d21c2bbb5f0ff8e}{%
+           family={Witte},
+           familyi={W\bibinitperiod},
+           given={Herbert},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Walter de Gruyter {GmbH}}%
+      }
+      \strng{namehash}{71ffa5f3cfe30040c385521e1ff654c7}
+      \strng{fullhash}{c538d1bd4aeb829eee567ef823dd6c3d}
+      \strng{authornamehash}{71ffa5f3cfe30040c385521e1ff654c7}
+      \strng{authorfullhash}{c538d1bd4aeb829eee567ef823dd6c3d}
+      \field{sortinit}{L}
+      \field{sortinithash}{7bba64db83423e3c29ad597f3b682cf3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Biomedizinische Technik/Biomedical Engineering}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{Coupled oscillators for modeling and analysis of {EEG}/{MEG} oscillations}
+      \field{volume}{52}
+      \field{year}{2007}
+      \field{pages}{83\bibrangedash 89}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1515/bmt.2007.016
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1515/bmt.2007.016
+      \endverb
+    \endentry
+    \entry{Ljungberg2009}{article}{}
+      \name{author}{5}{}{%
+        {{hash=586b76558872d43eb2222b467e66228a}{%
+           family={Ljungberg},
+           familyi={L\bibinitperiod},
+           given={M.\bibnamedelimi C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=7a51c388106465417c25a53b5c94f0c7}{%
+           family={Sunnen},
+           familyi={S\bibinitperiod},
+           given={C.\bibnamedelimi N.},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=7c3cb4833dd3335e8a2e56460a08c7b4}{%
+           family={Lugo},
+           familyi={L\bibinitperiod},
+           given={J.\bibnamedelimi N.},
+           giveni={J\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=574b307fdcd155480c73a15d45fec09c}{%
+           family={Anderson},
+           familyi={A\bibinitperiod},
+           given={A.\bibnamedelimi E.},
+           giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=6b64afbc2fea8940676dba1d94114111}{%
+           family={D{'}Arcangelo},
+           familyi={D\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The Company of Biologists}%
+      }
+      \strng{namehash}{cad24fe2fc3c43b7a390248207d00c2e}
+      \strng{fullhash}{aaeb7437809a1cb95101e49c28faf5ff}
+      \strng{authornamehash}{cad24fe2fc3c43b7a390248207d00c2e}
+      \strng{authorfullhash}{aaeb7437809a1cb95101e49c28faf5ff}
+      \field{sortinit}{L}
+      \field{sortinithash}{7bba64db83423e3c29ad597f3b682cf3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Disease Models {\&} Mechanisms}
+      \field{month}{5}
+      \field{number}{7-8}
+      \field{title}{Rapamycin suppresses seizures and neuronal hypertrophy in a mouse model of cortical dysplasia}
+      \field{volume}{2}
+      \field{year}{2009}
+      \field{pages}{389\bibrangedash 398}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1242/dmm.002386
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1242/dmm.002386
+      \endverb
+    \endentry
+    \entry{Marten2009}{article}{}
+      \name{author}{5}{}{%
+        {{hash=73dc5cc5f044572d1bc245d08b654cfa}{%
+           family={Marten},
+           familyi={M\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=ed3903760b3d47e58968efee62b47401}{%
+           family={Rodrigues},
+           familyi={R\bibinitperiod},
+           given={Serafim},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6073cb0503dc7530618178779fc1a2c6}{%
+           family={Benjamin},
+           familyi={B\bibinitperiod},
+           given={Oscar},
+           giveni={O\bibinitperiod}}}%
+        {{hash=9346326332a0926a7a3ded8c9974db16}{%
+           family={Richardson},
+           familyi={R\bibinitperiod},
+           given={Mark\bibnamedelima P},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=f528c91896157158c775257ccf5ccc00}{%
+           family={Terry},
+           familyi={T\bibinitperiod},
+           given={John\bibnamedelima R},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The Royal Society}%
+      }
+      \strng{namehash}{1ff122cc314a74d986f8c39ce454f8a3}
+      \strng{fullhash}{dd20a18ff33bf767fe6aeda797e05f98}
+      \strng{authornamehash}{1ff122cc314a74d986f8c39ce454f8a3}
+      \strng{authorfullhash}{dd20a18ff33bf767fe6aeda797e05f98}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences}
+      \field{month}{3}
+      \field{number}{1891}
+      \field{title}{Onset of polyspike complexes in a mean-field model of human electroencephalography and its application to absence epilepsy}
+      \field{volume}{367}
+      \field{year}{2009}
+      \field{pages}{1145\bibrangedash 1161}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1098/rsta.2008.0255
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1098/rsta.2008.0255
+      \endverb
+    \endentry
+    \entry{Martens2013}{article}{}
+      \name{author}{4}{}{%
+        {{hash=e441e15cdd570ce92f547ee92d53c7c4}{%
+           family={Martens},
+           familyi={M\bibinitperiod},
+           given={E.\bibnamedelimi A.},
+           giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=394f318e77b602c0d8e118894ccc086d}{%
+           family={Thutupalli},
+           familyi={T\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ad05de6447c0e2b402b8601aae0744fb}{%
+           family={Fourriere},
+           familyi={F\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b18d27600fabae201943f189570730e3}{%
+           family={Hallatschek},
+           familyi={H\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Proceedings of the National Academy of Sciences}%
+      }
+      \strng{namehash}{bcc791846171af0e3b57150c907295a7}
+      \strng{fullhash}{c9531abcdfb0ba33875b706e5c6b29a0}
+      \strng{authornamehash}{bcc791846171af0e3b57150c907295a7}
+      \strng{authorfullhash}{c9531abcdfb0ba33875b706e5c6b29a0}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences}
+      \field{month}{6}
+      \field{number}{26}
+      \field{title}{Chimera states in mechanical oscillator networks}
+      \field{volume}{110}
+      \field{year}{2013}
+      \field{pages}{10563\bibrangedash 10567}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1073/pnas.1302880110
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1073/pnas.1302880110
+      \endverb
+    \endentry
+    \entry{Molnar2013}{inbook}{}
+      \name{author}{2}{}{%
+        {{hash=0c0f93686d65d9b430844ca8c40baecf}{%
+           family={Molnar},
+           familyi={M\bibinitperiod},
+           given={Charles},
+           giveni={C\bibinitperiod}}}%
+        {{hash=bba22093df567474d2fa8e1c05be81ef}{%
+           family={Gair},
+           familyi={G\bibinitperiod},
+           given={Jane},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {OpenStax College}%
+      }
+      \strng{namehash}{243049f1bcc1672c6baa1777c735b846}
+      \strng{fullhash}{243049f1bcc1672c6baa1777c735b846}
+      \strng{authornamehash}{243049f1bcc1672c6baa1777c735b846}
+      \strng{authorfullhash}{243049f1bcc1672c6baa1777c735b846}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{chapter}{16.1 - Neurons and Glial Cells}
+      \field{title}{Concepts of Biology - 1st Canadian Edition}
+      \field{year}{2013}
+    \endentry
+    \entry{Oh2014}{article}{}
+      \name{author}{34}{}{%
+        {{hash=c8b5bc19787d9b8adc19d45074b25d45}{%
+           family={Oh},
+           familyi={O\bibinitperiod},
+           given={Seung\bibnamedelima Wook},
+           giveni={S\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=7c53921b1408c363e813be7664bb83b3}{%
+           family={Harris},
+           familyi={H\bibinitperiod},
+           given={Julie\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=80b54c582f6141cb6a83def7c09c870d}{%
+           family={Ng},
+           familyi={N\bibinitperiod},
+           given={Lydia},
+           giveni={L\bibinitperiod}}}%
+        {{hash=7f19f2884d0ffdfc6939f724262cf150}{%
+           family={Winslow},
+           familyi={W\bibinitperiod},
+           given={Brent},
+           giveni={B\bibinitperiod}}}%
+        {{hash=ffbad46a019f0a90111c85c007abb307}{%
+           family={Cain},
+           familyi={C\bibinitperiod},
+           given={Nicholas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=b5ae1335b2aad9ee17d3b3625882d1d5}{%
+           family={Mihalas},
+           familyi={M\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6b9944a769397e04db74408c475aa3c6}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Quanxin},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=a81be2d4f6ee991c112f9d66dd0acb3b}{%
+           family={Lau},
+           familyi={L\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+        {{hash=cdd7931838fffebc76a9fc11e353fb3f}{%
+           family={Kuan},
+           familyi={K\bibinitperiod},
+           given={Leonard},
+           giveni={L\bibinitperiod}}}%
+        {{hash=180924ce1c777e712824f308883e3360}{%
+           family={Henry},
+           familyi={H\bibinitperiod},
+           given={Alex\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=a92e95198276eddbaf4f29a763d7429a}{%
+           family={Mortrud},
+           familyi={M\bibinitperiod},
+           given={Marty\bibnamedelima T.},
+           giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=fb1978dfd2b6aa20ca8e3cffa722523f}{%
+           family={Ouellette},
+           familyi={O\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=00e0e6fb6817e0e21aafe5362cb4327f}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Thuc\bibnamedelima Nghi},
+           giveni={T\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=63fb9533866e364d46bcddff6363a871}{%
+           family={Sorensen},
+           familyi={S\bibinitperiod},
+           given={Staci\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=90a902b74cbde1d0d74db2b2220e0628}{%
+           family={Slaughterbeck},
+           familyi={S\bibinitperiod},
+           given={Clifford\bibnamedelima R.},
+           giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=5905b0dcf2479ad78fc94dfc564d3922}{%
+           family={Wakeman},
+           familyi={W\bibinitperiod},
+           given={Wayne},
+           giveni={W\bibinitperiod}}}%
+        {{hash=2af761d9bef859ea29248418adce0dd7}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ff88e176ceeada6403f70492909257e0}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=3bd692189de4cea037e13e7405f5abbe}{%
+           family={Ho},
+           familyi={H\bibinitperiod},
+           given={Anh},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4fc891368526d67acbf22461e9f630dc}{%
+           family={Nicholas},
+           familyi={N\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=0d25460fa284164aef40f5575880f7ee}{%
+           family={Hirokawa},
+           familyi={H\bibinitperiod},
+           given={Karla\bibnamedelima E.},
+           giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=cba16009eb6882a6fecf2beaa59aff2c}{%
+           family={Bohn},
+           familyi={B\bibinitperiod},
+           given={Phillip},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f301f650cb3b6bde66e6c706c12a7994}{%
+           family={Joines},
+           familyi={J\bibinitperiod},
+           given={Kevin\bibnamedelima M.},
+           giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=8de02dca906e7d49cc6ec7bea2c7aaac}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Hanchuan},
+           giveni={H\bibinitperiod}}}%
+        {{hash=a31205d773c6a6138ab80ea7b34c06f9}{%
+           family={Hawrylycz},
+           familyi={H\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=115032f57f02bd3ab96446b444e14868}{%
+           family={Phillips},
+           familyi={P\bibinitperiod},
+           given={John\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=35efa92ec706c6fdff122a1354819ff9}{%
+           family={Hohmann},
+           familyi={H\bibinitperiod},
+           given={John\bibnamedelima G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=7d910d47746cff35c62e0c999e0f909e}{%
+           family={Wohnoutka},
+           familyi={W\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=1743e923f5d5d2f30fee5e87fe1b8ce4}{%
+           family={Gerfen},
+           familyi={G\bibinitperiod},
+           given={Charles\bibnamedelima R.},
+           giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=bde4db3430ff6f578a4358224bece0ac}{%
+           family={Koch},
+           familyi={K\bibinitperiod},
+           given={Christof},
+           giveni={C\bibinitperiod}}}%
+        {{hash=c07dd9dc62f244f86aaee74359469d83}{%
+           family={Bernard},
+           familyi={B\bibinitperiod},
+           given={Amy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0aa0d77ad89b5196e88a2d6468541647}{%
+           family={Dang},
+           familyi={D\bibinitperiod},
+           given={Chinh},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d6a6b26f7a5bea154c0e8a5eef8327a6}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Allan\bibnamedelima R.},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=8eb902ca52d925881b25041257bfc3d6}{%
+           family={Zeng},
+           familyi={Z\bibinitperiod},
+           given={Hongkui},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature}%
+      }
+      \strng{namehash}{5e00c168936edf3b58e42d36e1d8f005}
+      \strng{fullhash}{1e459bd9a6fc5c73bf8f52ffc99eae22}
+      \strng{authornamehash}{5e00c168936edf3b58e42d36e1d8f005}
+      \strng{authorfullhash}{1e459bd9a6fc5c73bf8f52ffc99eae22}
+      \field{sortinit}{O}
+      \field{sortinithash}{f5d80ef71b5b58852663ecfd775b175a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{month}{4}
+      \field{number}{7495}
+      \field{title}{A mesoscale connectome of the mouse brain}
+      \field{volume}{508}
+      \field{year}{2014}
+      \field{pages}{207\bibrangedash 214}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1038/nature13186
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1038/nature13186
+      \endverb
+    \endentry
+    \entry{Panaggio2015}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ee1ab435fd6dc77f50d692a9c864bcf8}{%
+           family={Panaggio},
+           familyi={P\bibinitperiod},
+           given={Mark\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=e75639c7a6b4ecc8db5381f803463d0c}{%
+           family={Abrams},
+           familyi={A\bibinitperiod},
+           given={Daniel\bibnamedelima M},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {{IOP} Publishing}%
+      }
+      \strng{namehash}{c62b618a5d4300cc3d4735f4dffa4ab3}
+      \strng{fullhash}{c62b618a5d4300cc3d4735f4dffa4ab3}
+      \strng{authornamehash}{c62b618a5d4300cc3d4735f4dffa4ab3}
+      \strng{authorfullhash}{c62b618a5d4300cc3d4735f4dffa4ab3}
+      \field{sortinit}{P}
+      \field{sortinithash}{24100cef455d7974167575052c29146e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nonlinearity}
+      \field{month}{2}
+      \field{number}{3}
+      \field{title}{Chimera states: coexistence of coherence and incoherence in networks of coupled oscillators}
+      \field{volume}{28}
+      \field{year}{2015}
+      \field{pages}{R67\bibrangedash R87}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1088/0951-7715/28/3/r67
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1088/0951-7715/28/3/r67
+      \endverb
+    \endentry
+    \entry{Pantaleone2002}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f55287ec87489f14c8a108c2d48c22e1}{%
+           family={Pantaleone},
+           familyi={P\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association of Physics Teachers ({AAPT})}%
+      }
+      \strng{namehash}{f55287ec87489f14c8a108c2d48c22e1}
+      \strng{fullhash}{f55287ec87489f14c8a108c2d48c22e1}
+      \strng{authornamehash}{f55287ec87489f14c8a108c2d48c22e1}
+      \strng{authorfullhash}{f55287ec87489f14c8a108c2d48c22e1}
+      \field{sortinit}{P}
+      \field{sortinithash}{24100cef455d7974167575052c29146e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Journal of Physics}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{Synchronization of metronomes}
+      \field{volume}{70}
+      \field{year}{2002}
+      \field{pages}{992\bibrangedash 1000}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1119/1.1501118
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1119/1.1501118
+      \endverb
+    \endentry
+    \entry{PenaRamirez2016}{article}{}
+      \name{author}{4}{}{%
+        {{hash=579f44716d3c0ed7376ad6ce790709ce}{%
+           family={Ramirez},
+           familyi={R\bibinitperiod},
+           given={Jonatan\bibnamedelima Pe\~{n}a},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=52785a9507d7110dc7489a96f5bb8abd}{%
+           family={Olvera},
+           familyi={O\bibinitperiod},
+           given={Luis\bibnamedelima Alberto},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=d29df8f60381c9eb25fde9628ad03cbc}{%
+           family={Nijmeijer},
+           familyi={N\bibinitperiod},
+           given={Henk},
+           giveni={H\bibinitperiod}}}%
+        {{hash=3cbba4f159d294d0f3f368a1134a887b}{%
+           family={Alvarez},
+           familyi={A\bibinitperiod},
+           given={Joaquin},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature}%
+      }
+      \strng{namehash}{d6e0df0214d2c456ca9e1dc4230dee53}
+      \strng{fullhash}{f7a05534708c0605095154b0bf8e188a}
+      \strng{authornamehash}{d6e0df0214d2c456ca9e1dc4230dee53}
+      \strng{authorfullhash}{f7a05534708c0605095154b0bf8e188a}
+      \field{sortinit}{R}
+      \field{sortinithash}{c15bc8eb6936bc6b3c8baa9e8575af53}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific Reports}
+      \field{month}{3}
+      \field{number}{1}
+      \field{title}{The sympathy of two pendulum clocks: beyond Huygens' observations}
+      \field{volume}{6}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1038/srep23580
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1038/srep23580
+      \endverb
+    \endentry
+    \entry{Santos2017}{article}{}
+      \name{author}{8}{}{%
+        {{hash=65c4a5abbd062a480e794ede14ea0b39}{%
+           family={Santos},
+           familyi={S\bibinitperiod},
+           given={M.S.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6a58d878cb9f9d26962b4150dcd089ce}{%
+           family={Szezech},
+           familyi={S\bibinitperiod},
+           given={J.D.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=83b14f152c0938f41dd7b6d85bede874}{%
+           family={Borges},
+           familyi={B\bibinitperiod},
+           given={F.S.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=928a894c50ae888e93a333b9503077d0}{%
+           family={Iarosz},
+           familyi={I\bibinitperiod},
+           given={K.C.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=1477a3066b1474b515c41e036ce64138}{%
+           family={Caldas},
+           familyi={C\bibinitperiod},
+           given={I.L.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=9d0f9ec420d9fe7fdc150c644c7ba721}{%
+           family={Batista},
+           familyi={B\bibinitperiod},
+           given={A.M.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5dc821b69ec0009c8dea91dacde782f8}{%
+           family={Viana},
+           familyi={V\bibinitperiod},
+           given={R.L.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9fe8d59db779fd02f652ae717750ac51}{%
+           family={Kurths},
+           familyi={K\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier {BV}}%
+      }
+      \strng{namehash}{043f92348e5061f4f48f3ad992ab22ee}
+      \strng{fullhash}{2e5aec46f1ea7688f027956db2a9c51f}
+      \strng{authornamehash}{043f92348e5061f4f48f3ad992ab22ee}
+      \strng{authorfullhash}{2e5aec46f1ea7688f027956db2a9c51f}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Chaos, Solitons {\&} Fractals}
+      \field{month}{8}
+      \field{title}{Chimera-like states in a neuronal network model of the cat brain}
+      \field{volume}{101}
+      \field{year}{2017}
+      \field{pages}{86\bibrangedash 91}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/j.chaos.2017.05.028
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.chaos.2017.05.028
+      \endverb
+    \endentry
+    \entry{Santos2015}{article}{}
+      \name{author}{6}{}{%
+        {{hash=65c4a5abbd062a480e794ede14ea0b39}{%
+           family={Santos},
+           familyi={S\bibinitperiod},
+           given={M.S.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6a58d878cb9f9d26962b4150dcd089ce}{%
+           family={Szezech},
+           familyi={S\bibinitperiod},
+           given={J.D.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9d0f9ec420d9fe7fdc150c644c7ba721}{%
+           family={Batista},
+           familyi={B\bibinitperiod},
+           given={A.M.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1477a3066b1474b515c41e036ce64138}{%
+           family={Caldas},
+           familyi={C\bibinitperiod},
+           given={I.L.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=5dc821b69ec0009c8dea91dacde782f8}{%
+           family={Viana},
+           familyi={V\bibinitperiod},
+           given={R.L.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=377a66ac04b3d664a904d4d30a67b9c8}{%
+           family={Lopes},
+           familyi={L\bibinitperiod},
+           given={S.R.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier {BV}}%
+      }
+      \strng{namehash}{043f92348e5061f4f48f3ad992ab22ee}
+      \strng{fullhash}{e99d9b80199ce23e5560818f388d0cc5}
+      \strng{authornamehash}{043f92348e5061f4f48f3ad992ab22ee}
+      \strng{authorfullhash}{e99d9b80199ce23e5560818f388d0cc5}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physics Letters A}
+      \field{month}{10}
+      \field{number}{37}
+      \field{title}{Recurrence quantification analysis of chimera states}
+      \field{volume}{379}
+      \field{year}{2015}
+      \field{pages}{2188\bibrangedash 2192}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1016/j.physleta.2015.07.029
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.physleta.2015.07.029
+      \endverb
+    \endentry
+    \entry{Schmidt2017}{article}{}
+      \name{author}{5}{}{%
+        {{hash=eae8e84585cf2e15f4e98904aa5aeb11}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d9c1c2b9a3679f70881aecbb2e3a9050}{%
+           family={Kasimatis},
+           familyi={K\bibinitperiod},
+           given={Theodoros},
+           giveni={T\bibinitperiod}}}%
+        {{hash=9c2b54d1c47750ab4d0aba1a5dd72816}{%
+           family={Hizanidis},
+           familyi={H\bibinitperiod},
+           given={Johanne},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d63219ea668bc7ca00392916ab44cb78}{%
+           family={Provata},
+           familyi={P\bibinitperiod},
+           given={Astero},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5a1702de21488f905079ddaa82be3e38}{%
+           family={H\"{o}vel},
+           familyi={H\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society ({APS})}%
+      }
+      \strng{namehash}{dbbdaf062861f7a46eb735f87e33c348}
+      \strng{fullhash}{df02970950a6c6ee7fd4572586e78366}
+      \strng{authornamehash}{dbbdaf062861f7a46eb735f87e33c348}
+      \strng{authorfullhash}{df02970950a6c6ee7fd4572586e78366}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review E}
+      \field{month}{3}
+      \field{number}{3}
+      \field{title}{Chimera patterns in two-dimensional networks of coupled neurons}
+      \field{volume}{95}
+      \field{year}{2017}
+      \verb{doi}
+      \verb 10.1103/physreve.95.032224
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1103/physreve.95.032224
+      \endverb
+    \endentry
+    \entry{Shanahan2010}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9c9a18dc9378af37452e312a622cd2ed}{%
+           family={Shanahan},
+           familyi={S\bibinitperiod},
+           given={Murray},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {{AIP} Publishing}%
+      }
+      \strng{namehash}{9c9a18dc9378af37452e312a622cd2ed}
+      \strng{fullhash}{9c9a18dc9378af37452e312a622cd2ed}
+      \strng{authornamehash}{9c9a18dc9378af37452e312a622cd2ed}
+      \strng{authorfullhash}{9c9a18dc9378af37452e312a622cd2ed}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Chaos: An Interdisciplinary Journal of Nonlinear Science}
+      \field{month}{3}
+      \field{number}{1}
+      \field{title}{Metastable chimera states in community-structured oscillator networks}
+      \field{volume}{20}
+      \field{year}{2010}
+      \field{pages}{013108}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1063/1.3305451
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1063/1.3305451
+      \endverb
+    \endentry
+    \entry{Strogatz2015}{book}{}
+      \name{author}{1}{}{%
+        {{hash=68fade108c3a43705e86ba210a516cf9}{%
+           family={Strogatz},
+           familyi={S\bibinitperiod},
+           given={Steven\bibnamedelima H.},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Westview Press}%
+      }
+      \strng{namehash}{68fade108c3a43705e86ba210a516cf9}
+      \strng{fullhash}{68fade108c3a43705e86ba210a516cf9}
+      \strng{authornamehash}{68fade108c3a43705e86ba210a516cf9}
+      \strng{authorfullhash}{68fade108c3a43705e86ba210a516cf9}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Nonlinear Dynamics and Chaos: With Applications to Physics, Biology, Chemistry, and Engineering}
+      \field{year}{2015}
+    \endentry
+    \entry{Taylor2012}{article}{}
+      \name{author}{4}{}{%
+        {{hash=9074587e03c0ca7cb20160e66ea58c0e}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={Peter\bibnamedelima Neal},
+           giveni={P\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=aeea0f3acb6564570031ea3d92213754}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+        {{hash=96c2a8c61be8bcee5894229c2b0a4a9a}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yujiang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=c84f3e8cc9037cf25fa44ad6244c772d}{%
+           family={Baier},
+           familyi={B\bibinitperiod},
+           given={Gerold},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature}%
+      }
+      \strng{namehash}{fa2bc1761facdab45d266a8078b79a03}
+      \strng{fullhash}{d4f32462234a7e3577fa1cd26eb1fb8e}
+      \strng{authornamehash}{fa2bc1761facdab45d266a8078b79a03}
+      \strng{authorfullhash}{d4f32462234a7e3577fa1cd26eb1fb8e}
+      \field{sortinit}{T}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Biological Cybernetics}
+      \field{month}{11}
+      \field{number}{1}
+      \field{title}{Towards a large-scale model of patient-specific epileptic spike-wave discharges}
+      \field{volume}{107}
+      \field{year}{2012}
+      \field{pages}{83\bibrangedash 94}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1007/s00422-012-0534-2
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s00422-012-0534-2
+      \endverb
+    \endentry
+    \entry{Wang2012}{article}{}
+      \name{author}{4}{}{%
+        {{hash=96c2a8c61be8bcee5894229c2b0a4a9a}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yujiang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=aeea0f3acb6564570031ea3d92213754}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9074587e03c0ca7cb20160e66ea58c0e}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={Peter\bibnamedelima Neal},
+           giveni={P\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=c84f3e8cc9037cf25fa44ad6244c772d}{%
+           family={Baier},
+           familyi={B\bibinitperiod},
+           given={Gerold},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society ({APS})}%
+      }
+      \strng{namehash}{d4f502e534ead51d1bff09276dae0d5c}
+      \strng{fullhash}{6b4256648df2c34aa349c8b866e54954}
+      \strng{authornamehash}{d4f502e534ead51d1bff09276dae0d5c}
+      \strng{authorfullhash}{6b4256648df2c34aa349c8b866e54954}
+      \field{sortinit}{W}
+      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review E}
+      \field{month}{6}
+      \field{number}{6}
+      \field{title}{Phase space approach for modeling of epileptic dynamics}
+      \field{volume}{85}
+      \field{year}{2012}
+      \verb{doi}
+      \verb 10.1103/physreve.85.061918
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1103/physreve.85.061918
+      \endverb
+    \endentry
+    \entry{Kandel2013}{inbook}{}
+      \name{author}{1}{}{%
+        {{hash=7254dee5ac978b3a20dfc31a5ddae162}{%
+           family={Westbrook},
+           familyi={W\bibinitperiod},
+           given={Gary\bibnamedelima L.},
+           giveni={G\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \name{editor}{5}{}{%
+        {{hash=b641bd020ce7bf616a332729fbd7da07}{%
+           family={Kandel},
+           familyi={K\bibinitperiod},
+           given={Eric\bibnamedelima R.},
+           giveni={E\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=9d4b4459d086ef87293d44161f94a489}{%
+           family={Schwartz},
+           familyi={S\bibinitperiod},
+           given={James\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=2a2ef580a92ac7939d807827a489ede5}{%
+           family={Jessell},
+           familyi={J\bibinitperiod},
+           given={Thomas\bibnamedelima M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=c252fb3373e9ab9d980b5425dae1cf48}{%
+           family={Siegelbaum},
+           familyi={S\bibinitperiod},
+           given={Steven\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=8b5e1684d322de3d38b6c952abe98475}{%
+           family={Hudspeth},
+           familyi={H\bibinitperiod},
+           given={A.J.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {McGraw Hill Medical}%
+      }
+      \strng{namehash}{7254dee5ac978b3a20dfc31a5ddae162}
+      \strng{fullhash}{7254dee5ac978b3a20dfc31a5ddae162}
+      \strng{authornamehash}{7254dee5ac978b3a20dfc31a5ddae162}
+      \strng{authorfullhash}{7254dee5ac978b3a20dfc31a5ddae162}
+      \strng{editornamehash}{d4541375f7b73846876916501ab6b904}
+      \strng{editorfullhash}{a7fa174ba3f826e87ad0a85110068fe0}
+      \field{sortinit}{W}
+      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Principles of Neural Science}
+      \field{chapter}{50}
+      \field{edition}{Fifth}
+      \field{title}{Seizures and Epilepsy}
+      \field{year}{2013}
+      \field{pages}{1116\bibrangedash 1139}
+      \range{pages}{24}
+    \endentry
+    \entry{Wolfrum2011}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b2c38a1d518badd10b65502213e6870a}{%
+           family={Wolfrum},
+           familyi={W\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+        {{hash=294d6bbd56dfc3368f30e38d6a41a330}{%
+           family={Omel'chenko},
+           familyi={O\bibinitperiod},
+           given={Oleh\bibnamedelima E.},
+           giveni={O\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society ({APS})}%
+      }
+      \strng{namehash}{6d72665501ffef4bc1ef719692a13a09}
+      \strng{fullhash}{6d72665501ffef4bc1ef719692a13a09}
+      \strng{authornamehash}{6d72665501ffef4bc1ef719692a13a09}
+      \strng{authorfullhash}{6d72665501ffef4bc1ef719692a13a09}
+      \field{sortinit}{W}
+      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review E}
+      \field{month}{7}
+      \field{number}{1}
+      \field{title}{Chimera states are chaotic transients}
+      \field{volume}{84}
+      \field{year}{2011}
+      \verb{doi}
+      \verb 10.1103/physreve.84.015201
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1103/physreve.84.015201
+      \endverb
+    \endentry
+    \entry{Xie2014}{article}{}
+      \name{author}{3}{}{%
+        {{hash=2b06cf4f3637f2a33431798085fc2b61}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Jianbo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e0b2e8ebc4c0ea31c464ee7dcc5e5afa}{%
+           family={Knobloch},
+           familyi={K\bibinitperiod},
+           given={Edgar},
+           giveni={E\bibinitperiod}}}%
+        {{hash=0a8393ec2a23e350868e4a068227babd}{%
+           family={Kao},
+           familyi={K\bibinitperiod},
+           given={Hsien-Ching},
+           giveni={H\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society ({APS})}%
+      }
+      \strng{namehash}{3237a80e6f3288bcbdff1a9b901d7a9e}
+      \strng{fullhash}{3237a80e6f3288bcbdff1a9b901d7a9e}
+      \strng{authornamehash}{3237a80e6f3288bcbdff1a9b901d7a9e}
+      \strng{authorfullhash}{3237a80e6f3288bcbdff1a9b901d7a9e}
+      \field{sortinit}{X}
+      \field{sortinithash}{755b54a59c4b54d471c87a4486a94349}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review E}
+      \field{month}{8}
+      \field{number}{2}
+      \field{title}{Multicluster and traveling chimera states in nonlocal phase-coupled oscillators}
+      \field{volume}{90}
+      \field{year}{2014}
+      \verb{doi}
+      \verb 10.1103/physreve.90.022919
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1103/physreve.90.022919
+      \endverb
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

@@ -1,4 +1,4 @@
-The model used for this work was the modified Hindmarsh-Rose neural model\footnote{The modification is to add in the coupling, turning it into a network model instead of a single neuron.} \cite{Santos2017}.
+The model used for this work was the modified Hindmarsh-Rose neural model\footnote{The modification is to add in the coupling, turning it into a network model instead of a single neuron.} taken from \cite{Santos2017}.
 \begin{align}
   \label{eq:hr_x}
   \dot{\hrx}_{j}
@@ -36,7 +36,8 @@ where
   =
   \frac{\hrx_{j} - \hrx_{\text{rev}}}{1 + e^{-\lambda \pqty{\hrx_{k} - \theta}}}
 \end{equation}
-is the sigmoidal activation function, making it a neural mass model.
+is the sigmoidal activation function.
+This activation function helps the model better approximate the behavior of neural masses, as opposed to specific neurons.
 \Cref{tab:hr_params} shows the values and meanings of the symbols in the model.
 
 \begin{table}[ht]
@@ -56,10 +57,10 @@ is the sigmoidal activation function, making it a neural mass model.
     $\hrx_{\text{rest}}$ & -1.6 & Resting/equilibrium potential \\ \hline
     $\hra$ & Varied & Connection strength within cortices \\
     $n_{j}'$ & See \cref{fig:n_prime} & Number of connections within a cortex from the $j$th neuron \\
-    $G_{j k}'$ & See \cref{fig:g_prime} & Intra-cortical connection matrix \\
+    $G_{j k}'$ & See \cref{fig:g_prime} & Intra-cortical connection strength \\
     $\hrb$ & Varied & Connection strength between conrtices \\
     $n_{j}''$ & See \cref{fig:n_prime} & Number of connections between cortices from the $j$th neuron \\
-    $G_{j k}''$ & See \cref{fig:g_prime} & Inter-cortical connection matrix
+    $G_{j k}''$ & See \cref{fig:g_prime} & Inter-cortical connection strength
   \end{tabular}
   \caption[Hindmarsh-Rose Parameters]{The list of parameters used in modeling the Hindmarsh-Rose network.}
   \label{tab:hr_params}
@@ -68,7 +69,11 @@ is the sigmoidal activation function, making it a neural mass model.
 This model was chosen due to the semanticity of its parameters, as well as its proven ability to exhibit chimera-like behavior as a neural mass model \cite{Santos2017}.
 Additionally, the Hindmarsh-Rose model was not designed to emulate seizures, which provides further evidence for the theory that chimeras are a universal aspect of brain activity, as discussed in \cref{sec:lit_review_chimera_square_torus}.
 
+It is worth noting that one of the limitations of this model is the changing nature of $\hra$ and $\hrb$ in the actual brain.
+The strengths of connections and the amounts by which they are amplified vary in time.
+However, they will be treated as constant, in order to present a view of parameter space.
+
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../../main"
+%%% TeX-master: "../../ms"
 %%% End:

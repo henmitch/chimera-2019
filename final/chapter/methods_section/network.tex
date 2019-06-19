@@ -1,17 +1,20 @@
-The model was implemented on a mesoscale mouse connectome, which organized the mouse brain into 13 cortices, made up of 213 subcortices total and measured the connection strengths between the subcortices \cite{Oh2014}.
-These connection strengths were then reduced to those with sufficient certainty ($p < 0.01$), and segmented as follows:
+The model was implemented on a mesoscale mouse connectome, which organized the mouse brain into 213 fine areas, grouped into 13 coarse areas, and measured the connection strengths between the subcortices \cite{Oh2014}.
+These coarse areas were used as the sets $C$ (\cref{eq:chimera,eq:metastability}) for chimera and metastability analyses.
+The connection strengths were then reduced to those with sufficient certainty ($p < 0.01$), and segmented as follows:
 \begin{equation}
   \label{eq:mouse_segmentation}
   G_{j k}
   =
   \begin{cases}
     0, & \text{if } O_{j k} < 10^{-4} \\
-    1, & \text{if } O_{j k} < 10^{-2} \\
-    2, & \text{if } O_{j k} < 1 \\
-    3, & \text{otherwise}
+    1, & \text{if } 10^{-4} \leq O_{j k} < 10^{-2} \\
+    2, & \text{if } 10^{-2} \leq O_{j k} < 1 \\
+    3, & \text{if } 1 \leq O_{j k}
   \end{cases}
 \end{equation}
 where $O_{j k}$ is the raw connection strength provided by \cite{Oh2014}.
+This was done to more closely match the analysis of Santos \textit{et al}.\ \cite{Santos2017}.
+
 $G$ is shown in \cref{fig:mouse_connectome}, and is shown broken down into its inter- and intra-connections in \cref{fig:network_breakdown}.
 A useful aspect of this brain network is that the standard graph whose topology it most resembles is a small-world or Watts-Strogatz graph \cite{Oh2014}.
 This graph topology lends itself well to the development of chimera states, as it facilitates nonlocal coupling \cite{Hizanidis2016}.
@@ -100,5 +103,5 @@ Additionally, as mice are common analogues for humans in laboratory settings, th
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../../main"
+%%% TeX-master: "../../ms"
 %%% End:

@@ -5,24 +5,36 @@ It is unsurprising that chimera states would be prevalent when the coupling is l
 What is surprising, however, is the presence of the chimeric patch in the bottom left corner of \cref{fig:aphysical_chimera}, shown at a higher resolution in \cref{fig:zoom_chimera}.
 \begin{figure}[ht]
   \centering
-  \includegraphics{figure/zoom_chimera}
-  \caption[Zoomed landscape]{The chimera index of runs with $(\hra, \hrb) \in (0, 0.2) \times (0, 0.1)$.
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figure/zoom_chimera}
+    \caption{Chimera-like index}
+    \label{fig:zoom_chimera}
+  \end{subfigure}%
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figure/zoom_chimera_var}
+    \caption{Variance of the chimera-like index}
+    \label{fig:zoom_chimera_var}
+  \end{subfigure}
+  \caption[Zoomed landscape]{The chimera index of runs with $(\hra, \hrb) \in (0, 0.2) \times (0, 0.2)$.
     As before, the chimera-like index is normalized to $\frac{1}{7}$.
-    Note that the values of the index are much higher in this patch than in most of the rest of $(\hra, \hrb) \in (0, 0.9) \times (0, 0.9)$ (\cref{fig:aphysical_chimera}).
+    Note that the values of the index are much higher in this patch than in most of the rest of $(\hra, \hrb) \in (0, 1) \times (0, 1)$ (\cref{fig:aphysical_chimera}).
     The dashed line shows $\beta = \alpha$.
   }
-  \label{fig:zoom_chimera}
 \end{figure}
 Plotting the results of the simulations (\cref{fig:mean_058_010,fig:overhead_058_010}),
 it is evident that this is not a calculation error, but is an actual feature of the parameter landscape.
 \begin{figure}[ht]
   \centering
   \begin{subfigure}{\textwidth}
+    \centering
     \includegraphics[width=\textwidth]{figure/means-0_058-0_010}
     \caption{}
     \label{fig:mean_058_010}
   \end{subfigure}
   \begin{subfigure}{\textwidth}
+    \centering
     \includegraphics[width=\textwidth]{figure/overhead-0_058-0_010}
     \caption{}
     \label{fig:overhead_058_010}
@@ -48,5 +60,5 @@ This leads to a qualitative difference between the two states, which likely mani
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../../main"
+%%% TeX-master: "../../ms"
 %%% End:
