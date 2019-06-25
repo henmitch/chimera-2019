@@ -5,18 +5,14 @@ It is unsurprising that chimera states would be prevalent when the coupling is l
 What is surprising, however, is the presence of the chimeric patch in the bottom left corner of \cref{fig:aphysical_chimera}, shown at a higher resolution in \cref{fig:zoom_chimera}.
 \begin{figure}[ht]
   \centering
-  \begin{subfigure}{0.45\textwidth}
+  \subfloat[Chimera-like index\label{fig:zoom_chimera}]{
     \centering
-    \includegraphics[width=\textwidth]{figure/zoom_chimera}
-    \caption{Chimera-like index}
-    \label{fig:zoom_chimera}
-  \end{subfigure}%
-  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=0.45\columnwidth]{figure/zoom_chimera}
+    } \hfill
+  \subfloat[Variance\label{fig:zoom_chimera_var}]{
     \centering
-    \includegraphics[width=\textwidth]{figure/zoom_chimera_var}
-    \caption{Variance of the chimera-like index}
-    \label{fig:zoom_chimera_var}
-  \end{subfigure}
+    \includegraphics[width=0.45\columnwidth]{figure/zoom_chimera_var}
+    }
   \caption[Zoomed landscape]{The chimera index of runs with $(\hra, \hrb) \in (0, 0.2) \times (0, 0.2)$.
     As before, the chimera-like index is normalized to $\frac{1}{7}$.
     Note that the values of the index are much higher in this patch than in most of the rest of $(\hra, \hrb) \in (0, 1) \times (0, 1)$ (\cref{fig:aphysical_chimera}).
@@ -25,27 +21,24 @@ What is surprising, however, is the presence of the chimeric patch in the bottom
 \end{figure}
 Plotting the results of the simulations (\cref{fig:mean_058_010,fig:overhead_058_010}),
 it is evident that this is not a calculation error, but is an actual feature of the parameter landscape.
-\begin{figure}[ht]
+\begin{figure*}[ht]
   \centering
-  \begin{subfigure}{\textwidth}
+  \subfloat[\label{fig:mean_058_010}]{
     \centering
-    \includegraphics[width=\textwidth]{figure/means-0_058-0_010}
-    \caption{}
-    \label{fig:mean_058_010}
-  \end{subfigure}
-  \begin{subfigure}{\textwidth}
+    \includegraphics[width=0.9\textwidth]{figure/means-0_058-0_010}
+  }
+
+  \subfloat[\label{fig:overhead_058_010}]{
     \centering
-    \includegraphics[width=\textwidth]{figure/overhead-0_058-0_010}
-    \caption{}
-    \label{fig:overhead_058_010}
-  \end{subfigure}
+    \includegraphics[width=0.9\textwidth]{figure/overhead-0_058-0_010}
+  }
   \caption[Highly chimeric simulation]{A run of the Hindmarsh-Rose simulation in the chimeric island.
     (a) The mean membrane potential within each cortex.
     (b) The phase $\phase$ of the entire timeseries for a simulation of the Hindmarsh-Rose network.
     Synchronization is most consistently evident in the medulla, the hypothalamus, and the isocortex.
   }
   \label{fig:058_010}
-\end{figure}
+\end{figure*}
 
 The highly chimeric portion of the landscape appears to be mostly below the $\beta = \alpha$ line.
 This is reasonable, as chimera states occur when coupling within groups is greater than coupling between groups.

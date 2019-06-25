@@ -1,10 +1,10 @@
-\subsection{Neuroanatomy and Neurophysiology}
+\subsubsection{Neuroanatomy and Neurophysiology}
 \label{sec:intro_seizures_neuroanatomy}
 Since the brain is an electrochemical device, its function and disorders are often best talked about from an electrical standpoint \cite{Deco2008}.
 \textit{Neurons} are cells which are specialized for communication (see \cref{fig:neuron_diagram} for a diagram).
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.5\textwidth]{figure/neuron_diagram}
+  \includegraphics[width=0.8\columnwidth]{figure/neuron_diagram}
   \caption[Neuron diagram]{A diagram of the anatomy of a neuron.
     Taken from \cite{Molnar2013}.
   }
@@ -38,21 +38,20 @@ Each location along the axon goes through the following six stages, in total tak
 
 \end{description}
 
-\subsubsection{Micro-scale models}
-\label{sec:intro_seizures_neuroanatomy_hodgkin_huxley}
+%% \subsubsubsection{Micro-scale models}
 All of these processes are summarized in the \textit{Hodgkin-Huxley model}\footnote{A full derivation of this model can be found in \cite{Graben2008}.} describing the membrane potential $U$:
-\begin{equation}
+\begin{multline}
   \label{eq:hodgkin_huxley_main}
   C_{m} \dot{U}
   +
-  p_{A \ce{K^{+}}} \mean{g}_{A \ce{K^{+}}} \pqty{U - E_{\ce{K^{+}}}}
+  p_{A \ce{K^{+}}} \mean{g}_{A \ce{K^{+}}} \pqty{U - E_{\ce{K^{+}}}} \\
   +
   p_{A \ce{Na^{+}}} \mean{g}_{A \ce{Na^{+}}} \pqty{U - E_{\ce{Na^{+}}}}
   +
   g_{l} \pqty{U - E_{l}}
   =
   I_{m}
-\end{equation}
+\end{multline}
 where
 \begin{equation}
   \label{eq:hodgkin_huxley_supplementary}
@@ -88,8 +87,8 @@ Since the human brain has approximately $10^{11}$ neurons with $10^{14}$ synapse
 In order to better understand the dynamics of large portions of the brain, many researchers turned to the techniques of thermal and statistical physics \cite{Breakspear2017}.
 Particularly, \textit{neural ensemble models} and \textit{neural mass models} are popular approaches to studying brain behavior.
 
-\subsubsection{Meso-scale Models}
-\label{sec:intro_seizures_neuroanatomy_meso_scale}
+%% \subsubsubsection{Meso-scale Models}
+%% \label{sec:intro_seizures_neuroanatomy_meso_scale}
 Neural ensemble models treat patches of the brain as a collective group, taking into account neurons' mean activity, as well as their variance.
 They assume that the firings of the neurons within a group are sufficiently uncorrelated to result in a Gaussian distribution of firing rates.
 This means that the behavior of the ensemble is linear, even though the behavior of the constituent neurons is highly nonlinear.
@@ -126,8 +125,8 @@ $P$, $Q$, and $R$ represent the excitability threshold, or the constant external
 The sigmoidal activation function $S(x) = \frac{1}{1 + e^{-a \pqty{x - \theta}}}$ represents the mass effect of the population of neurons being modeled.
 This system provides an excellent toy model which reflects meso-scale dynamics accurately, relative to its simplicity.
 
-\subsubsection{Macro-scale Models}
-\label{sec:intro_seizures_neuroanatomy_macro_scale}
+%% \subsubsubsection{Macro-scale Models}
+%% \label{sec:intro_seizures_neuroanatomy_macro_scale}
 These models do an accurate job of representing the behavior of small parts of the brain.
 However, it is not reasonable to carry the assumptions of un- or highly-correlated activity to the large-scale activity of whole-brain dynamics.
 In order to make these models accurately depict the overall behavior of the brain as a whole, researchers turn to two main techniques: \textit{neural field models} and \textit{neural mass networks}.
@@ -145,7 +144,7 @@ Additionally, the EEG has relatively low spatial and temporal resolution (16 ele
 However, when properly treated, neural mass models make for effective predictors of the output from EEGs \cite{Taylor2012,Leistritz2007}.
 This is useful, as EEGs are the main tool used to detect and categorize seizures.
 
-\subsection{Seizure \AE tiology}
+\subsubsection{Seizure \AE tiology}
 \label{sec:intro_seizures_aetiology}
 For centuries, and across many cultures, seizures were viewed as holy and mystical events, and those with epilepsy were often considered to be shamans \cite{Kandel2013,Fadiman1998}.
 Seizures are often accompanied by strange visions, sounds, or smells (called \textit{auras}), and sometimes manifest themselves physically in extreme ways.
@@ -171,15 +170,15 @@ In many cases, they secondarily generalize, spreading to the entire brain.
 This can make focal seizures and primary generalized seizures hard to distinguish, as a focal seizure can generalize rapidly after a brief aura.
 This can lead to misdiagnoses and improper treatments.
 
-\subsubsection{The Epileptor Model}
-\label{sec:intro_seizures_aetiology_epileptor}
+%% \subsubsubsection{The Epileptor Model}
+%% \label{sec:intro_seizures_aetiology_epileptor}
 From careful observation, an empirical/phenomenological seizure model called Epileptor was developed \cite{Jirsa2014,Jirsa2017}.
 It involves two fast processes $x_{1}$ and $y_{1}$, two \textit{spike-wave event} processes $x_{2}$ and $y_{2}$, and a slow permittivity variable $z$.
 Its guiding equations are:
 \begin{align}
   \label{eq:epileptor_x1}
   \dot{x}_{1}
-  &=
+  ={}&
     y_{1}
     -
     f_{1}(x_{1}, x_{2})
@@ -189,7 +188,7 @@ Its guiding equations are:
     I_{\text{rest} 1} \\
   \label{eq:epileptor_y1}
   \dot{y}_{1}
-  &=
+  ={}&
     y_{0}
     -
     5 x_{1}^{2}
@@ -197,36 +196,38 @@ Its guiding equations are:
     y_{1} \\
   \label{eq:epileptor_z}
   \dot{z}
-  &=
+  ={}&
     \frac{1}{\tau_{0}} \pqty{4 \pqty{x_{1} - x_{0}} - z} \\
+  \begin{split}
   \label{eq:epileptor_x2}
   \dot{x}_{2}
-  &=
+  ={}&
     -y_{2}
     +
     x_{2}
     -
     x_{2}^{3}
     +
-    I_{\text{rest} 2}
-    +
+    I_{\text{rest} 2} \\
+    & +
     0.002 g(x_{1})
     -
     0.3 \pqty{z - 3.5} \\
+  \end{split} \\
   \label{eq:epileptor_y2}
   \dot{y}_{2}
-  &=
+  ={}&
     \frac{1}{\tau_{2}} \pqty{-y_{2} + f_{2}(x_{1}, x_{2})}
 \end{align}
 where
 \begin{align}
   \label{eq:epileptor_g}
   g(x_{1})
-  &=
+  ={}&
     \int_{t_{0}}^{t}{e^{-\gamma \pqty{t - \tau}} x_{1}(\tau) \dd{\tau}} \\
   \label{eq:epileptor_f1}
   f_{1}(x_{1}, x_{2})
-  &=
+  ={}&
     \begin{cases}
       x_{1}^{3} - 3 x_{1}^{2},
       & \text{if } x_{1} < 0 \\
@@ -236,7 +237,7 @@ where
     \end{cases} \\
   \label{eq:epileptor_f2}
   f_{2}(x_{1}, x_{2})
-  &=
+  ={}&
     \begin{cases}
       0,
       & \text{if } x_{2} < -0.25 \\
@@ -252,3 +253,8 @@ While the Epileptor model is highly accurate, and is currently being used to dev
 EEG traces of humans, mice, and zebrafish were collected, and parameters were adjusted until $x_{1} + x_{2}$ matched the measured traces, resulting in the above values.
 This means that, while the variables and parameters in the model directly correspond to physical processes, the model's development was largely empirical, and not fully rooted in theory \cite{Jirsa2014}.
 This means that it can be a helpful tool in treating symptoms, but is not necessarily as valuable for determining root causes.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../ms"
+%%% End:

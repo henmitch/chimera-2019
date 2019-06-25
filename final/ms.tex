@@ -1,4 +1,4 @@
-\documentclass[12pt,twoside]{report}
+\documentclass[aip,cha,reprint,superscriptaddress,floatfix,nofootinbib]{revtex4-1}
 \pdfoutput=1
 
 \usepackage[arrowdel]{physics}
@@ -6,27 +6,24 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage[margin=0.75in]{geometry}
-\usepackage[margin=0.5in]{caption}
-\usepackage[style=numeric-comp,backend=biber]{biblatex}
-\usepackage[noblocks]{authblk}
+\usepackage{textcomp}
 \usepackage{graphicx}
-\usepackage{subcaption}
+\usepackage[caption=false]{subfig}
 \usepackage{tikz}
 \usepackage{mhchem}
 \usepackage{tipa}
-%% \usepackage[hidelinks]{hyperref}
 \usepackage{hyperref}
-\usepackage{cleveref}
+\usepackage[capitalise]{cleveref}
+
+\Crefname{equation}{Eq.}{Eqs.}
+\Crefname{figure}{Fig.}{Figs.}
+\Crefname{tabular}{Tab.}{Tabs.}
 
 \hypersetup{hidelinks}
 
-\setlength{\marginparwidth}{2cm}
-
 \usetikzlibrary{patterns}
 
-\addbibresource{ms.bib}
 
-\renewcommand\Affilfont{\small}
 \newcommand*\mean[1]{\bar{#1}}
 
 %% For the Hindmarsh-Rose model
@@ -42,61 +39,65 @@
 \newcommand*{\ordparam}{r}
 \newcommand*{\phase}{\phi}
 
-\author[1,2,5]{Henry Mitchell}
-\author[1,4,5]{Peter Dodds}
-\author[3,4]{Matt Mahoney}
-\author[1,4,5]{Chris Danforth}
-\affil[1]{Department of Mathematics and Statistics, University of Vermont College of Engineering and Mathematical Sciences}
-\affil[2]{Department of Physics, University of Vermont College of Arts and Sciences}
-\affil[3]{Department of Neurology, University of Vermont Larner College of Medicince}
-\affil[4]{Department of Computer Science, University of Vermont College of Engineering and Mathematical Sciences}
-\affil[5]{Computational Story Lab, Vermont Complex Systems Center, University of Vermont}
-
+\begin{document}
 \title{Chimera States and Seizures in a Mouse Neuronal Model}
 
-\begin{document}
-\pagenumbering{alph}
-\maketitle
-
-\pagenumbering{arabic}
+\author{Henry M. Mitchell}
+\affiliation{Department of Mathematics and Statistics, University of Vermont, Burlington, VT 05401}
+\affiliation{Department of Physics, University of Vermont, Burlington, VT 05401}
+\affiliation{Vermont Complex Systems Center, University of Vermont, Burlington, VT 05401}
+\affiliation{Computational Story Lab, University of Vermont, Burlington, VT 05401}
+\author{Peter Sheridan Dodds}
+\affiliation{Department of Mathematics and Statistics, University of Vermont, Burlington, VT 05401}
+\affiliation{Vermont Complex Systems Center, University of Vermont, Burlington, VT 05401}
+\affiliation{Computational Story Lab, University of Vermont, Burlington, VT 05401}
+\affiliation{Department of Computer Science, University of Vermont, Burlington, VT 05401}
+\author{J. Matthew Mahoney}
+\affiliation{Department of Computer Science, University of Vermont, Burlington, VT 05401}
+\affiliation{Department of Neurology, University of Vermont Larner College of Medicine, Burlington, VT 05401}
+\author{Christopher M. Danforth}
+\affiliation{Department of Mathematics and Statistics, University of Vermont, Burlington, VT 05401}
+\affiliation{Vermont Complex Systems Center, University of Vermont, Burlington, VT 05401}
+\affiliation{Computational Story Lab, University of Vermont, Burlington, VT 05401}
+\affiliation{Department of Computer Science, University of Vermont, Burlington, VT 05401}
 
 \begin{abstract}
-\input{abstract}
+  \input{abstract}
 \end{abstract}
 
-\tableofcontents
+\maketitle
 
-\chapter{Introduction}
-\label{chap:intro}
+\section{Introduction}
+\label{sec:intro}
 \input{chapter/intro}
 
-\chapter{Literature Review}
-\label{chap:lit_review}
+\section{Literature Review}
+\label{sec:lit_review}
 \input{chapter/lit_review}
 
-\chapter{Methods}
-\label{chap:methods}
+\section{Methods}
+\label{sec:methods}
 \input{chapter/methods}
 
-\chapter{Results}
-\label{chap:results}
+\section{Results}
+\label{sec:results}
 \input{chapter/results}
 
-\chapter{Conclusion}
-\label{chap:conclusion}
+\section{Discussion}
+\label{sec:conclusion}
 \input{chapter/conclusion}
+
+\bibliography{ms.bib}
 
 \appendix
 
-\chapter{Additional Figures}
-\label{chap:figures}
+\section{Acknowledgments}
+\label{sec:acknowledgements}
+\input{chapter/acknowledgments}
+
+\section{Additional Figures}
+\label{sec:figures}
 \input{chapter/figures}
-
-\listoffigures
-
-\listoftables
-
-\printbibliography
 
 \end{document}
 

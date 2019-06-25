@@ -10,7 +10,7 @@ One places a platform on top of a set of rollers, and places at least two metron
 When these metronomes are started with the same frequency, out of phase with each other, over time their phases drift until they synchronize.
 \begin{figure}[ht]
   \centering
-  \begin{tikzpicture}
+  \begin{tikzpicture}[scale=0.7]
     \draw (0, 0) circle (0.5);
     \draw (4, 0) circle (0.5);
     \draw[pattern=north east lines] (-2, 0.5) -- (6, 0.5) -- (6, 1) -- (-2, 1) -- (-2, 0.5);
@@ -40,55 +40,56 @@ The existence of these chimera states are surprising, as they represent asymmetr
 The first time this behavior was observed was in a ring of \textit{nonlocally coupled} oscillators \cite{Kuramoto2002}.
 While global coupling is an all-to-all interaction and local coupling is a nearest-neighbor interaction, nonlocal coupling is a mixture of the two.
 The model is expressible in one dimension as
-\begin{equation}
+\begin{multline}
   \label{eq:kuramoto}
   \pdv{t} A(x, t)
   =
   \pqty{1 + i \omega_{0}} A
   -
-  \pqty{1 + i b} \abs{A}^{2} A
+  \pqty{1 + i b} \abs{A}^{2} A \\
   +
   K \pqty{1 + i a} \pqty{Z(x, t) - A(x, t)}
-\end{equation}
+\end{multline}
 where
-\begin{equation}
+\begin{equation*}
   \label{eq:kuramoto_coupling}
   Z(x, t)
   =
   \int{G(x - x') A(x', t) \dd{x'}}
-  \qand
+\end{equation*}
+and
+\begin{equation*}
   G(y)
   =
   \frac{\kappa}{2} e^{-k \abs{y}},
-\end{equation}
+\end{equation*}
 which reduces to the phase equation
-\begin{equation}
+\begin{multline}
   \label{eq:kuramoto_phase}
   \pdv{t} \phi(x, t)
   =
   \omega
   -
-  \int{G(x - x') \sin(\phi(x, t) - \phi(x', t) + \alpha) \dd{x'}}
-  \qq{where}
+  \int G(x - x') \times \\
+    \sin(\phi(x, t) - \phi(x', t) + \alpha) \dd{x'}
+\end{multline}
+where
+\begin{equation}
   \tan(\alpha)
   =
   \frac{b - a}{1 + a b}.
 \end{equation}
 We numerically simulated the Kuramoto system using a discrete approximation, and it quickly fell into a chimera state (\cref{fig:kuramoto_chimera}).
-\begin{figure}[ht]
+\begin{figure*}[ht]
   \centering
-  \begin{subfigure}{0.6\textwidth}
+  \subfloat[The time series of the Kuramoto simulation.\label{fig:kuramoto_overhead}]{
     \centering
-    \includegraphics[width=\textwidth]{figure/kuramoto_overhead}
-    \caption{The time series of the Kuramoto simulation.}
-    \label{fig:kuramoto_overhead}
-  \end{subfigure} %
-  \begin{subfigure}{0.35\textwidth}
+    \includegraphics[width=0.6\textwidth]{figure/kuramoto_overhead}
+  } \hfill
+  \subfloat[A snapshot at $t = 120$.\label{fig:kuramoto_snapshot}]{
     \centering
-    \includegraphics[width=\textwidth]{figure/kuramoto_snapshot}
-    \caption{A snapshot at $t = 120$.}
-    \label{fig:kuramoto_snapshot}
-  \end{subfigure}
+    \includegraphics[width=0.3\textwidth]{figure/kuramoto_snapshot}
+  }
   \caption[Kuramoto simulation]{The results of our simulation of a Kuramoto oscillator, as described in \cref{eq:kuramoto_phase}.
     A 4th-order Runge-Kutta solver ($\dd{t} = 0.01$, $t_{\text{max}} = 1000$) was run on a system of 512 oscillators.
     (a) The entire time series of the simulation.
@@ -98,7 +99,7 @@ We numerically simulated the Kuramoto system using a discrete approximation, and
     Note the juxtaposition of asynchronous ($0 \lesssim x \lesssim 0.3$ and $0.78 \lesssim x \lesssim 1$) and synchronous (oscillators $0.3 \lesssim x \lesssim 0.78$).
   }
   \label{fig:kuramoto_chimera}
-\end{figure}
+\end{figure*}
 
 Since then, chimera states have been found in simpler systems still.
 One of the simplest is the Abrams model, two populations of identical oscillators with a stronger coupling strength within the populations than between them \cite{Abrams2008}.
@@ -110,38 +111,36 @@ The equation describing this system is given as
   \omega
   +
   \sum_{\sigma' = 1}^{2} \frac{K_{\sigma \sigma'}}{N_{\sigma'}} \sum_{j = 1}^{N_{\sigma'}} \sin(\theta_{j}^{\sigma'} - \theta_{i}^{\sigma} - \alpha)
-  \qq{where}
+\end{equation}
+where
+\begin{equation*}
   K
   =
   \bmqty{\mu & \nu \\ \nu & \mu}
   \qand
   \sigma \in \Bqty{1, 2}.
-\end{equation}
+\end{equation*}
 In this model, $\mu$ represents the intra-population strength, and $\nu$ represents the inter-population strength, meaning $\mu > \nu$.
 Time can be scaled such that $\mu + \nu = 1$.
 If $\mu - \nu$ is not too large, and $\alpha$ is not too much less than $\frac{\pi}{2}$, then this system can produce chimera states.
 \Cref{fig:abrams} shows a simulation of the Abrams model on two populations of 128 oscillators.
-\begin{figure}[ht]
+\begin{figure*}[ht]
   \centering
-  \begin{subfigure}{0.6\textwidth}
+  \subfloat[The time series of the Abrams simulation.\label{fig:abrams_overhead}]{
     \centering
-    \includegraphics[width=\textwidth]{figure/abrams_overhead}
-    \caption{The time series of the Abrams simulation.}
-    \label{fig:abrams_overhead}
-  \end{subfigure} %
-  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=0.6\textwidth]{figure/abrams_overhead}
+  } \hfill
+  \subfloat[A snapshot at $t \approx 800$.\label{fig:abrams_snapshot}]{
     \centering
-    \includegraphics[width=\textwidth]{figure/abrams_snapshot}
-    \caption{A snapshot at $t = 799.45$.}
-    \label{fig:abrams_snapshot}
-  \end{subfigure}
+    \includegraphics[width=0.3\textwidth]{figure/abrams_snapshot}
+  }
   \caption[Abrams simulation]{A simulation of the Abrams model for two populations of 128 oscillators.
     A 4th-order Runge-Kutta solver ($\dd{t} = 0.01$, $t_{\text{max}} = 1000$) was run.
     (a) shows the time series of the simulation for $t \in \pqty{800, 1000}$.
-    (b) shows a snapshot at $t = 799.45$, chosen because the synchronous population (on the left) was almost perfectly synchronized ($\phi \approx 0$).
+    (b) shows a snapshot at $t \approx 800$.
   }
   \label{fig:abrams}
-\end{figure}
+\end{figure*}
 
 A similar system was also analyzed in the physical world \cite{Martens2013}.
 Two swinging platforms were coupled together with springs of variable spring constant $\kappa$, and 15 metronomes---all tuned to the same frequency---were placed on each platform.
@@ -161,19 +160,18 @@ From this, we find the two measures:
   \label{eq:chimera}
   \chimera
   &=
-    \expval{\sigma_{\text{chi}}}_{T}
-  &
-    \qq{where}
-    \sigma_{\text{chi}}(t)
-  &=
-    \frac{1}{M - 1} \sum_{c \in C}\pqty{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{C}}^{2} \\
+    \expval{\sigma_{\text{chi}}}_{T} \\
   \label{eq:metastability}
   \meta
   &=
     \expval{\sigma_{\text{met}}}_{C}
-  &
-    \qq{where}
-    \sigma_{\text{met}}(c)
+\end{align}
+where
+\begin{align}
+  \sigma_{\text{chi}}(t)
+  &=
+    \frac{1}{M - 1} \sum_{c \in C}\pqty{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{C}}^{2} \\
+  \sigma_{\text{met}}(c)
   &=
     \frac{1}{T - 1} \sum_{t \leq T}\pqty{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{T}}^{2}
 \end{align}

@@ -19,20 +19,16 @@ $G$ is shown in \cref{fig:mouse_connectome}, and is shown broken down into its i
 A useful aspect of this brain network is that the standard graph whose topology it most resembles is a small-world or Watts-Strogatz graph \cite{Oh2014}.
 This graph topology lends itself well to the development of chimera states, as it facilitates nonlocal coupling \cite{Hizanidis2016}.
 
-\begin{figure}[ht]
+\begin{figure*}[ht]
   \centering
-  \begin{subfigure}{0.45\textwidth}
+  \subfloat[Matrix representation\label{fig:mouse_matrix}]{
     \centering
-    \includegraphics[width=\textwidth]{figure/n}
-    \caption{Matrix representation}
-    \label{fig:mouse_matrix}
-  \end{subfigure} %
-  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=0.45\textwidth]{figure/n}
+  } \hfill
+  \subfloat[Embedding\label{fig:mouse_embedding}]{
     \centering
-    \includegraphics[width=\textwidth]{figure/network}
-    \caption{Embedding}
-    \label{fig:mouse_embedding}
-  \end{subfigure}
+    \includegraphics[width=0.45\textwidth]{figure/network}
+  }
   \caption[Mouse connectome]{(a) A matrix representation of the mouse connectome, with strengths as defined by \cref{eq:mouse_segmentation}.
     The cortices represented are, left to right (top to bottom),
     the striatum,
@@ -52,7 +48,7 @@ This graph topology lends itself well to the development of chimera states, as i
     Edge colors indicate the source location.
   }
   \label{fig:mouse_connectome}
-\end{figure}
+\end{figure*}
 
 Another benefit to this network is that it is accurate and complete.
 Given the complexity of brains, creating an accurate structural or functional connectome is extremely difficult.
@@ -61,18 +57,15 @@ Additionally, as mice are common analogues for humans in laboratory settings, th
 
 \begin{figure}[ht]
   \centering
-  \begin{subfigure}{0.45\textwidth}
+  \subfloat[$n'$ and $n''$\label{fig:n_prime}]{
     \centering
-    \includegraphics[width=\textwidth]{figure/n_prime}
-    \caption{$n'$ and $n''$}
-    \label{fig:n_prime}
-  \end{subfigure} %
-  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=0.9\columnwidth]{figure/n_prime}
+  }
+
+  \subfloat[$G'$ and $G''$\label{fig:g_prime}]{
     \centering
-    \includegraphics[width=\textwidth]{figure/g_prime}
-    \caption{$G'$ and $G''$}
-    \label{fig:g_prime}
-  \end{subfigure}
+    \includegraphics[width=0.9\columnwidth]{figure/g_prime}
+  }
   \caption[Network breakdown]{A breakdown of the network.
     (a) shows $n_{j}'$ and $n_{j}''$, effectively the number of nonzero elements in the $j$th row of $G'$ and $G''$, respectively.
     (b) shows $G'$ and $G''$, which are $G$ (\cref{fig:mouse_matrix}) only within and between cortices, respectively.
@@ -82,18 +75,15 @@ Additionally, as mice are common analogues for humans in laboratory settings, th
 
 \begin{figure}[ht]
   \centering
-  \begin{subfigure}{0.45\textwidth}
+  \subfloat[All values\label{fig:g_over_n}]{
     \centering
-    \includegraphics[width=\textwidth]{figure/g_over_n}
-    \caption{All values}
-    \label{fig:g_over_n}
-  \end{subfigure} %
-  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=0.9\columnwidth]{figure/g_over_n}
+  }
+
+  \subfloat[Dropped zeros\label{fig:g_over_n_drop}]{
     \centering
-    \includegraphics[width=\textwidth]{figure/g_over_n_drop}
-    \caption{Dropped zeros}
-    \label{fig:g_over_n_drop}
-  \end{subfigure}
+    \includegraphics[width=0.9\columnwidth]{figure/g_over_n_drop}
+  }
   \caption[Average strengths]{The average connection strengths for each neuron $j$, within cortices (blue) and between them (orange).
     (a) All of the subcortices.
     (b) All of the subcortices for which neither intra- nor inter-cortical average strength was 0.

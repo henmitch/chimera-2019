@@ -1,8 +1,9 @@
-The model used for this work was the modified Hindmarsh-Rose neural model\footnote{The modification is to add in the coupling, turning it into a network model instead of a single neuron.} taken from \cite{Santos2017}.
+The model used for this work was the modified Hindmarsh-Rose neural model\footnote{The modification is to add in the coupling, turning it into a network model instead of a single neuron.} taken from [\onlinecite{Santos2017}].
 \begin{align}
+  \begin{split}
   \label{eq:hr_x}
   \dot{\hrx}_{j}
-  &=
+  ={}&
     \hry_{j}
     -
     \hrx_{j}^{3}
@@ -11,14 +12,15 @@ The model used for this work was the modified Hindmarsh-Rose neural model\footno
     +
     I_{j}
     -
-    \hrz_{j}
-    -
+    \hrz_{j} \\
+    & -
     \frac{\hra}{n'_{j}} \sum_{k = 1}^{N} G'_{j k} \Theta_{j}(\hrx_{k})
     -
-    \frac{\hrb}{n''_{j}} \sum_{k = 1}^{N} G''_{j k} \Theta_{j}(\hrx_{k}) \\
+    \frac{\hrb}{n''_{j}} \sum_{k = 1}^{N} G''_{j k} \Theta_{j}(\hrx_{k})
+    \end{split} \\
   \label{eq:hr_y}
   \dot{\hry}_{j}
-  &=
+  ={}&
     1
     -
     5 \hrx_{j}^{2}
@@ -26,7 +28,7 @@ The model used for this work was the modified Hindmarsh-Rose neural model\footno
     \hry_{j} \\
   \label{eq:hr_z}
   \dot{\hrz}_{j}
-  &=
+  ={}&
     \mu \pqty{s \pqty{\hrx_{j} - \hrx_{\text{rest}}} - \hrz_{j}}
 \end{align}
 where
@@ -42,7 +44,7 @@ This activation function helps the model better approximate the behavior of neur
 
 \begin{table}[ht]
   \centering
-  \begin{tabular}{c | c | l}
+  \begin{tabular}{c | c | p{0.33\textwidth}}
     Symbol & Value & Meaning \\ \hline
     $\hrx_{j}$ & --- & Membrane potential of the $j$th neural mass \\
     $\hry_{j}$ & --- & Associated with the fast processes \\
@@ -58,7 +60,7 @@ This activation function helps the model better approximate the behavior of neur
     $\hra$ & Varied & Connection strength within cortices \\
     $n_{j}'$ & See \cref{fig:n_prime} & Number of connections within a cortex from the $j$th neuron \\
     $G_{j k}'$ & See \cref{fig:g_prime} & Intra-cortical connection strength \\
-    $\hrb$ & Varied & Connection strength between conrtices \\
+    $\hrb$ & Varied & Connection strength between cortices \\
     $n_{j}''$ & See \cref{fig:n_prime} & Number of connections between cortices from the $j$th neuron \\
     $G_{j k}''$ & See \cref{fig:g_prime} & Inter-cortical connection strength
   \end{tabular}
