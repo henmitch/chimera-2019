@@ -1,7 +1,8 @@
-\documentclass[aip,cha,reprint,superscriptaddress,floatfix,nofootinbib]{revtex4-1}
+\documentclass[aip,cha,reprint,superscriptaddress,floatfix,nofootinbib,twoside]{revtex4-1}
 \pdfoutput=1
 
 \usepackage[arrowdel]{physics}
+\usepackage{lmodern}
 \usepackage{siunitx}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -15,16 +16,23 @@
 \usepackage{hyperref}
 \usepackage[capitalise]{cleveref}
 
+%% To get that nice hatching in the Huygens figure
+\usetikzlibrary{patterns}
+
+%% {P}references
 \Crefname{equation}{Eq.}{Eqs.}
 \Crefname{figure}{Fig.}{Figs.}
 \Crefname{tabular}{Tab.}{Tabs.}
-
+\crefdefaultlabelformat{#2#1#3}
+\creflabelformat{equation}{#2#1#3}
+\newcommand{\crefpairconjunction}{,}
+%% \renewcommand\thesubfigure{\Alph{subfigure}}
+\renewcommand\thesubfigure{}
 \hypersetup{hidelinks}
 
-\usetikzlibrary{patterns}
-
-
+%% Because I'm lazy
 \newcommand*\mean[1]{\bar{#1}}
+\newcommand{\etal}{\textit{et al.}\ }
 
 %% For the Hindmarsh-Rose model
 \newcommand*{\hrx}{x}

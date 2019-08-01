@@ -54,7 +54,7 @@
 * DONE Reread Strogatz on chimeras
   Specifically quantification
   DEADLINE: <2018-09-21 Fri 10:30>
-* TODO Meet with Danforth re: timeline
+* DONE Meet with Danforth re: timeline
 * Meeting Matt
   <2018-10-26 Fri 09:40-10:00>
 * HON 201
@@ -74,8 +74,107 @@
     DEADLINE: <2019-04-05 Fri>
 *** TODO Submit schedule
     DEADLINE: <2019-04-20 Sat>
-* TODO Email Matt
+* DONE Email Matt
   DEADLINE: <2018-11-16 Fri>
+* Meeting Lakoba
+  <2018-11-30 Fri 11:00-11:15>
+** DONE Google stochastic resonance
+   DEADLINE: <2018-11-30 Fri>
+* DONE SRC Abstract Draft
+  DEADLINE: <2019-01-15 Tue>
+  [[~/UVM/thesis/SRC/abstract/main.tex][Draft]]
+* DONE Revised SRC Abstract
+  DEADLINE: <2019-02-01 Fri>
+* DONE SRC Poster Draft
+  DEADLINE: <2019-04-08 Mon>
+* DONE Print SRC Poster
+  DEADLINE: <2019-04-12 Sun>
+
+* Meeting with Matt
+  - See if there are models that cover going from syncrhony to chimera state (like a reverse collapse)
+  - Look at global average/order parameter during chimera collapse
+    - What kind of bifurcation does that look like?
+    - Look at $r = \sum_{k}{e^{i \theta_{k}}}$ (or, look at mean $\theta$)
+      - Time-delay embedding -> Often uses
+  - Dynamical Sytems in Neuroscience - Izhekivich
+  - Bump state
+    - Bard Ehrmentraut (has worked with Strogatz)
+    - Neurophysiological analog of chimera states
+      - Allows for compartmentalization
+  - Random forests to find attractors/predict basins of attraction -> PLoS Comp Bio
+    - John Terry
+* Story Time
+** Story Time - Morgan Frank - The Future of Work
+   <2019-01-16 Wed 12:00-13:05>
+   - Note: Video on slide 6 potentially distracting
+     - Maybe have play once?
+   - Note: Slide 9 & 10: s/chance/change/
+   - Slide 13 - How's "job impact" quantified?
+   - O*NET skills database?
+   - Slide 14 - "Need" more purple
+     - Not "have"?  Necessity seems kinda weird...
+   - Skill complementarity - only pairwise?
+   - Slide 19 - maybe have smaller version of colorized embedding from slide 18 (for reference)
+   - Aesthetic: use LaTeX newcommand for function/measure names
+   - Other fields not citing AI papers
+     - Does this mean they aren't leveraging AI?  As analogy, a historian using a database system doesn't mean they cite that system.
+
+** Story Time - Ben Emery - Mish-Mash
+   <2019-01-23 Wed 12:00-13:05>
+   - Food systems + data science
+
+** Story Time - Josh Minot - POTUSometer
+   <2019-01-30 Wed 12:00-13:05>
+** Story Time - Tyler Gray - Word stretchability
+   <2019-02-13 Wed 12:00-13:05>
+   - Finding words where one repeats letters or patterns
+     - i.e., "goooooo....ooooal" or "hahahahahaha..."
+** Story Time - Dave Dewhurst - Computational Finance
+   <2019-02-27 Wed 12:00-13:05>
+*** Background
+    We're talking about US equities markets: buying and selling stocks (largely computational).
+    There are 13 "lit" exchanges, and O(40) of "dark" alternative systems which don't provide as much information publicly.
+    There's a high rate of data exchange, one stream of which is governmentally mandated, the rest of which are proprietary.
+    One can make a weighted directed graph out of the information flows.
+    Note that geography does make a difference, as information moves at a finite speed (about \frac{\sqrt{2}}{2} c)[fn:Wired_fiber_optics].
+
+    One way to quantify information disparities is dislocations: the difference between the price reported on one feed and another feed.
+    One can caltulate the opportunity cost from this dislocation.
+*** [[https://compfi.org/][The research]]
+    From the point of view of an observer in Carteret, NJ (home of the NYSE) in 2016, they analyzed the realized opportunity cost resulting from these information disparities.
+
+    Dislocations occur a lot for the first 15 minutes of trading (starting at 9:30), then there are big spikes every half hour until noon.
+    Then, there are not as many big spikes until 14:00, then there's a fairly large bump with a steady increase until trading closes at 16:00.
+
+
+[fn:Wired_fiber_optics]Recall [[https://www.wired.com/story/corning-pure-glass-fiber-optic-cable/][this Wired article]], particularly the giant spools.
+
+** Story Time - Danne Elbers - Data Sharing and the VA
+   <2019-03-06 Wed 12:00-13:05>
+** Story Time - Sandhya Gopchandani - Words Around Depression
+   <2019-03-20 Wed 12:00-13:05>
+** Story Time - Laura Jennings - Perceptions of Veganism on Social Media and in the Real World
+   <2019-03-27 Wed 12:00-13:05>
+
+** Story Time - Lindsay Ross
+   <2019-04-01 Mon 12:00-13:05>
+** Story Time - Henry Mitchell
+   <2019-04-10 Wed 12:00-13:05>
+** Story Time - Michael Arnold
+   <2019-04-17 Wed 12:00-13:05>
+** Story Time - Colin Van Oort
+   <2019-04-24 Wed 12:00-13:05>
+** Story Time - Todd DeLuca - Active Learning and Algorithmic Fairness
+   <2019-05-01 Wed 12:00-13:05>
+
+** Story Time - Andy Metcalf
+   <2019-05-08 Wed 12:00-13:05>
+* DONE Set date
+  DEADLINE: <2019-01-31 Thu>
+* DONE "Final" Draft due
+  DEADLINE: <2019-04-05 Fri>
+* Defense
+  <2019-04-12 Fri 10:00-12:00>
 * Publication next steps
   - Make lower-res
   - Arxiv account
@@ -85,3 +184,6 @@
     - Chaos
     - Phys Rev E
     - Ask Matt about epilepsy journals?
+** DONE Contact C. Molnar and J. Gair re: neuron diagram use
+** IN-PROGRESS Contact F. Marten, S. Rodrigues, O. Benjamin, M. P. Richardson, and J. R. Terry re: swe figure use
+** DONE Contact M. C. Ljungberg, C. N. Sunnen, J. N. Lugo, A. E. Anderson, and G. D'Arcangelo re: typical epileptiform figure use

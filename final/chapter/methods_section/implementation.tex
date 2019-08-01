@@ -1,25 +1,25 @@
-The modified Hindmarsh-Rose model was coded into Python (Python version 3.7.0, NumPy version 1.15.2, Pandas version 0.23.4, SciPy version 1.1.0), and integrated using a 4th-order Runge-Kutta with variable step size\footnote{Step size was determined by SciPy's internal algorithms, but was limited to a maximum of 0.01.} $\dd{t} < 0.01$.
-The code was verified by reproducing the results of \cite{Santos2017}.
-The model was run for a time period of $T_{\text{sim}} = \bqty{-1000, 5000}$, where only times $T = \bqty{0, 4000}$ were saved.
-The times $\bqty{-1000, 0}$ were calculated and thrown away to eliminate transients.
-The chimeras were extremely unlikely to be eliminated on such a time scale, due to the size of the network \cite{Wolfrum2011}.
-The times $\bqty{4000, 5000}$ were calculated to facilitate analysis of the phase.
+We coded the modified Hindmarsh-Rose model using Python (Python version 3.7.0, NumPy version 1.15.2, Pandas version 0.23.4, SciPy version 1.1.0), and integrated using a 4th-order Runge-Kutta with variable step size\footnote{Step size was determined by SciPy's internal algorithms, but was limited to a maximum of 0.01.} $\dd{t} < 0.01$.
+We verified the code by reproducing the results of [\onlinecite{Santos2017}].
+We ran the model for a time period of $T_{\text{sim}} = \bqty{-1000, 5000}$, where only times $T = \bqty{0, 4000}$ were saved.
+We threw away the times $\bqty{-1000, 0}$ to eliminate transients.
+The chimeras were extremely unlikely to be eliminated on such a time scale, due to the size of the network [\onlinecite{Wolfrum2011}].
+We calculated the times $\bqty{4000, 5000}$ to facilitate analysis of the phase.
 
-The phase of the $j$th neuron in the resulting waveform was found as
+We computed the phase of the $j$th neuron in the resulting waveform as
 \begin{equation}
   \label{eq:hr_phase}
   \phase_{j}(t)
   =
-  2 \pi \times \frac{t - t_{i}}{t_{i + 1} - t_{i}}
+  2 \pi \times \frac{t - t_{i}}{t_{i + 1} - t_{i}},
 \end{equation}
-where $t_{i}$ is the time at which the $j$th neuron fires ($x_{j}$ crosses 0 in a positive direction) for the $i$th time\footnote{This is a similar measure for the phase as was used in \cite{Santos2017}, but allows for easier discrimination between physical and aphysical parameter sets.
+where $t_{i}$ is the time at which the $j$th neuron fires ($x_{j}$ crosses 0 in a positive direction) for the $i$th time\footnote{This is a similar measure for the phase as was used in [\onlinecite{Santos2017}], but allows for easier discrimination between physical and aphysical parameter sets.
   It is modified to keep $\phase_{j} \in \pqty{0, 2\pi}$ and to eliminate ambiguity about the meanings of the subscripts.
 }.
 In order for this calculation to be possible for all values in $T$, it was necessary to have each neuron fire at least once after $T$ had finished (i.e., there has to be some $t_{i + 1} \notin T$ in order to calculate the phase for times $t_{i} \leq t \leq t_{\text{max}} = 4000$).
 The calculated time range went so far beyond $t_{\text{max}}$ so that any extremely slow-firing neurons were allowed to do so, to ensure that as much of parameter space was in the physical region (\cref{sec:results_aphysical}).
-The phase was then used to find the chimera and metastability indices of the result using \cref{eq:chimera} and \cref{eq:metastability} respectively.
+We then used phase to find the chimera and metastability indices of the result using \cref{eq:chimera} and \cref{eq:metastability} respectively.
 
-This process was repeated for various parameter sweeps of $\hra \times \hrb$, summarized in \cref{tab:parameter_sweeps}.
+We repeated this process for various parameter sweeps of $\hra \times \hrb$, summarized in \cref{tab:parameter_sweeps}.
 Note that the step in each strength $i \in \Bqty{\hra, \hrb}$ is $\Delta i = \frac{i_{\text{max}}}{n_{i} - 1}$, due to the fact that the ranges are inclusive of both endpoints.
 \begin{table}[ht]
   \centering
@@ -27,19 +27,19 @@ Note that the step in each strength $i \in \Bqty{\hra, \hrb}$ is $\Delta i = \fr
     $\hra_{\text{max}}$, $\hrb_{\text{max}}$ & $\Delta \hra$ ($n_{\hra}$), $\Delta \hrb$ ($n_{\hrb}$) & Figure \\ \hline
     1.6, 0.4 & 0.0203 (80), 0.0211 (20) & --- \\
     3.2, 0.8 & 0.0405 (80), 0.0205 (40) & --- \\
-    0.2, 0.1 & 0.00253 (80), 0.00256 (40) & \cref{fig:zoom_chimera} \\
+    0.2, 0.1 & 0.00253 (80), 0.00256 (40) & \cref{fig:zoom} \\
     0.9, 0.9 & 0.0101 (80), 0.0101 (80) & --- \\
     1.0, 1.0 & 0.0101 (100), 0.0101 (100) & \cref{fig:aphysical_chimera}
   \end{tabular}
-  \caption[Parameter sweeps]{The sweeps used in evaluating the effects of $\hra$ and $\hrb$ on the chimera and metastability indices.
+  \caption[Parameter sweeps]{The sweeps we used in evaluating the effects of $\hra$ and $\hrb$ on the chimera and metastability indices.
     All parameter sweeps started at $(\hra, \hrb) = (0, 0)$.
-    The $\bqty{0, 1} \times \bqty{0, 1}$ sweep was performed 10 times, and the resulting chimera-like indices were averaged.
+    We performed the $\bqty{0, 1} \times \bqty{0, 1}$ sweep 10 times, and averaged the resulting chimera-like indices.
   }
   \label{tab:parameter_sweeps}
 \end{table}
 
 Initial conditions were drawn from uniform distributions of $x_{j} \in \bqty{-2, 2}$, $y_{j} \in \bqty{0, 0.2}$, $z_{j} \in \bqty{0, 0.2}$.
-All code was run on the \href{https://www.uvm.edu/vacc}{Vermont Advanced Computing Core}, and is \href{https://gitlab.uvm.edu/Henry.Mitchell/chimera-2019}{available online}\footnote{\href{https://gitlab.uvm.edu/Henry.Mitchell/chimera-2019}{https://gitlab.uvm.edu/Henry.Mitchell/chimera-2019}}.
+We performed all simulations on the \href{https://www.uvm.edu/vacc}{Vermont Advanced Computing Core}, and is \href{https://gitlab.uvm.edu/Henry.Mitchell/chimera-2019}{available online}\footnote{\href{https://gitlab.uvm.edu/Henry.Mitchell/chimera-2019}{https://gitlab.uvm.edu/Henry.Mitchell/chimera-2019}}.
 
 %%% Local Variables:
 %%% mode: latex
