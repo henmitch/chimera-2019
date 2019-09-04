@@ -9,7 +9,9 @@ from scipy.integrate import solve_ivp
 
 
 def prep_masks(n, cortices):
-    """Create the intra- and inter-cortical matrices, and the list of events
+    """
+    Create the intra- and inter-cortical matrices, and the list of events
+
     n:        (numpy.ndarray) The connectome matrix in question
     cortices: (List) A list of lists of `[start, end]` for each cortex
 
@@ -34,11 +36,26 @@ def prep_masks(n, cortices):
 
 
 def Θ(x, x_rev, λ, θ):
+    """
+    The activation function in the Hindmarsh-Rose model from Santos (2017)
+
+    x:
+    x_rev:
+    λ:
+    θ:
+    """
     xk, xj = np.meshgrid(x, x)
     return (xj - x_rev)/(1 + np.exp(-λ*(xk - θ)))
 
 
 def dΘ_dx(x, λ, θ):
+    """
+    The x-derivative of the activation function, used in the Jacobian
+
+    x:
+    λ:
+    θ:
+    """
     final = np.ones((x.size, x.size))/(1 + np.exp(-λ*(x - θ)))
     np.fill_diagonal(final,
                      final.diagonal() +
@@ -48,6 +65,26 @@ def dΘ_dx(x, λ, θ):
 
 def hr_dots(current, _,
             b, i0, x_rev, λ, θ, μ, s, x_rest, α, n1, β, n2, G1, G2):
+    """
+    The Hindmarsh-Rose model from Santos (2017)
+
+    current:
+    _:
+    b:
+    i0:
+    x_rev:
+    λ:
+    θ:
+    μ:
+    s:
+    x_rest:
+    α:
+    n1:
+    β:
+    n2:
+    G1:
+    G2:
+    """
     x, y, z = map(lambda k: k.flatten(), np.split(current, 3))
     theta = Θ(x, x_rev, λ, θ)
     dots = np.zeros_like(current).reshape(3, -1)
@@ -60,6 +97,26 @@ def hr_dots(current, _,
 
 def jac(_, y_in,
         b, i0, x_rev, λ, θ, μ, s, x_rest, α, n1, β, n2, G1, G2):
+    """
+    The Jacobian of the Hindmarsh-Rose model from Santos (2017)
+
+    _:
+    y_in:
+    b:
+    i0:
+    x_rev:
+    λ:
+    θ:
+    μ:
+    s:
+    x_rest:
+    α:
+    n1:
+    β:
+    n2:
+    G1:
+    G2:
+    """
     x, y, z = map(lambda k: k.flatten(), np.split(y_in, 3))
     dtheta_dx = dΘ_dx(x, λ, θ)
     dẋ_dx = -3*x**2 + 2*b*x - (α/n1)*G1*dtheta_dx - (β/n2)*G2*dtheta_dx
@@ -82,6 +139,9 @@ def jac(_, y_in,
 
 
 def cortex_size(mask, val):
+    """
+    The size of a given cortex (not used)
+    """
     return int(np.sqrt(mask[mask == val].shape))
 
 
@@ -92,6 +152,9 @@ def plot_final_state(
     markers=["ro", "k^", "gX", "bD"],
     ylim=[-1.5, 2.5]
 ):
+    """
+    Plot a state diagram of the given timeseries at its end.
+    """
     if cortices is None:
         cortices = [[0, y.size]]
     m = iter(markers[:len(cortices)])
@@ -107,6 +170,9 @@ def plot_final_state(
 
 def plot_beginning_and_end(y, start, end, p=0.99,
                            legend=False, title=True, channel=0):
+    """
+    Plot the first and last segments of a timeseries.
+    """
     length = y.shape[0]
     fig, [ax1, ax2] = plt.subplots(1, 2, sharey=True)
     for i in range(start, end):
@@ -124,6 +190,9 @@ def plot_beginning_and_end(y, start, end, p=0.99,
 
 
 def plot_phase_diagram(y, **kwargs):
+    """
+    Plot the phase diagram of a given timeseries.
+    """
     ydot = y[1:] - y[:-1]
     plt.plot(y[1:], ydot, **kwargs)
 
@@ -131,6 +200,9 @@ def plot_phase_diagram(y, **kwargs):
 def plot_state_diagram(y, cortices=None, lim=[-1.5, 2.5],
                        markers=["ro", "k^", "gX", "bD"],
                        delay=1):
+    """
+    Plot a state diagram.
+    """
     if cortices is None:
         cortices = [[0, y.size]]
     m = iter(markers[:len(cortices)])
@@ -143,10 +215,16 @@ def plot_state_diagram(y, cortices=None, lim=[-1.5, 2.5],
 
 
 def event(t, y, i):
+    """
+    The event that defines neural firing
+    """
     return y[i]
 
 
 def time_to_index(t, tmax, N, as_int=True):
+    """
+    Convert a time to an index
+    """
     out = (N*t/tmax)
     if as_int:
         return out.astype(int)
@@ -155,6 +233,9 @@ def time_to_index(t, tmax, N, as_int=True):
 
 
 def firing_time_mask(firing_timeses, tmax, N):
+    """
+    Generate a mask of neuron firing times.
+    """
     times = np.linspace(0, tmax, N)
     k_mask = np.zeros((N, len(firing_timeses)))
     t_mask = k_mask.copy()
@@ -168,6 +249,9 @@ def firing_time_mask(firing_timeses, tmax, N):
 
 
 def ϕ(sol, t):
+    """
+    Calculate the phase of a solution.
+    """
     n_areas = len(sol.t_events)
     T = np.vstack(n_areas*[sol.t]).T
     k_mask, t_mask, tp1_mask = firing_time_mask(
@@ -176,10 +260,16 @@ def ϕ(sol, t):
 
 
 def order(phases):
+    """
+    Calculate the order parameter of a set of phases
+    """
     return np.absolute(np.mean(np.exp(phases*1j), axis=1))
 
 
 def chimera(phase, cortices, p=1, channel=0):
+    """
+    Calculate the chimera-like index of a set of phases
+    """
     N = int((1-p)*phase.shape[0])
     M = len(cortices)
     average = np.mean([order(phase[N:, cortex[0]:cortex[1]])
@@ -192,6 +282,9 @@ def chimera(phase, cortices, p=1, channel=0):
 
 
 def metastability(phase, cortices, p=1, channel=0):
+    """
+    Calculate the metastability index of a set of phases
+    """
     metastabilities = []
     N = int((1-p)*phase.shape[0])
     average = np.mean([order(phase[N:, cortex[0]:cortex[1]])
@@ -214,21 +307,29 @@ def main():
         help="The beta value to use (intra connection strength)"
     )
     parser.add_argument(
-        "-n", metavar="run", type=int, nargs=1, default=0,
+        "-n", metavar="run", type=int, nargs=1,
+        default=0,
         help="The number run"
     )
     parser.add_argument(
-        "-d", metavar="data_dir", type=str, nargs=1, default="../../data",
+        "-d", metavar="data_dir", type=str, nargs=1,
+        default="../../data",
         help="The location to which to save the data"
     )
     parser.add_argument(
-        "-f", metavar="out_file", type=str, nargs=1, default="shanahan_params.csv",
+        "-f", metavar="out_file", type=str, nargs=1,
+        default="shanahan_params.csv",
         help="The file in which to save the data"
     )
     parser.add_argument(
         "--pickle", metavar="pickle", dest="pickle", action="store_const",
         const=True, default=False,
         help="Whether to pickle the data"
+    )
+    parser.add_argument(
+        "-t", metavar="tmax", type=int, nargs=1,
+        default=4000,
+        help="Maximum time to run to"
     )
     args = parser.parse_args()
     data_dir = args.d[0]
