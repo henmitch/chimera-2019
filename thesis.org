@@ -66,13 +66,13 @@
    [[http://uvm.edu/~ashonors]["One Stop Shop"]]
    [[https://scholarworks.uvm.edu/hcoltheses/][Scholarworks]] (previous theses)
 ** Process
-*** IN-PROGRESS Committee
+*** DONE Committee
     1. Chair from outside department - can be outside college (Matt?)
     2. Thesis supervisor - Danforth
     3. Person #3 - Dodds?
-*** TODO Book a room and schedule
+*** DONE Book a room and schedule
     DEADLINE: <2019-04-05 Fri>
-*** TODO Submit schedule
+*** DONE Submit schedule
     DEADLINE: <2019-04-20 Sat>
 * DONE Email Matt
   DEADLINE: <2018-11-16 Fri>
@@ -185,5 +185,7 @@
     - Phys Rev E
     - Ask Matt about epilepsy journals?
 ** DONE Contact C. Molnar and J. Gair re: neuron diagram use
-** IN-PROGRESS Contact F. Marten, S. Rodrigues, O. Benjamin, M. P. Richardson, and J. R. Terry re: swe figure use
+** DONE Contact F. Marten, S. Rodrigues, O. Benjamin, M. P. Richardson, and J. R. Terry re: swe figure use
 ** DONE Contact M. C. Ljungberg, C. N. Sunnen, J. N. Lugo, A. E. Anderson, and G. D'Arcangelo re: typical epileptiform figure use
+* DONE Email arXiv moderators
+  DEADLINE: <2019-08-19 Mon>
