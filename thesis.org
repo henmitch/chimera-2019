@@ -189,3 +189,5 @@
 ** DONE Contact M. C. Ljungberg, C. N. Sunnen, J. N. Lugo, A. E. Anderson, and G. D'Arcangelo re: typical epileptiform figure use
 * DONE Email arXiv moderators
   DEADLINE: <2019-08-19 Mon>
+* Dynamics Days
+  <2020-01-03 Fri>--<2020-01-05 Sun>
