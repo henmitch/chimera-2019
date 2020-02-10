@@ -1,4 +1,4 @@
-\documentclass[aip,cha,reprint,superscriptaddress,floatfix,nofootinbib,twoside]{revtex4-1}
+\documentclass{ws-ijbc}
 \pdfoutput=1
 
 \usepackage[arrowdel]{physics}
@@ -6,7 +6,6 @@
 \usepackage{siunitx}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage[margin=0.75in]{geometry}
 \usepackage{textcomp}
 \usepackage{graphicx}
 \usepackage[caption=false]{subfig}
@@ -15,6 +14,8 @@
 \usepackage{tipa}
 \usepackage{hyperref}
 \usepackage[capitalise]{cleveref}
+
+\bibliographystyle{ws-ijbc}
 
 %% To get that nice hatching in the Huygens figure
 \usetikzlibrary{patterns}
@@ -48,36 +49,31 @@
 \newcommand*{\phase}{\phi}
 
 \begin{document}
+\markboth{H.\ M.\ Mitchell, P.\ S.\ Dodds, J.\ M.\ Mahoney, \& C.\ M.\ Danforth}{Chimera States and Seizures in a Mouse Neuronal Model}
+
 \title{Chimera States and Seizures in a Mouse Neuronal Model}
 
 \author{Henry M. Mitchell}
-\affiliation{Department of Mathematics and Statistics, University of Vermont, Burlington, VT 05401}
-\affiliation{Department of Physics, University of Vermont, Burlington, VT 05401}
-\affiliation{Vermont Complex Systems Center, University of Vermont, Burlington, VT 05401}
-\affiliation{Computational Story Lab, University of Vermont, Burlington, VT 05401}
+\address{Vermont Complex Systems Center, University of Vermont, \\
+  82 University Place, Burlington, Vermont 05405, USA \\
+  Henry.Mitchell@uvm.edu}
 \author{Peter Sheridan Dodds}
-\affiliation{Department of Mathematics and Statistics, University of Vermont, Burlington, VT 05401}
-\affiliation{Vermont Complex Systems Center, University of Vermont, Burlington, VT 05401}
-\affiliation{Computational Story Lab, University of Vermont, Burlington, VT 05401}
-\affiliation{Department of Computer Science, University of Vermont, Burlington, VT 05401}
+\address{Vermont Complex Systems Center, University of Vermont, \\
+  82 University Place, Burlington, Vermont 05405, USA}
 \author{J. Matthew Mahoney}
-\affiliation{Department of Computer Science, University of Vermont, Burlington, VT 05401}
-\affiliation{Department of Neurology, University of Vermont Larner College of Medicine, Burlington, VT 05401}
-\author{Christopher M. Danforth}
-\affiliation{Department of Mathematics and Statistics, University of Vermont, Burlington, VT 05401}
-\affiliation{Vermont Complex Systems Center, University of Vermont, Burlington, VT 05401}
-\affiliation{Computational Story Lab, University of Vermont, Burlington, VT 05401}
-\affiliation{Department of Computer Science, University of Vermont, Burlington, VT 05401}
+\address{Department of Neurology, University of Vermont, \\
+  95 Carrigan Drive, Burlington, Vermont 05405, USA}
+\author{Christopher M.\ Danforth}
+\address{Vermont Complex Systems Center, University of Vermont, \\
+  82 University Place, Burlington, Vermont 05405, USA}
+
+\maketitle
 
 \begin{abstract}
   \input{abstract}
 \end{abstract}
 
-\maketitle
-
-\begin{quotation}
-\input{lead}
-\end{quotation}
+\keywords{Chimera state, seizure, neural network, epilepsy}
 
 \section{Introduction}
 \label{sec:intro}
@@ -99,17 +95,17 @@
 \label{sec:conclusion}
 \input{chapter/conclusion}
 
-\bibliography{ms.bib}
-
-\appendix
-
-\section{Acknowledgments}
+\nonumsection{Acknowledgments}
 \label{sec:acknowledgements}
 \input{chapter/acknowledgments}
+
+\appendix{}
 
 \section{Additional Figures}
 \label{sec:figures}
 \input{chapter/figures}
+
+\bibliography{ms.bib}
 
 \end{document}
 

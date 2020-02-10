@@ -1,4 +1,4 @@
-The model we used here was the modified Hindmarsh-Rose neural model\footnote{The modification is to add in the coupling, turning it into a network model instead of a single neuron.} taken from [\onlinecite{Santos2017}].
+The model we used here was the modified Hindmarsh-Rose neural model\footnote{The modification is to add in the coupling, turning it into a network model instead of a single neuron.} taken from \cite{Santos2017}.
 \begin{align}
   \begin{split}
   \label{eq:hr_x}
@@ -54,7 +54,7 @@ This function helps the model better approximate the behavior of neural masses, 
     $\hrz_{j}$ & --- & Associated with slow processes \\ \hline
     $b$ & 3.2 & Tunes the spiking frequency \\
     $I_{j}$ & 4.4 & External input current \\
-    $\hrx_{\text{rev}}$ & 2 & Ambient reverse potential \\
+    $\hrx_{\text{rev}}$ & 2 & Ambient reversal potential \\
     $\lambda$ & 10 & Activation function parameter \\
     $\theta$ & -0.25 & Activation function parameter \\
     $\mu$ & 0.01 & Time scale for variation of $z$ \\
@@ -71,10 +71,13 @@ This function helps the model better approximate the behavior of neural masses, 
   \label{tab:hr_params}
 \end{table}
 
-We chose this model due to the intelligibility of its parameters, as well as its proven ability to exhibit chimera-like behavior as a neural mass model [\onlinecite{Santos2017}].
+The measurable output of an EEG corresponds to the mean of the membrane potential within a cortex
+(i.e., the observable values are $\expval{x_{j}}_{j \in C}$)
+
+We chose this model due to the intelligibility of its parameters, as well as its proven ability to exhibit chimera-like behavior as a neural mass model \cite{Santos2017}.
 Additionally, the Hindmarsh-Rose model was not designed to emulate seizures, which provides further evidence for the assertion that chimeras may be a universal aspect of brain activity, as discussed in \cref{sec:lit_review_chimera_square_torus}.
 
-It is worth noting that one of the limitations of this model is the changing nature of $\hra$ and $\hrb$ in the actual brain.
+It is worth noting that one of the limitations of this model is the changing nature of intra- and inter-cortical connection strengths (corresponding to $\hra$ and $\hrb$) in the actual brain.
 The strengths of connections and the amounts by which they are amplified vary in time.
 However, they will be treated as constant, in order to present a view of parameter space.
 

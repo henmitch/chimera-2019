@@ -1,8 +1,8 @@
 We coded the modified Hindmarsh-Rose model using Python (Python version 3.7.0, NumPy version 1.15.2, Pandas version 0.23.4, SciPy version 1.1.0), and integrated using a 4th-order Runge-Kutta with variable step size\footnote{Step size was determined by SciPy's internal algorithms, but was limited to a maximum of 0.01.} $\dd{t} < 0.01$.
-We verified the code by reproducing the results of [\onlinecite{Santos2017}].
+We verified the code by reproducing the results of \cite{Santos2017}.
 We ran the model for a time period of $T_{\text{sim}} = \bqty{-1000, 5000}$, where only times $T = \bqty{0, 4000}$ were saved.
 We threw away the times $\bqty{-1000, 0}$ to eliminate transients.
-The chimeras were extremely unlikely to be eliminated on such a time scale, due to the size of the network [\onlinecite{Wolfrum2011}].
+The chimeras were extremely unlikely to be eliminated on such a time scale, due to the size of the network \cite{Wolfrum2011}.
 We calculated the times $\bqty{4000, 5000}$ to facilitate analysis of the phase.
 
 We computed the phase of the $j$th neuron in the resulting waveform as
@@ -12,7 +12,7 @@ We computed the phase of the $j$th neuron in the resulting waveform as
   =
   2 \pi \times \frac{t - t_{i}}{t_{i + 1} - t_{i}},
 \end{equation}
-where $t_{i}$ is the time at which the $j$th neuron fires ($x_{j}$ crosses 0 in a positive direction) for the $i$th time\footnote{This is a similar measure for the phase as was used in [\onlinecite{Santos2017}], but allows for easier discrimination between physical and aphysical parameter sets.
+where $t_{i}$ is the time at which the $j$th neuron fires ($x_{j}$ crosses 0 in a positive direction) for the $i$th time\footnote{This is a similar measure for the phase as was used in \cite{Santos2017}, but allows for easier discrimination between physical and aphysical parameter sets.
   It is modified to keep $\phase_{j} \in \pqty{0, 2\pi}$ and to eliminate ambiguity about the meanings of the subscripts.
 }.
 In order for this calculation to be possible for all values in $T$, it was necessary to have each neuron fire at least once after $T$ had finished (i.e., there has to be some $t_{i + 1} \notin T$ in order to calculate the phase for times $t_{i} \leq t \leq t_{\text{max}} = 4000$).
