@@ -1,0 +1,87 @@
+The model we used here was the modified Hindmarsh-Rose neural model\footnote{The modification is to add in the coupling, turning it into a network model instead of a single neuron.} taken from \cite{Santos2017}.
+\begin{align}
+  \begin{split}
+  \label{eq:hr_x}
+  \dot{\hrx}_{j}
+  ={}&
+    \hry_{j}
+    -
+    \hrx_{j}^{3}
+    +
+    b \hrx_{j}^{2}
+    +
+    I_{j}
+    -
+    \hrz_{j} \\
+    & -
+    \frac{\hra}{n'_{j}} \sum_{k = 1}^{N} G'_{j k} \Theta_{j}(\hrx_{k})
+    -
+    \frac{\hrb}{n''_{j}} \sum_{k = 1}^{N} G''_{j k} \Theta_{j}(\hrx_{k}),
+    \end{split} \\
+  \label{eq:hr_y}
+  \dot{\hry}_{j}
+  ={}&
+    1
+    -
+    5 \hrx_{j}^{2}
+    -
+    \hry_{j}, \\
+\end{align}
+and
+\begin{equation}
+  \label{eq:hr_z}
+  \dot{\hrz}_{j}
+  ={}
+    \mu \pqty{s \pqty{\hrx_{j} - \hrx_{\text{rest}}} - \hrz_{j}},
+\end{equation}
+where
+\begin{equation}
+  \label{eq:hr_sigmoid}
+  \Theta_{j}(\hrx_{k})
+  =
+  \frac{\hrx_{j} - \hrx_{\text{rev}}}{1 + e^{-\lambda \pqty{\hrx_{k} - \theta}}}
+\end{equation}
+is the sigmoidal activation function.
+This function helps the model better approximate the behavior of neural masses, as opposed to specific neurons.
+\Cref{tab:hr_params} shows the values and meanings of the symbols in the model.
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{c | c | p{0.6\columnwidth}}
+    Symbol & Value & Meaning \\ \hline
+    $\hrx_{j}$ & --- & Membrane potential of the $j$th neural mass \\
+    $\hry_{j}$ & --- & Associated with the fast processes \\
+    $\hrz_{j}$ & --- & Associated with slow processes \\ \hline
+    $b$ & 3.2 & Tunes the spiking frequency \\
+    $I_{j}$ & 4.4 & External input current \\
+    $\hrx_{\text{rev}}$ & 2 & Ambient reversal potential \\
+    $\lambda$ & 10 & Activation function parameter \\
+    $\theta$ & -0.25 & Activation function parameter \\
+    $\mu$ & 0.01 & Time scale for variation of $z$ \\
+    $s$ & 4 & Governs adaptation \\
+    $\hrx_{\text{rest}}$ & -1.6 & Resting/equilibrium potential \\ \hline
+    $\hra$ & Varied & Coupling strength within cortices \\
+    $n_{j}'$ & See \cref{fig:primes} A & Number of connections within a cortex from the $j$th neuron \\
+    $G_{j k}'$ & See \cref{fig:primes} C & Intra-cortical connection strength \\
+    $\hrb$ & Varied & Coupling strength between cortices \\
+    $n_{j}''$ & See \cref{fig:primes} B & Number of connections between cortices from the $j$th neuron \\
+    $G_{j k}''$ & See \cref{fig:primes} D & Inter-cortical connection strength
+  \end{tabular}
+  \caption[Hindmarsh-Rose Parameters]{The list of parameters used in modeling the Hindmarsh-Rose network.}
+  \label{tab:hr_params}
+\end{table}
+
+The measurable output of an EEG corresponds to the mean of the membrane potential within a cortex
+(i.e., the observable values are $\expval{x_{j}}_{j \in C}$)
+
+We chose this model due to the intelligibility of its parameters, as well as its proven ability to exhibit chimera-like behavior as a neural mass model \cite{Santos2017}.
+Additionally, the Hindmarsh-Rose model was not designed to emulate seizures, which provides further evidence for the assertion that chimeras may be a universal aspect of brain activity, as discussed in \cref{sec:lit_review_chimera_square_torus}.
+
+It is worth noting that one of the limitations of this model is the changing nature of intra- and inter-cortical connection strengths (corresponding to $\hra$ and $\hrb$) in the actual brain.
+The strengths of connections and the amounts by which they are amplified vary in time.
+However, they will be treated as constant, in order to present a view of parameter space.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../ms"
+%%% End:

@@ -1,0 +1,174 @@
+The science and mathematics of synchronization are among history's most well-studied areas of research.
+One of the earliest well-documented appearances of synchrony in unexpected places was observed in 1665 by Dutch physicist Christiaan Huygens, the inventor of the pendulum clock.
+Huygens noticed that two clocks hung from the same beam would eventually synchronize with each other.
+He supposed that this was due to minuscule energy transfers between the two clocks through the wooden beam.
+His hypothesis was proven nearly 350 years later, demonstrating that even the simplest-seeming synchronization behavior may result from complex dynamics \cite{PenaRamirez2016}.
+
+This behavior extends to larger systems than two clocks.
+A classic demonstration in many classes on the mathematics of synchronization depicts the same phenomenon with more oscillators \cite{Pantaleone2002}.
+One places a platform on top of a set of rollers, along with at least two metronomes on that platform (see \cref{fig:metronome_demo} for a drawing).
+When the metronomes are started with the same frequency but out of phase with each other, over time their phases drift until they synchronize.
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=0.7]
+    \draw (0, 0) circle (0.5);
+    \draw (4, 0) circle (0.5);
+    \draw[pattern=north east lines] (-2, 0.5) -- (6, 0.5) -- (6, 1) -- (-2, 1) -- (-2, 0.5);
+    \draw (-4, -0.5) -- (8, -0.5);
+    \draw (-0.5, 1) -- ++(0.2, 2) -- ++(0.6, 0) -- ++(0.2, -2);
+    \draw (0, 2.5) circle (0.05);
+    \draw[fill] (0, 1.5) circle (0.1);
+    \draw (0, 2.7) -- (0, 1.5);
+
+    \draw (1.5, 1) -- ++(0.2, 2) -- ++(0.6, 0) -- ++(0.2, -2);
+    \draw (2, 2.5) circle (0.05);
+    \draw[fill] (2, 1.5) circle (0.1);
+    \draw (2, 2.7) -- (2, 1.5);
+
+    \draw (3.5, 1) -- ++(0.2, 2) -- ++(0.6, 0) -- ++(0.2, -2);
+    \draw (4, 2.5) circle (0.05);
+    \draw[fill] (4, 1.5) circle (0.1);
+    \draw (4, 2.7) -- (4, 1.5);
+
+  \end{tikzpicture}
+  \caption[Synchronization demonstration]{The classic demonstration of Huygens synchronization.  When the metronomes are set running, they eventually synchronize due to the light coupling provided by the platform's ability to roll.}
+  \label{fig:metronome_demo}
+\end{figure}
+
+One example of more complex behavior arising from similar mechanisms is the coexistence of synchrony and asynchrony within a system of identical coupled oscillators, a phenomenon known as a chimera state \cite{Kuramoto2002,Abrams2004}.
+The existence of these chimera states is surprising, as they represent asymmetry within symmetric systems.
+The first time this behavior was observed was in a ring of nonlocally coupled oscillators \cite{Kuramoto2002}.
+While global coupling is an all-to-all interaction and local coupling is a nearest-neighbor interaction, nonlocal coupling is a mixture of the two.
+The model is expressible in one dimension as
+\begin{equation}
+  \label{eq:kuramoto}
+  \pdv{t} A(x, t)
+  =
+  \pqty{1 + i \omega_{0}} A
+  -
+  \pqty{1 + i b} \abs{A}^{2} A
+  +
+  K \pqty{1 + i a} \bqty{Z(x, t) - A(x, t)},
+\end{equation}
+where
+\begin{equation*}
+  \label{eq:kuramoto_coupling}
+  Z(x, t)
+  =
+  \int{G(x - x') A(x', t) \dd{x'}},
+\end{equation*}
+and
+\begin{equation*}
+  G(y)
+  =
+  \frac{\kappa}{2} e^{-k \abs{y}}x
+\end{equation*}
+\Cref{eq:kuramoto} reduces to the phase equation
+\begin{equation}
+  \label{eq:kuramoto_phase}
+  \pdv{t} \phi(x, t)
+  =
+  \omega
+  -
+  \int G(x - x') \times
+  \sin(\phi(x, t) - \phi(x', t) + \alpha) \dd{x'},
+\end{equation}
+where
+\begin{equation}
+  \tan(\alpha)
+  =
+  \frac{b - a}{1 + a b}.
+\end{equation}
+We numerically simulated the Kuramoto system using a discrete approximation, and it quickly fell into a chimera state (\cref{fig:kuramoto}).
+\begin{figure*}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{figure/kuramoto.pdf}
+  \caption[Kuramoto simulation]{The results of our simulation of a Kuramoto oscillator, as described in \cref{eq:kuramoto_phase}.
+    We ran a 4th-order Runge-Kutta solver ($\dd{t} = 0.01$, $t_{\text{max}} = 1000$) on a system of 512 oscillators.
+    A. The entire time series of the simulation.
+    The behavior represented there is quite complex, with several distinct qualitative changes to the patterns in the system.
+    However, in-depth analysis of this system is beyond the purview of this work.
+    B. A snapshot of the state of the system at $t = 120$.
+    Note the juxtaposition of asynchronous ($0.25 \lesssim x \lesssim 1$) and synchronous ($0 \lesssim x \lesssim 0.25$) oscillators.
+  }
+  \label{fig:kuramoto}
+\end{figure*}
+
+Chimera states have subsequently been found in simpler systems still.
+One of the simplest is the Abrams model which consists of two populations of identical oscillators with a stronger coupling strength within the populations than between them \cite{Abrams2008}.
+The equation describing this system is given by
+\begin{equation}
+  \label{eq:abrams}
+  \dv{\theta_{i}^{\sigma}}{t}
+  =
+  \omega
+  +
+  \sum_{\sigma' = 1}^{2} \frac{K_{\sigma \sigma'}}{N_{\sigma'}} \sum_{j = 1}^{N_{\sigma'}} \sin(\theta_{j}^{\sigma'} - \theta_{i}^{\sigma} - \alpha),
+\end{equation}
+where
+\begin{equation*}
+  K
+  =
+  \bmqty{\mu & \nu \\ \nu & \mu}
+  \qand
+  \sigma \in \Bqty{1, 2}.
+\end{equation*}
+In this model, $\mu$ represents the intra-population strength, and $\nu$ represents the inter-population strength, with $\mu > \nu$.
+Time can be scaled such that $\mu + \nu = 1$.
+If $\mu - \nu$ is not too large, and $\alpha$ is not too much less than $\frac{\pi}{2}$, then this system can produce chimera states.
+\Cref{fig:abrams} shows a simulation of the Abrams model on two populations of 128 oscillators.
+\begin{figure*}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{figure/abrams.pdf}
+  \caption[Abrams simulation]{A simulation of the Abrams model for two populations of 128 oscillators.
+    We employed a 4th-order Runge-Kutta solver ($\dd{t} = 0.01$, $t_{\text{max}} = 1000$).
+    A. Time series of the simulation for $t \in \pqty{800, 1000}$.
+    B. Snapshot at $t \approx 800$.
+  }
+  \label{fig:abrams}
+\end{figure*}
+
+An analogous system has recently been analyzed in the physical world \cite{Martens2013}.
+Two swinging platforms were coupled together with springs of variable spring constant $\kappa$, and 15 metronomes---all tuned to the same frequency---were placed on each platform.
+The metronomes on the same platform are coupled through the motion of the swing, which heavily influences the motion of the metronomes, represented in the Abrams model by $\mu$.
+The metronomes on opposite platforms are coupled through the springs, which is a much weaker interaction, represented in the Abrams model by $\nu$.
+For a wide range of values of $\kappa$, all of the metronomes on one platform would synchronize, while the metronomes on other platform would remain asynchronous.
+
+While chimera states may present themselves obviously when observed in a plot or the physical world, they can be harder to pin down analytically.
+In order to do so, we will investigate a system of $M$ communities of nonlocally-coupled oscillators, and we sample their phases at times $t \in \bqty{1, \ldots, T}$.
+A useful pair of measures for detecting the presence of a chimera state are the chimera-like index $\chimera$ and the metastability index $\meta$ \cite{Shanahan2010,Hizanidis2016}.
+To develop these two measures, we start with the order parameter $\ordparam_{c}(t) = \abs{\expval{e^{i \phase_{k}(t)}}_{k \in C}}$, where $\phase_{k}$ is the phase of oscillator $k$, and $\ev{f}_{k \in C}$ is the average of $f$ over all $k$ in community $C$.
+The order parameter $\ordparam$ indicates the instantaneous synchrony of a community (how similar the phases of the oscillators are to the others in $C$), and not its overall coherence (how similar the trajectories of the oscillators are).
+From this, we define the two measures:
+\begin{align}
+  \label{eq:chimera}
+  \chimera
+  &=
+    7 \times \expval{\sigma_{\text{chi}}}_{T}, \\
+  \label{eq:metastability}
+  \meta
+  &=
+    12 \times \expval{\sigma_{\text{met}}}_{C},
+\end{align}
+where
+\begin{equation}
+  \sigma_{\text{chi}}(t)
+  =
+  \frac{1}{M - 1} \sum_{c \in C}\pqty{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{C}}^{2},
+\end{equation}
+and
+\begin{equation}
+  \sigma_{\text{met}}(c)
+  =
+  \frac{1}{T - 1} \sum_{t \leq T}\pqty{\ordparam_{c}(t) - \expval{\ordparam_{c}}_{T}}^{2}.
+\end{equation}
+To put this into words, the chimera-like index $\chimera$ is the average over time of the variance of the order parameter across communities, while the metastability index $\meta$ is the average across communities of the variance of the order parameter within a given community over time,.
+
+The normalization constants follow from the indices' maximum possible values \cite{Shanahan2010}.
+If a community spends equal time in a maximally chimeric state and a minimally chimeric state, then its chimera-like index will be at its maximum\footnote{While it is possible for half of a system's communities to be synchronous and the other half asynchronous for all times (resulting in a chimera-like index of $\frac{2}{7}$), this is transient due to the effects of metastability \cite{Shanahan2010}.  Therefore, we will ignore this case.}: $\chimera_{\text{max}} = \frac{1}{7}$.
+If a community $c$ spends equal time in all stages of synchronization (i.e., the phase parameter of $c$ is uniformly distributed), then $\sigma_{\text{met}}(c)$ is at its maximum, which is the variance of the uniform distribution: $\meta_{\text{max}} = \frac{1}{12}$.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../ms"
+%%% End:

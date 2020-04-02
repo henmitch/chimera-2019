@@ -1,0 +1,44 @@
+We show the normalized chimera-like index of the entire physical region in \cref{fig:aphysical_chimera}.
+Near the maximal edge of the physical region, the highest values of the chimera index appear to follow a slope of $-1$.
+It is unsurprising that chimera states would be prevalent when the coupling is large (out near the boundary of the aphysical range).
+
+What is surprising, however, is the presence of the chimeric patch in the bottom left corner of \cref{fig:aphysical_chimera}, shown at a higher resolution in \cref{fig:zoom}.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figure/zoom_100dpi.pdf}
+  \caption[Zoomed landscape]{A.\ The chimera-like index $\chimera$ of runs with $(\hra, \hrb) \in (0, 0.2) \times (0, 0.2)$.
+    As before, the chimera-like index is normalized to $\frac{1}{7}$.
+    Note that the values of the index are much higher in this patch than in most of the rest of $(\hra, \hrb) \in (0, 1) \times (0, 1)$ (\cref{fig:aphysical_chimera}).
+    B.\ The variance of the chimera-like index.
+  }
+  \label{fig:zoom}
+\end{figure}
+Plotting the results of the simulations (\cref{fig:041_021}),
+it is evident that this is not a calculation error, but is an actual feature of the parameter landscape.
+\begin{figure*}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{figure/0_041-0_021_200dpi.pdf}
+  \caption[Highly chimeric simulation]{A run of the Hindmarsh-Rose simulation in the chimeric island.
+    A. The mean membrane potential within each cortex.
+    B. The phase $\phase$ of the entire timeseries for a simulation of the Hindmarsh-Rose network.
+    Synchronization is most consistently evident in the medulla, the hypothalamus, and the isocortex.
+  }
+  \label{fig:041_021}
+\end{figure*}
+
+The highly chimeric patch within the physical portion of the landscape appears to be mostly below the $\beta = \alpha$ line.
+This is reasonable, as chimera states occur when coupling within groups is greater than coupling between groups.
+A small portion of the chimeric patch lies above the $\beta = \alpha$ line, likely because the average strength between cortices is greater than the average strength within cortices (see \cref{fig:average_strengths} A).
+
+The chimera-like index $\chimera$ greatly lessens at $\alpha \approx 0.1$.
+A possible explanation for this comes from comparing the order of $\dot{\hrx}$ without the coupling terms, and the coupling terms themselves.
+From our simulation, we find that $\dot{\hrx}$ without the coupling terms ranges roughly from -6 to 3.
+The coupling terms each\footnote{Since the same can be said for both $\alpha$ and $\beta$, we will discuss only $\alpha$, with the understanding that $\beta$ could be substituted into the proceeding sentences.}
+range from 0 to approximately $30 \alpha$.
+This means that, when $\alpha > 0.1$, the coupling is at least of the same order as the sum of the rest of the terms in the equation.
+This leads to a qualitative difference between the two states, which likely manifests itself as the less chimeric states.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../ms"
+%%% End:

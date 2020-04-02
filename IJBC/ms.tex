@@ -1,0 +1,113 @@
+\documentclass{ws-ijbc}
+\pdfoutput=1
+
+\usepackage[arrowdel]{physics}
+\usepackage{lmodern}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage[caption=false]{subfig}
+\usepackage{tikz}
+\usepackage{mhchem}
+\usepackage{tipa}
+\usepackage{hyperref}
+\usepackage[capitalise]{cleveref}
+
+\bibliographystyle{ws-ijbc}
+
+%% To get that nice hatching in the Huygens figure
+\usetikzlibrary{patterns}
+
+%% {P}references
+\Crefname{equation}{Eq.}{Eqs.}
+\Crefname{figure}{Fig.}{Figs.}
+\Crefname{tabular}{Tab.}{Tabs.}
+\crefdefaultlabelformat{#2#1#3}
+\creflabelformat{equation}{#2#1#3}
+\newcommand{\crefpairconjunction}{,}
+%% \renewcommand\thesubfigure{\Alph{subfigure}}
+\renewcommand\thesubfigure{}
+\hypersetup{hidelinks}
+
+%% Because I'm lazy
+\newcommand*\mean[1]{\bar{#1}}
+\newcommand{\etal}{\textit{et al.}\ }
+
+%% For the Hindmarsh-Rose model
+\newcommand*{\hrx}{x}
+\newcommand*{\hry}{y}
+\newcommand*{\hrz}{z}
+\newcommand*{\hra}{\alpha}
+\newcommand*{\hrb}{\beta}
+
+%% For the chimera-like index
+\newcommand*{\chimera}{\chi}
+\newcommand*{\meta}{m}
+\newcommand*{\ordparam}{r}
+\newcommand*{\phase}{\phi}
+
+\begin{document}
+\markboth{H.\ M.\ Mitchell, P.\ S.\ Dodds, J.\ M.\ Mahoney, \& C.\ M.\ Danforth}{Chimera States and Seizures in a Mouse Neuronal Model}
+
+\title{Chimera States and Seizures in a Mouse Neuronal Model}
+
+\author{Henry M. Mitchell}
+\address{Vermont Complex Systems Center, University of Vermont, \\
+  82 University Place, Burlington, Vermont 05405, USA \\
+  Henry.Mitchell@uvm.edu}
+\author{Peter Sheridan Dodds}
+\address{Vermont Complex Systems Center, University of Vermont, \\
+  82 University Place, Burlington, Vermont 05405, USA}
+\author{J. Matthew Mahoney}
+\address{Department of Neurology, University of Vermont, \\
+  95 Carrigan Drive, Burlington, Vermont 05405, USA}
+\author{Christopher M.\ Danforth}
+\address{Vermont Complex Systems Center, University of Vermont, \\
+  82 University Place, Burlington, Vermont 05405, USA}
+
+\maketitle
+
+\begin{abstract}
+  \input{abstract}
+\end{abstract}
+
+\keywords{Chimera state, seizure, neural network, epilepsy}
+
+\section{Introduction}
+\label{sec:intro}
+\input{chapter/intro}
+
+\section{Literature Review}
+\label{sec:lit_review}
+\input{chapter/lit_review}
+
+\section{Methods}
+\label{sec:methods}
+\input{chapter/methods}
+
+\section{Results}
+\label{sec:results}
+\input{chapter/results}
+
+\section{Discussion}
+\label{sec:conclusion}
+\input{chapter/conclusion}
+
+\nonumsection{Acknowledgments}
+\label{sec:acknowledgements}
+\input{chapter/acknowledgments}
+
+\appendix{Additional Figures}
+\label{sec:figures}
+\input{chapter/figures}
+
+\bibliography{ms.bib}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
