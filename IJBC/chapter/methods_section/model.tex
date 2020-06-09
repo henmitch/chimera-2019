@@ -1,4 +1,5 @@
-The model we used here was the modified Hindmarsh-Rose neural model\footnote{The modification is to add in the coupling, turning it into a network model instead of a single neuron.} taken from \cite{Santos2017}.
+The model we used was a modified Hindmarsh-Rose neural model\footnote{The modification is to add in the coupling, turning it into a network model instead of a single neuron.
+  The brain has different connection strengths and types within cortices than it does between cortices, which is why the network is separated into intra- and intercortical connections in \cref{eq:hr_x}.} taken from \cite{Santos2017}.
 \begin{align}
   \begin{split}
   \label{eq:hr_x}
@@ -72,14 +73,20 @@ This function helps the model better approximate the behavior of neural masses, 
 \end{table}
 
 The measurable output of an EEG corresponds to the mean of the membrane potential within a cortex
-(i.e., the observable values are $\expval{x_{j}}_{j \in C}$)
+(i.e., the observable values are $\expval{x_{j}}_{j \in C}$).
 
 We chose this model due to the intelligibility of its parameters, as well as its proven ability to exhibit chimera-like behavior as a neural mass model \cite{Santos2017}.
-Additionally, the Hindmarsh-Rose model was not designed to emulate seizures, which provides further evidence for the assertion that chimeras may be a universal aspect of brain activity, as discussed in \cref{sec:lit_review_chimera_square_torus}.
+Additionally, the Hindmarsh-Rose model was not designed to emulate seizures, which provides further evidence for the assertion that chimeras may be a universal aspect of brain activity.
 
 It is worth noting that one of the limitations of this model is the changing nature of intra- and inter-cortical connection strengths (corresponding to $\hra$ and $\hrb$) in the actual brain.
 The strengths of connections and the amounts by which they are amplified vary in time.
 However, they will be treated as constant, in order to present a view of parameter space.
+
+Additionally, the model assumes a network of identical nodes.
+This is not the case in the brain, as there is heterogeneity of neuronal behavior, even among neurons of similar types.
+The model does allow some flexibility for creating differences between neural masses through the $I_{j}$ external input current term.
+Changes to this term have been shown to disrupt chimera states \cite{Santos2017}, possibly due to intermediate levels of heterogeneity enabling optimal information encoding \cite{Baroni2014}.
+However, a network of identical nodes provides a good qualitative picture of the parameter space, with room for refinement by the introduction of noise.
 
 %%% Local Variables:
 %%% mode: latex
