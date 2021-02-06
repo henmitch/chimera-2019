@@ -1,12 +1,15 @@
 import argparse
 import fcntl
+import logging
+import pickle
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import pickle
-
 from scipy.integrate import solve_ivp
 
+logger = logging.Logger(name="chimera")
+logger.setLevel(logging.INFO)
 
 def prep_masks(n, cortices):
     """
@@ -68,22 +71,22 @@ def hr_dots(current, _,
     """
     The Hindmarsh-Rose model from Santos (2017)
 
-    current:
-    _:
-    b:
-    i0:
-    x_rev:
-    λ:
-    θ:
-    μ:
-    s:
-    x_rest:
-    α:
-    n1:
-    β:
-    n2:
-    G1:
-    G2:
+    current: The current state of the system.
+    _: time. Required for solve_ivp, but not for the Hindmarsh-Rose model.
+    b: Controls spiking frequency
+    i0: Input current
+    x_rev: Reverse potential
+    λ: Sigmoidal activation function parameter
+    θ: Sigmoidal activation function parameter
+    μ: Time scale of the slow
+    s: Governs adaptation
+    x_rest: The rest potential of the neurons
+    α: The inter-cortical connection strength
+    n1: The number of inter-cortical connections
+    β: The inter-cortical connection strength
+    n2: The number of inter-cortical connections
+    G1: The intra-cortical connection matrix
+    G2: The inter-cortical connection matrix
     """
     x, y, z = map(lambda k: k.flatten(), np.split(current, 3))
     theta = Θ(x, x_rev, λ, θ)
@@ -216,7 +219,9 @@ def plot_state_diagram(y, cortices=None, lim=[-1.5, 2.5],
 
 def event(t, y, i):
     """
-    The event that defines neural firing
+    The event that defines neural firing. Currently y[i] = 0.
+
+    TODO: Improve this -> make it the firing threshold.
     """
     return y[i]
 
@@ -261,7 +266,7 @@ def ϕ(sol, t):
 
 def order(phases):
     """
-    Calculate the order parameter of a set of phases
+    Calculate the order parameter of a set of phases.
     """
     return np.absolute(np.mean(np.exp(phases*1j), axis=1))
 
@@ -335,11 +340,13 @@ def main():
     data_dir = args.d[0]
 
     # DATA PREPARATION - specific to the data in question
+    logger.info("Reading mouse connectome")
     data = pd.read_excel("../connectomes/mouse.xlsx", sheet_name=None)
-    metadata = pd.read_excel("../connectomes/mouse_meta.xlsx", sheet_name=None)
+    logger.info("Reading mouse metadata")
+    metadata = pd.read_excel("../connectomes/mouse_meta.xlsx",
+        sheet_name="Voxel Count_295 Structures")
 
-    m = metadata["Voxel Count_295 Structures"]
-    m = m.loc[m["Represented in Linear Model Matrix"] == "Yes"]
+    m = metadata.loc[metadata["Represented in Linear Model Matrix"] == "Yes"]
 
     columns = []
     cortices = [[0, 0]]
@@ -348,8 +355,6 @@ def main():
              m.loc[m["Major Region"] == region, "Acronym"].values]
         cortices.append([cortices[-1][-1], cortices[-1][-1] + len(i)])
     cortices.remove([0, 0])
-
-    data = pd.read_excel("../connectomes/mouse.xlsx", sheet_name=None)
 
     d = data["W_ipsi"]
     p = data["PValue_ipsi"]
@@ -404,39 +409,40 @@ def main():
     t = np.linspace(0, tmax, N)
 
     params = (b, i0, x_rev, λ, θ, μ, s, x_rest, α, n1, β, n2, G1, G2)
-    print(f"Finding solution for (a, b) = ({α:0.3f}, {β:0.3f})... ", end=" ")
+    logger.info(f"Finding solution for (a, b) = ({α:0.3f}, {β:0.3f})... ", end=" ")
     sol = solve_ivp(fun=lambda t_in, y_in: hr_dots(y_in, t_in, *params),
                     t_span=(-1000, tmax + 1000), t_eval=t,
                     y0=ivs.reshape(ivs.size), events=events, method="RK45")
-    print("Found solution")
+    logger.info("Found solution")
 
-    print("Finding phase... ", end=" ")
+    logger.info("Finding phase... ", end=" ")
     phase = ϕ(sol, t)
     max_phase = np.max(phase)
-    print(f"Found phase (max {max_phase})")
+    logger.info(f"Found phase (max {max_phase})")
 
-    print("Finding chimera index... ", end=" ")
+    logger.info("Finding chimera index... ", end=" ")
     χ = chimera(phase, cortices)
-    print(f"Found chimera index {χ}")
+    logger.info(f"Found chimera index {χ}")
 
-    print("Finding metastability index... ", end=" ")
+    logger.info("Finding metastability index... ", end=" ")
     m = metastability(phase, cortices, 1)
-    print(f"Found metastability index {m}")
+    logger.info(f"Found metastability index {m}")
 
     r_bar = np.mean(order(phase))
-    print(f"Mean order parameter: {r_bar}")
+    logger.info(f"Mean order parameter: {r_bar}")
 
-    print("Writing... ", end=" ")
+    logger.info("Writing... ", end=" ")
     if args.pickle:
         with open(f"{data_dir}/{α:0.3f}-{β:0.3f}.pkl", "wb") as f:
             pickle.dump([params, sol, phase, χ, m], f)
     else:
         with open(args.f[0], "a") as f:
+            # Locking the output file for multiple runs in parallel
             fcntl.flock(f, fcntl.LOCK_EX)
             f.write(f"{args.n[0]},{α},{β},{max_phase},{χ},{m},{r_bar}\n")
             fcntl.flock(f, fcntl.LOCK_UN)
 
-    print("Wrote")
+    logger.info("Wrote")
 
 
 if __name__ == "__main__":
